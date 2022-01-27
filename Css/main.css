@@ -1,6 +1,7 @@
 #form {
-    position: relative;
-  }
+  position: relative;
+  margin-right: 20px;
+}
 
 #form .fa-search {
   position: absolute;
@@ -36,11 +37,6 @@
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-/* .form-input:focus {
-  box-shadow: none;
-  border: none;
-} */
-
 #sectionsCellView{
   display: flex;
   justify-content: space-between;
@@ -52,6 +48,10 @@
   font-size: 1.6rem;
   padding-left: 5px;
   padding-right: 5px;
+}
+
+.active {
+  color: #212529 !important;
 }
 
 @media screen and (min-width: 580px) {

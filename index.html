@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="Css/main.css" />
   </head>
   <body>
-     <!-- Navbar -->
+    <!-- Navbar -->
     <nav class="navbar pb-0" style="background-color: #393a34">
       <div
         class="navbar-dark w-100 d-flex justify-content-between align-items-center pb-3 px-2"
@@ -18,25 +18,27 @@
         <a class="navbar-brand" href="#">Bivra</a>
 
         <!-- Searchfield -->
-        <div id="form">
+        <div class="d-flex align-items-center">
+          <div id="form">
             <input type="text" class="form-input" placeholder="Buscar" />
             <i class="fa fa-search"></i>
-        </div>
-        <div
-          style="
-            border: 2px solid white;
-            border-radius: 100px;
-            padding: 3px 7px;
-          "
-        >
-          <i class="fas fa-user" style="font-size: 1.6rem; color: white"></i>
+          </div>
+          <div
+            style="
+              border: 2px solid white;
+              border-radius: 100px;
+              padding: 3px 7px;
+            "
+          >
+            <i class="fas fa-user" style="font-size: 1.6rem; color: white"></i>
+          </div>
         </div>
       </div>
 
       <!-- Sections -->
       <ul
         id="sectionsCellView"
-        class="navbar-nav py-2 px-0 px-sm-5 border-bottom bg-light w-100"
+        class="navbar-nav py-2 pt-3 px-0 px-sm-5 border-bottom bg-light w-100"
         style="flex-direction: row"
       >
         <li class="nav-item me-4">
@@ -46,10 +48,16 @@
           <i class="fas fa-music"></i>
         </li>
         <li class="nav-item me-4">
-          <i class="fas fa-home"></i>
+          <i class="fas fa-home active"></i>
         </li>
-        <li class="nav-item me-4">
+        <li class="nav-item me-4 position-relative">
           <i class="fas fa-bell"></i>
+          <span
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+          >
+            9
+            <span class="visually-hidden">unread messages</span>
+          </span>
         </li>
         <li class="nav-item me-4">
           <i class="fas fa-user"></i>
