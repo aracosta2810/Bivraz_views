@@ -1,0 +1,65 @@
+#form {
+    position: relative;
+  }
+
+#form .fa-search {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  color: #9ca3af;
+}
+
+.left-pan {
+  padding-left: 7px;
+}
+
+.left-pan i {
+  padding-left: 10px;
+}
+
+.form-input {
+  border-radius: 7px;
+  display: block;
+  width: 100%;
+  padding: 0rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* .form-input:focus {
+  box-shadow: none;
+  border: none;
+} */
+
+#sectionsCellView{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#sectionsCellView  i{
+  color: #b6b4b4;
+  font-size: 1.6rem;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+@media screen and (min-width: 580px) {
+  #sectionsCellView  {
+    display: none;
+  }
+}
+
+
+
+
