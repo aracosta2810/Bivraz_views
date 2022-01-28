@@ -14,7 +14,7 @@
 <body>
   <!-- Navbar -->
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-md d-none d-md-block navbar-dark" style="background-color: #393a34">
+  <nav class="navbar navbar-expand-md d-none d-md-block navbar-dark fixed-top" style="background-color: #393a34">
     <div class="container">
       <a class="navbar-brand" href="#"> <img src="assets/logoBivraz.png" alt="" width="100"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -25,15 +25,19 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#"><i class="fas fa-home"></i> Inicio</a>
+            <div class="activating_item"></div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="fas fa-music"></i> Listas</a>
+            <div class="activating_item"></div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="fas fa-box-open"></i> Paquetes</a>
+            <div class="activating_item"></div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="fas fa-user"></i> Artistas</a>
+            <div class="activating_item"></div>
           </li>
         </ul>
         <form class="d-flex">
@@ -61,9 +65,9 @@
             </ul>
           </div>
           <div style="color: white;padding: 7px;position: relative;" class="dropdown">
-            <i class="fas fa-bell" style="cursor: pointer;" id="icon_notifications" tabindex="0" data-bs-trigger="focus" data-bs-container="body"
-              data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom" data-bs-content=""
-              title="Notificaciones"></i>
+            <i class="fas fa-bell" style="cursor: pointer;" id="icon_notifications" tabindex="0" data-bs-trigger="focus"
+              data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom"
+              data-bs-content="" title="Notificaciones"></i>
 
             <span class="position-absolute top-0 translate-end badge rounded-pill bg-danger">
               9
@@ -78,7 +82,7 @@
 
 
 
-  <nav class="navbar pb-0 d-block d-md-none" style="background-color: #393a34">
+  <nav class="navbar pb-0 d-block d-md-none fixed-top" style="background-color: #393a34">
     <div class="navbar-dark w-100 d-flex justify-content-between align-items-center pb-3 px-2">
       <a class="navbar-brand" href="#"> <img src="assets/logoBivraz.png" alt="" width="100"></a>
 
@@ -111,7 +115,7 @@
         <i class="fas fa-home active"></i>
       </li>
       <li class="nav-item me-4 position-relative">
-        <i class="fas fa-bell" ></i>
+        <i class="fas fa-bell"></i>
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
           9
           <span class="visually-hidden">unread messages</span>
@@ -122,6 +126,66 @@
       </li>
     </ul>
   </nav>
+
+  <div class="container bg-light" id="content">
+    <div class="row">
+      <div class="col-sm-12 col-md-8 rigth-column">
+        <script>
+          for (let i = 0; i < 50; i++) {
+            document.write(`<p>${i} Hola mundo</p>`);
+
+          }
+        </script>
+      </div>
+      <div class="col-sm-12 col-md-4 vh-100 d-sm-none d-md-block">
+        <div class="left-column">
+          <p><i class="fa fa-list"></i> &Uacute;ltimas reproducidas</p>
+          <hr width="100%">
+          <p>
+            <i class="fas fa-play" style="margin-right: 5px;"></i>
+            Bad Bunny && Becky G - Amantes
+          </p>
+          <p><i class="fa fa-play" style="margin-right: 5px;"></i>Chocolate - Una noche m&aacute;s</p>
+          <p><i class="fa fa-play" style="margin-right: 5px;"></i> Anuel - Bubalu</p>
+          <hr width="100%">
+          <p style="width: 100%; font-size: small;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Placeat rem nam tempora consequatur...</p>
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Leer m&aacute;s
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">T&eacute;rminos y condiciones de uso</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <script>
+            for (let i = 0; i < 20; i++) {
+              document.write(`<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae nulla iure, quidem expedita
+          reprehenderit officia sed ad deleniti illum exercitationem delectus ipsa eum, ullam nostrum totam blanditiis
+          obcaecati? Accusamus, alias!</p>`)
+
+            }
+          </script>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
   <script src="Js/popper.min.js"></script>
   <script src="Js/bootstrap.js"></script>
   <script src="Js/jquery-3.5.1.js"></script>
