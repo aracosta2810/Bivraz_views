@@ -93,7 +93,7 @@ body {
 .left-column {
   position: fixed;
   border-left-style: solid;
-  border-left-color: gray;
+  border-left-color: #aeb1b6;
   border-left-width: 1px;
   height: 100%;
   padding: 15px;

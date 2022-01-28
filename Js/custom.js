@@ -6,13 +6,5 @@ function responsiveDesign() {
         } else {
             container.addClass("container");
         }
-/* 
-        if ($(this).width() <= 1075) {
-            container.removeClass("justify-content-lg-bettween");
-            container.addClass("justify-content-center");
-        } else {
-            container.addClass("justify-content-lg-bettween");
-            container.removeClass("justify-content-center");
-        } */
     });
 }
