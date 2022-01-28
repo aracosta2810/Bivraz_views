@@ -42,8 +42,8 @@
         </ul>
         <form class="d-flex">
           <div id="form" style="padding: 7px;">
-            <input type="text" class="form-input" placeholder="Buscar" />
-            <i class="fa fa-search" style="padding: 7px;cursor: pointer;"></i>
+            <input type="text" class="form-input" placeholder="Buscar" id="input_search" />
+            <i class="fa fa-search" style="padding: 7px;cursor: pointer;" id="btn_search"></i>
           </div>
           <div style="
                 border: 2px solid white;
@@ -160,10 +160,12 @@
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
-      <div class="modal-content">
+      <div class="modal-content" style="border-radius: 20px;text-align: center;">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">T&eacute;rminos y condiciones de uso</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <img src="assets/logo.png" alt="" width="70">
+          <h5 class="modal-title" id="exampleModalLabel" style="width: 100%;text-align: center;">T&eacute;rminos y
+            condiciones de uso</h5>
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
         </div>
         <div class="modal-body">
           <script>
@@ -192,7 +194,7 @@
   <script src="Js/custom.js"></script>
   <script>
     $(document).ready(function () {
-      var notifications = `
+      let notifications = `
       <a href="#" class="data_notifications"><img src='assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>
       <br>
       <a href="#" class="data_notifications"><img src='assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>  
@@ -205,6 +207,9 @@
       var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
       var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
         return new bootstrap.Popover(popoverTriggerEl)
+      });
+      $("#btn_search").click(function (e) {
+        alert("Has hecho click en buscar");
       });
 
     });
