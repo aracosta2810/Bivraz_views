@@ -37,13 +37,13 @@
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-#sectionsCellView{
+#sectionsCellView {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-#sectionsCellView  i{
+#sectionsCellView i {
   color: #b6b4b4;
   font-size: 1.6rem;
   padding-left: 5px;
@@ -54,12 +54,27 @@
   color: #212529 !important;
 }
 
-@media screen and (min-width: 580px) {
-  #sectionsCellView  {
+@media screen and (min-width: 768) {
+  #sectionsCellView {
     display: none;
   }
 }
 
+.data_notifications {
+  text-decoration: none;
+  color: #9ca3af;
+  padding: 15px;
+}
 
+.data_notifications:hover {
+  text-decoration: none;
+  color: #393a34;
+  transition: color .3s;
+}
 
-
+.btn_more_notifications {
+  padding: 5px;
+  background-color: #9ca3af;
+  color: white;
+  width: 100%;
+}

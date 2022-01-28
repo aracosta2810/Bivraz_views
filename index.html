@@ -1,69 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="Css/bootstrap.css" />
-    <link rel="stylesheet" href="fontawesome/css/all.css" />
-    <link rel="stylesheet" href="Css/main.css" />
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar pb-0" style="background-color: #393a34">
-      <div
-        class="navbar-dark w-100 d-flex justify-content-between align-items-center pb-3 px-2"
-      >
-        <a class="navbar-brand" href="#">Bivra</a>
 
-        <!-- Searchfield -->
-        <div class="d-flex align-items-center">
-          <div id="form">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="Css/bootstrap.css" />
+  <link rel="stylesheet" href="fontawesome/css/all.css" />
+  <link rel="stylesheet" href="Css/main.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md d-none d-md-block navbar-dark" style="background-color: #393a34">
+    <div class="container">
+      <a class="navbar-brand" href="#"> <img src="assets/logoBivraz.png" alt="" width="100"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#"><i class="fas fa-home"></i> Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-music"></i> Listas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-box-open"></i> Paquetes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-user"></i> Artistas</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <div id="form" style="padding: 7px;">
             <input type="text" class="form-input" placeholder="Buscar" />
-            <i class="fa fa-search"></i>
+            <i class="fa fa-search" style="padding: 7px;cursor: pointer;"></i>
           </div>
-          <div
-            style="
+          <div style="
+                border: 2px solid white;
+                border-radius: 100px;
+                padding: 3px 7px;
+              ">
+            <i class="fas fa-user" style="font-size: 1.6rem; color: white;"></i>
+          </div>
+          <div class="dropdown " style="padding: 7px;">
+            <a class="dropdown-toggle text-white" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+              aria-expanded="false" style="text-decoration: none;">
+              @username
+            </a>
+
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <li><a class="dropdown-item" href="#">Perfil</a></li>
+              <li><a class="dropdown-item" href="#">Otra opci&oacute;n</a></li>
+              <li><a class="dropdown-item" href="#">Cerrar sesi&oacute;n</a></li>
+            </ul>
+          </div>
+          <div style="color: white;padding: 7px;position: relative;" class="dropdown">
+            <i class="fas fa-bell" style="cursor: pointer;" id="icon_notifications" tabindex="0" data-bs-trigger="focus" data-bs-container="body"
+              data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom" data-bs-content=""
+              title="Notificaciones"></i>
+
+            <span class="position-absolute top-0 translate-end badge rounded-pill bg-danger">
+              9
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+  <nav class="navbar pb-0 d-block d-md-none" style="background-color: #393a34">
+    <div class="navbar-dark w-100 d-flex justify-content-between align-items-center pb-3 px-2">
+      <a class="navbar-brand" href="#"> <img src="assets/logoBivraz.png" alt="" width="100"></a>
+
+      <!-- Searchfield -->
+      <div class="d-flex align-items-center">
+        <div id="form">
+          <input type="text" class="form-input" placeholder="Buscar" />
+          <i class="fa fa-search"></i>
+        </div>
+        <div style="
               border: 2px solid white;
               border-radius: 100px;
               padding: 3px 7px;
-            "
-          >
-            <i class="fas fa-user" style="font-size: 1.6rem; color: white"></i>
-          </div>
+            ">
+          <i class="fas fa-user" style="font-size: 1.6rem; color: white"></i>
         </div>
       </div>
+    </div>
 
-      <!-- Sections -->
-      <ul
-        id="sectionsCellView"
-        class="navbar-nav py-2 pt-3 px-0 px-sm-5 border-bottom bg-light w-100"
-        style="flex-direction: row"
-      >
-        <li class="nav-item me-4">
-          <i class="fas fa-box-open" style="margin-left: 15px"></i>
-        </li>
-        <li class="nav-item me-4">
-          <i class="fas fa-music"></i>
-        </li>
-        <li class="nav-item me-4">
-          <i class="fas fa-home active"></i>
-        </li>
-        <li class="nav-item me-4 position-relative">
-          <i class="fas fa-bell"></i>
-          <span
-            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-          >
-            9
-            <span class="visually-hidden">unread messages</span>
-          </span>
-        </li>
-        <li class="nav-item me-4">
-          <i class="fas fa-user"></i>
-        </li>
-      </ul>
-    </nav>
-    <script src="Js/bootstrap.js"></script>
-  </body>
+    <!-- Sections -->
+    <ul id="sectionsCellView" class="navbar-nav py-2 pt-3 px-0 px-sm-5 border-bottom bg-light w-100"
+      style="flex-direction: row">
+      <li class="nav-item me-4">
+        <i class="fas fa-box-open" style="margin-left: 15px"></i>
+      </li>
+      <li class="nav-item me-4">
+        <i class="fas fa-music"></i>
+      </li>
+      <li class="nav-item me-4">
+        <i class="fas fa-home active"></i>
+      </li>
+      <li class="nav-item me-4 position-relative">
+        <i class="fas fa-bell" ></i>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          9
+          <span class="visually-hidden">unread messages</span>
+        </span>
+      </li>
+      <li class="nav-item me-4">
+        <i class="fas fa-user"></i>
+      </li>
+    </ul>
+  </nav>
+  <script src="Js/popper.min.js"></script>
+  <script src="Js/bootstrap.js"></script>
+  <script src="Js/jquery-3.5.1.js"></script>
+  <script src="Js/custom.js"></script>
+  <script>
+    $(document).ready(function () {
+      var notifications = `
+      <a href="#" class="data_notifications"><img src='assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>
+      <br>
+      <a href="#" class="data_notifications"><img src='assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>  
+      <br>
+      <a href="#" class="data_notifications"><img src='assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a> 
+      <br>
+      <hr class="dropdown-divider">
+      <a href="#" class="data_notifications btn_more_notifications btn btn-sm" >Ver m&aacute;s</a> `;
+      $("#icon_notifications").attr("data-bs-content", notifications);
+      var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+      var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+      });
+
+    });
+  </script>
+
+
+</body>
+
 </html>
