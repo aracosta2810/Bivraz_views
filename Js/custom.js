@@ -1,3 +1,4 @@
+
 function responsiveDesign() {
     let container = $("#nav_bar");
     $(window).resize(() => {
