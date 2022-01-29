@@ -25,21 +25,25 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#"><i class="fas fa-home"></i> Inicio</a>
+            <div class="activating_item"></div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="fas fa-music"></i> Listas</a>
+            <div class="activating_item"></div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="fas fa-box-open"></i> Paquetes</a>
+            <div class="activating_item"></div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="fas fa-user"></i> Artistas</a>
+            <div class="activating_item"></div>
           </li>
         </ul>
         <form class="d-flex">
           <div id="form" style="padding: 7px;">
-            <input type="text" class="form-input" placeholder="Buscar" />
-            <i class="fa fa-search" style="padding: 7px;cursor: pointer;"></i>
+            <input type="text" class="form-input" placeholder="Buscar" id="input_search" />
+            <i class="fa fa-search" style="padding: 7px;cursor: pointer;" id="btn_search"></i>
           </div>
           <div style="
                 border: 2px solid white;
@@ -61,9 +65,9 @@
             </ul>
           </div>
           <div style="color: white;padding: 7px;position: relative;" class="dropdown">
-            <i class="fas fa-bell" style="cursor: pointer;" id="icon_notifications" tabindex="0" data-bs-trigger="focus" data-bs-container="body"
-              data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom" data-bs-content=""
-              title="Notificaciones"></i>
+            <i class="fas fa-bell" style="cursor: pointer;" id="icon_notifications" tabindex="0" data-bs-trigger="focus"
+              data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom"
+              data-bs-content="" title="Notificaciones"></i>
 
             <span class="position-absolute top-0 translate-end badge rounded-pill bg-danger">
               9
@@ -111,7 +115,7 @@
         <i class="fas fa-home active"></i>
       </li>
       <li class="nav-item me-4 position-relative">
-        <i class="fas fa-bell" ></i>
+        <i class="fas fa-bell"></i>
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
           9
           <span class="visually-hidden">unread messages</span>
@@ -122,13 +126,75 @@
       </li>
     </ul>
   </nav>
+
+  <div class="container bg-light" id="content">
+    <div class="row">
+      <div class="col-sm-12 col-md-8 rigth-column">
+        <script>
+          for (let i = 0; i < 50; i++) {
+            document.write(`<p>${i} Hola mundo</p>`);
+
+          }
+        </script>
+      </div>
+      <div class="col-sm-12 col-md-4 vh-100 d-sm-none d-md-block">
+        <div class="left-column">
+          <p><i class="fa fa-list"></i> &Uacute;ltimas reproducidas</p>
+          <hr width="100%">
+          <p>
+            <i class="fas fa-play" style="margin-right: 5px;"></i>
+            Bad Bunny && Becky G - Amantes
+          </p>
+          <p><i class="fa fa-play" style="margin-right: 5px;"></i>Chocolate - Una noche m&aacute;s</p>
+          <p><i class="fa fa-play" style="margin-right: 5px;"></i> Anuel - Bubalu</p>
+          <hr width="100%">
+          <p style="width: 100%; font-size: small;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Placeat rem nam tempora consequatur...</p>
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Leer m&aacute;s
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content" style="border-radius: 20px;text-align: center;">
+        <div class="modal-header">
+          <img src="assets/logo.png" alt="" width="70">
+          <h5 class="modal-title" id="exampleModalLabel" style="width: 100%;text-align: center;">T&eacute;rminos y
+            condiciones de uso</h5>
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body">
+          <script>
+            for (let i = 0; i < 20; i++) {
+              document.write(`<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae nulla iure, quidem expedita
+          reprehenderit officia sed ad deleniti illum exercitationem delectus ipsa eum, ullam nostrum totam blanditiis
+          obcaecati? Accusamus, alias!</p>`)
+
+            }
+          </script>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
   <script src="Js/popper.min.js"></script>
   <script src="Js/bootstrap.js"></script>
   <script src="Js/jquery-3.5.1.js"></script>
   <script src="Js/custom.js"></script>
   <script>
     $(document).ready(function () {
-      var notifications = `
+      let notifications = `
       <a href="#" class="data_notifications"><img src='assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>
       <br>
       <a href="#" class="data_notifications"><img src='assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>  
@@ -141,6 +207,9 @@
       var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
       var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
         return new bootstrap.Popover(popoverTriggerEl)
+      });
+      $("#btn_search").click(function (e) {
+        alert("Has hecho click en buscar");
       });
 
     });
