@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="Css/bootstrap.css" />
-  <link rel="stylesheet" href="fontawesome/css/all.css" />
-  <link rel="stylesheet" href="Css/main.css" />
-  <link rel="stylesheet" href="Css/home.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Css/bootstrap.css">
+    <link rel="stylesheet" href="../fontawesome/css/all.css">
+    <link rel="stylesheet" href="../Css/main.css">
 </head>
 <body> 
-
-  <!-- Navbar PC view -->
+    <!-- Navbar PC view -->
   <nav class="navbar navbar-expand-md d-none d-md-block navbar-dark sticky-top" style="background-color: #393a34">
     <div class="container-fluid pe-md-4 pe-lg-5">
       <a class="navbar-brand" href="#"> <img src="assets/logoBivraz.png" alt="" width="100"></a>
@@ -23,23 +20,23 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul id="sectionsPCView" class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/"><i class="fas fa-home d-sm-none d-lg-inline"></i> Inicio</a>
-            <div class="activating_item"></div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/list.html"><i class="fas fa-music d-sm-none d-lg-inline"></i> Listas</a>
-            <div class="activating_item"></div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/packages.html"><i class="fas fa-box-open d-sm-none d-lg-inline"></i> Paquetes</a>
-            <div class="activating_item"></div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/artists.html"><i class="fas fa-user d-sm-none d-lg-inline"></i> Artistas</a>
-            <div class="activating_item"></div>
-          </li>
-        </ul>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/"><i class="fas fa-home d-sm-none d-lg-inline"></i> Inicio</a>
+              <div class="activating_item"></div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="list.html"><i class="fas fa-music d-sm-none d-lg-inline"></i> Listas</a>
+              <div class="activating_item"></div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="packages.html"><i class="fas fa-box-open d-sm-none d-lg-inline"></i> Paquetes</a>
+              <div class="activating_item"></div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="artists.html"><i class="fas fa-user d-sm-none d-lg-inline"></i> Artistas</a>
+              <div class="activating_item"></div>
+            </li>
+          </ul>
         <form class="d-flex">
           <div id="form" style="padding: 7px;">
             <input type="text" class="form-input" placeholder="Buscar" id="input_search" />
@@ -106,13 +103,13 @@
     <ul id="sectionsCellView" class="navbar-nav py-2 pt-3 px-0 px-sm-5 border-bottom bg-light w-100"
       style="flex-direction: row">
       <li class="nav-item me-4">
-        <a href="pages/packages.html"><i class="fas fa-box-open" style="margin-left: 15px"></i></a>
+        <a href="packages.html"><i class="fas fa-box-open" style="margin-left: 15px"></i></a>
       </li>
       <li class="nav-item me-4">
-        <a href="pages/list.html"><i class="fas fa-music"></i></a>
+        <a href="list.html"><i class="fas fa-music active"></i></a>
       </li>
       <li class="nav-item me-4">
-        <a href="/"><i class="fas fa-home active"></i></a>
+        <a href="/"><i class="fas fa-home"></i></a>
       </li>
       <li class="nav-item me-4 position-relative">
         <i class="fas fa-bell"></i>
@@ -122,79 +119,18 @@
         </span>
       </li>
       <li class="nav-item me-4">
-        <a href="pages/artists.html"><i class="fas fa-user"></i></a>
+        <a href="artists.html"><i class="fas fa-user"></i></a>
       </li>
     </ul>
   </nav>
 
-
-
-<!-- Home -->
-  <div class="px-0 px-md-4 px-lg-5">
-    <div class="container-fluid bg-light" >
-      <div class="row">
-        <div class="col-sm-12 col-md-8 rigth-column">
-          <script>
-            for (let i = 0; i < 50; i++) {
-              document.write(`<p>${i} Hola mundo</p>`);
-  
-            }
-          </script>
-        </div>
-        <div class="col-sm-12 col-md-4 vh-100 d-sm-none d-md-block">
-          <div class="left-column">
-            <p><i class="fa fa-list"></i> &Uacute;ltimas reproducidas</p>
-            <hr width="100%">
-            <p>
-              <i class="fas fa-play" style="margin-right: 5px;"></i>
-              Bad Bunny && Becky G - Amantes
-            </p>
-            <p><i class="fa fa-play" style="margin-right: 5px;"></i>Chocolate - Una noche más</p>
-            <p><i class="fa fa-play" style="margin-right: 5px;"></i> Anuel - Bubalu</p>
-            <hr width="100%">
-            <p style="width: 100%; font-size: small;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Placeat rem nam tempora consequatur...</p>
-            <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Leer más
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content" style="border-radius: 20px;text-align: center;">
-          <div >
-            <img src="assets/logo.png" alt="" width="70">
-            <h5 class="modal-title border-bottom pb-3" id="exampleModalLabel" style="width: 100%;text-align: center;">Términos y
-              condiciones de uso</h5>
-            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-          </div>
-          <div class="modal-body">
-            <script>
-              for (let i = 0; i < 20; i++) {
-                document.write(`<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae nulla iure, quidem expedita
-            reprehenderit officia sed ad deleniti illum exercitationem delectus ipsa eum, ullam nostrum totam blanditiis
-            obcaecati? Accusamus, alias!</p>`)
-  
-              }
-            </script>
-  
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div>Listas</div>
 
   <!-- Js -->
-  <script src="Js/popper.min.js"></script>
-  <script src="Js/bootstrap.js"></script>
-  <script src="Js/jquery-3.5.1.js"></script>
-  <script src="Js/custom.js"></script>
+  <script src="../Js/popper.min.js"></script>
+  <script src="../Js/bootstrap.js"></script>
+  <script src="../Js/jquery-3.5.1.js"></script>
+  <script src="../Js/custom.js"></script>
   <script>
     $(document).ready(function () {
       let notifications = `
@@ -217,8 +153,5 @@
 
     });
   </script>
-
-
 </body>
-
 </html>
