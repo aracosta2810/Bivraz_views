@@ -10,10 +10,10 @@
   <link rel="stylesheet" href="fontawesome/css/all.css" />
   <link rel="stylesheet" href="Css/main.css" />
 </head>
-<body class="px-0 px-md-5">
+<body>
 
   <!-- Navbar PC view -->
-  <nav class="navbar navbar-expand-md d-none d-md-block navbar-dark fixed-top" style="background-color: #393a34">
+  <nav class="navbar navbar-expand-md d-none d-md-block navbar-dark sticky-top" style="background-color: #393a34">
     <div class="container-fluid pe-md-4 pe-lg-5>
       <a class="navbar-brand" href="#"> <img src="assets/logoBivraz.png" alt="" width="100"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -81,7 +81,7 @@
 
 
 <!-- Navbar Cell View -->
-  <nav class="navbar pb-0 d-block d-md-none fixed-top" style="background-color: #393a34">
+  <nav class="navbar pb-0 d-block d-md-none sticky-top" style="background-color: #393a34">
     <div class="navbar-dark w-100 d-flex justify-content-between align-items-center pb-3 px-2">
       <a class="navbar-brand" href="#"> <img src="assets/logoBivraz.png" alt="" width="100"></a>
 
@@ -127,69 +127,70 @@
   </nav>
 
 <!-- Home -->
-  <div class="container-fluid bg-light" id="content">
-    <div class="row">
-      <div class="col-sm-12 col-md-8 rigth-column">
-        <script>
-          for (let i = 0; i < 50; i++) {
-            document.write(`<p>${i} Hola mundo</p>`);
-
-          }
-        </script>
-      </div>
-      <div class="col-sm-12 col-md-4 vh-100 d-sm-none d-md-block">
-        <div class="left-column">
-          <p><i class="fa fa-list"></i> &Uacute;ltimas reproducidas</p>
-          <hr width="100%">
-          <p>
-            <i class="fas fa-play" style="margin-right: 5px;"></i>
-            Bad Bunny && Becky G - Amantes
-          </p>
-          <p><i class="fa fa-play" style="margin-right: 5px;"></i>Chocolate - Una noche m&aacute;s</p>
-          <p><i class="fa fa-play" style="margin-right: 5px;"></i> Anuel - Bubalu</p>
-          <hr width="100%">
-          <p style="width: 100%; font-size: small;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Placeat rem nam tempora consequatur...</p>
-          <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Leer m&aacute;s
-          </button>
+  <div class="px-0 px-md-4 px-lg-5">
+    <div class="container-fluid bg-light" >
+      <div class="row">
+        <div class="col-sm-12 col-md-8 rigth-column">
+          <script>
+            for (let i = 0; i < 50; i++) {
+              document.write(`<p>${i} Hola mundo</p>`);
+  
+            }
+          </script>
+        </div>
+        <div class="col-sm-12 col-md-4 vh-100 d-sm-none d-md-block">
+          <div class="left-column">
+            <p><i class="fa fa-list"></i> &Uacute;ltimas reproducidas</p>
+            <hr width="100%">
+            <p>
+              <i class="fas fa-play" style="margin-right: 5px;"></i>
+              Bad Bunny && Becky G - Amantes
+            </p>
+            <p><i class="fa fa-play" style="margin-right: 5px;"></i>Chocolate - Una noche m&aacute;s</p>
+            <p><i class="fa fa-play" style="margin-right: 5px;"></i> Anuel - Bubalu</p>
+            <hr width="100%">
+            <p style="width: 100%; font-size: small;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Placeat rem nam tempora consequatur...</p>
+            <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Leer m&aacute;s
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable">
-      <div class="modal-content" style="border-radius: 20px;text-align: center;">
-        <div class="modal-header">
-          <img src="assets/logo.png" alt="" width="70">
-          <h5 class="modal-title" id="exampleModalLabel" style="width: 100%;text-align: center;">T&eacute;rminos y
-            condiciones de uso</h5>
-          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-        </div>
-        <div class="modal-body">
-          <script>
-            for (let i = 0; i < 20; i++) {
-              document.write(`<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae nulla iure, quidem expedita
-          reprehenderit officia sed ad deleniti illum exercitationem delectus ipsa eum, ullam nostrum totam blanditiis
-          obcaecati? Accusamus, alias!</p>`)
-
-            }
-          </script>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content" style="border-radius: 20px;text-align: center;">
+          <div class="modal-header">
+            <img src="assets/logo.png" alt="" width="70">
+            <h5 class="modal-title" id="exampleModalLabel" style="width: 100%;text-align: center;">T&eacute;rminos y
+              condiciones de uso</h5>
+            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+          </div>
+          <div class="modal-body">
+            <script>
+              for (let i = 0; i < 20; i++) {
+                document.write(`<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae nulla iure, quidem expedita
+            reprehenderit officia sed ad deleniti illum exercitationem delectus ipsa eum, ullam nostrum totam blanditiis
+            obcaecati? Accusamus, alias!</p>`)
+  
+              }
+            </script>
+  
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
 <!-- List section -->
-  <div>
+  <!-- <div>
     List Section
-  </div>
-
+  </div> -->
 
   <script src="Js/popper.min.js"></script>
   <script src="Js/bootstrap.js"></script>
