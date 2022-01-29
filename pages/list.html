@@ -25,7 +25,7 @@
               <div class="activating_item"></div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="list.html"><i class="fas fa-music d-sm-none d-lg-inline"></i> Listas</a>
+              <a class="nav-link activePCSection" href="list.html"><i class="fas fa-music d-sm-none d-lg-inline"></i> Listas</a>
               <div class="activating_item"></div>
             </li>
             <li class="nav-item">
@@ -106,13 +106,13 @@
         <a href="packages.html"><i class="fas fa-box-open" style="margin-left: 15px"></i></a>
       </li>
       <li class="nav-item me-4">
-        <a href="list.html"><i class="fas fa-music active"></i></a>
+        <a href="list.html"><i class="fas fa-music activeCellSection"></i></a>
       </li>
       <li class="nav-item me-4">
         <a href="/"><i class="fas fa-home"></i></a>
       </li>
       <li class="nav-item me-4 position-relative">
-        <i class="fas fa-bell"></i>
+        <a href="notifications.html"><i class="fas fa-bell "></i></a>
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
           9
           <span class="visually-hidden">unread messages</span>
@@ -141,7 +141,7 @@
       <a href="#" class="data_notifications"><img src='assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a> 
       <br>
       <hr class="dropdown-divider">
-      <a href="#" class="data_notifications btn_more_notifications btn btn-sm" >Ver m&aacute;s</a> `;
+      <a href="notifications.html" class="data_notifications btn_more_notifications btn btn-sm" >Ver m&aacute;s</a> `;
       $("#icon_notifications").attr("data-bs-content", notifications);
       var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
       var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
