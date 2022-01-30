@@ -1,4 +1,10 @@
+.modal-dialog {
+    padding: 5%;
+    
+}
 
-
-
-
+@media(max-width: 576px) {
+    .modal-dialog {
+        padding: 10%;
+    }
+}
