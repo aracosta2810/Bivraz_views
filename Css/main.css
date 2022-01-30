@@ -107,4 +107,6 @@ body {
 .left-column i {
   cursor: pointer;
 }
-
+.brow-color{
+  color:#393a34;
+}

@@ -119,7 +119,7 @@
       </li>
       <li class="nav-item me-4 position-relative">
         <a href="pages/notifications.html"><i class="fas fa-bell"></i></a>
-        
+
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
           9
           <span class="visually-hidden">unread messages</span>
@@ -139,7 +139,20 @@
       <div class="row">
         <div class="col-12 col-sm-8 rigth-column">
           <!-- content of home-->
-          
+          <div class="row">
+            <div class="col-1 offset-lg-1 mr-0">
+              <div style="
+              border: 2px solid #393a34;
+              border-radius: 100px;
+              padding: 3px 7px;
+              width: fit-content;
+            ">
+                <i class="fas fa-user brow-color" style="font-size: 1.6rem;"></i>
+              </div>
+            </div>
+            <div class="col-5"><a class="username" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                title="Ver perfil">@username</a></div>
+          </div>
         </div>
         <div class="col-12 col-sm-4 vh-100 d-none d-sm-block">
           <div class="left-column">
@@ -169,7 +182,8 @@
       <div class="modal-dialog modal-dialog-scrollable ">
         <div class="modal-content overflow-visible" style="border-radius: 20px;text-align: center;">
           <div class="position-relative pt-5">
-            <img src="assets/logo.png" alt="logoBivraz" style="position: absolute; top: -35px; left: calc(50% - 35px);" width="70">
+            <img src="assets/logo.png" alt="logoBivraz" style="position: absolute; top: -35px; left: calc(50% - 35px);"
+              width="70">
             <h5 class="modal-title border-bottom pb-3" id="exampleModalLabel" style="width: 100%;text-align: center;">
               T&eacute;rminos y condiciones de uso
             </h5>
@@ -215,7 +229,7 @@
       var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
         return new bootstrap.Popover(popoverTriggerEl)
       });
-      $("#btn_search").click(function (e) {
+      $(".fa-search").click(function (e) {
         alert("Has hecho click en buscar");
       });
 
