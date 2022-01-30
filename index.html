@@ -25,7 +25,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul id="sectionsPCView" class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link activePCSection" aria-current="page" href="/"><i
+            <a class="nav-link activePCSection" aria-current="page" href="index.html"><i
                 class="fas fa-home d-sm-none d-lg-inline"></i> Inicio</a>
             <div class="activating_item"></div>
           </li>
@@ -115,11 +115,11 @@
         <a href="pages/list.html"><i class="fas fa-music"></i></a>
       </li>
       <li class="nav-item me-4">
-        <a href="/"><i class="fas fa-home activeCellSection"></i></a>
+        <a href="index.html"><i class="fas fa-home activeCellSection"></i></a>
       </li>
-      <li class="nav-item me-4 position-relative">
-        <a href="pages/notifications.html"><i class="fas fa-bell"></i></a>
-
+      <li class="nav-item me-4 position-relative" style="cursor: pointer;">
+        <i class="fas fa-bell" tabindex="0" data-bs-trigger="focus" data-bs-container="body" data-bs-toggle="popover"
+          data-bs-html="true" data-bs-placement="bottom" data-bs-content="" title="Notificaciones"></i>
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
           9
           <span class="visually-hidden">unread messages</span>
@@ -135,7 +135,7 @@
 
   <!-- Home -->
   <div class="px-0 px-md-4 px-lg-5">
-    <div class="container-fluid bg-light">
+    <div class="container-fluid bg-light" >
       <div class="row">
         <div class="col-12 col-sm-8 rigth-column">
           <!-- content of home-->
@@ -150,9 +150,35 @@
                 <i class="fas fa-user brow-color" style="font-size: 1.6rem;"></i>
               </div>
             </div>
-            <div class="col-5"><a class="username" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                title="Ver perfil">@username</a></div>
+            <div class="col-5"><a class="username" href="#" tabindex="0" data-bs-trigger="focus"
+                data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom"
+                data-bs-content="<a href='#' class='username'>Ver perfil</a>">@username</a></div>
           </div>
+          <script>
+            for (let i = 0; i < 50; i++) {
+              document.write(`
+              <div class="row">
+            <div class="col-1 offset-lg-1 mr-0">
+              <div style="
+              border: 2px solid #393a34;
+              border-radius: 100px;
+              padding: 3px 7px;
+              width: fit-content;
+            ">
+                <i class="fas fa-user brow-color" style="font-size: 1.6rem;"></i>
+              </div>
+            </div>
+            <div class="col-5"><a class="username" href="#" tabindex="0" data-bs-trigger="focus"
+              data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom"
+              data-bs-content="<a href='#' class='username'>Ver perfil</a>"
+                >@username</a></div>
+          </div>
+              
+              
+              `);
+
+            }
+          </script>
         </div>
         <div class="col-12 col-sm-4 vh-100 d-none d-sm-block">
           <div class="left-column">
@@ -224,7 +250,7 @@
       <br>
       <hr class="dropdown-divider">
       <a href="pages/notifications.html" class="data_notifications btn_more_notifications btn btn-sm" >Ver más</a> `;
-      $("#icon_notifications").attr("data-bs-content", notifications);
+      $(".fa-bell").attr("data-bs-content", notifications);
       var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
       var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
         return new bootstrap.Popover(popoverTriggerEl)
