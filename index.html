@@ -154,8 +154,8 @@
                 data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom"
                 data-bs-content="<a href='#' class='username'>Ver perfil</a>">@username</a></div>
           </div>
-          <script>
-            for (let i = 0; i < 50; i++) {
+         <script>
+            for (let i = 0; i < 150; i++) {
               document.write(`
               <div class="row">
             <div class="col-1 offset-lg-1 mr-0">
@@ -168,9 +168,9 @@
                 <i class="fas fa-user brow-color" style="font-size: 1.6rem;"></i>
               </div>
             </div>
-            <div class="col-5"><a class="username" href="#" tabindex="0" data-bs-trigger="focus"
+            <div class="col-5"><a class="username" tabindex="0" data-bs-trigger="focus"
               data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom"
-              data-bs-content="<a href='#' class='username'>Ver perfil</a>"
+              data-bs-content="<a href='' class='username'>Ver perfil</a>"
                 >@username</a></div>
           </div>
               
@@ -203,6 +203,7 @@
         </div>
       </div>
     </div>
+
     <!-- Modal -->
     <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-scrollable ">
@@ -233,7 +234,11 @@
       </div>
     </div>
   </div>
-
+  <a class="btn-flotante d-sm-block d-md-none" data-bs-toggle="modal"
+  data-bs-target="#exampleModal">
+    <img src="assets/terminos.png" alt="" width="40">
+  </a>
+  
   <!-- Js -->
   <script src="Js/popper.min.js"></script>
   <script src="Js/bootstrap.js"></script>
