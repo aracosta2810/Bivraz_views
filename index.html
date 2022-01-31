@@ -135,7 +135,7 @@
 
   <!-- Home -->
   <div class="px-0 px-md-4 px-lg-5">
-    <div class="container-fluid bg-light" >
+    <div class="container-fluid bg-light">
       <div class="row">
         <div class="col-12 col-sm-8 rigth-column">
           <!-- content of home-->
@@ -153,9 +153,35 @@
             <div class="col-5"><a class="username" href="#" tabindex="0" data-bs-trigger="focus"
                 data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom"
                 data-bs-content="<a href='#' class='username'>Ver perfil</a>">@username</a></div>
+
+            <div class="col-5 position-relative">
+              <!-- <button class="position-absolute" style="top: 0%;right: 0%;">. . .</button> -->
+             <!--  <p class="text-end" style="width: 100%;">asd
+              </p> -->
+
+              <div class="dropdown position-absolute" style="top: 0%;right: 0%;">
+                <a class="dropdown-toggle brow-color user_menu" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none;">
+                  ...
+                </a>
+              
+                <ul class="dropdown-menu brow-color" aria-labelledby="dropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 bg-primary status  d-flex align-items-center justify-content-center text-white">
+              Hola mundo
+            </div>
+            <div class="col-6">
+              <p class="">Falling Donw</p>
+              <p class="">@algun texto</p>
+            </div>
+            <div class="col-6 text-end">Hola mundo</div>
           </div>
-         <script>
-            for (let i = 0; i < 150; i++) {
+          <script>
+            for (let i = 0; i < 50; i++) {
               document.write(`
               <div class="row">
             <div class="col-1 offset-lg-1 mr-0">
@@ -168,15 +194,40 @@
                 <i class="fas fa-user brow-color" style="font-size: 1.6rem;"></i>
               </div>
             </div>
-            <div class="col-5"><a class="username" tabindex="0" data-bs-trigger="focus"
-              data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom"
-              data-bs-content="<a href='' class='username'>Ver perfil</a>"
-                >@username</a></div>
+            <div class="col-5"><a class="username" href="#" tabindex="0" data-bs-trigger="focus"
+                data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom"
+                data-bs-content="<a href='#' class='username'>Ver perfil</a>">@username</a></div>
+
+            <div class="col-5 position-relative">
+              <!-- <button class="position-absolute" style="top: 0%;right: 0%;">. . .</button> -->
+             <!--  <p class="text-end" style="width: 100%;">asd
+              </p> -->
+
+              <div class="dropdown position-absolute" style="top: 0%;right: 0%;">
+                <a class="dropdown-toggle brow-color user_menu" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none;">
+                  ...
+                </a>
+              
+                <ul class="dropdown-menu brow-color" aria-labelledby="dropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 bg-primary status  d-flex align-items-center justify-content-center text-white">
+              Hola mundo
+            </div>
+            <div class="col-6">
+              <p class="">Falling Donw</p>
+              <p class="">@algun texto</p>
+            </div>
+            <div class="col-6 text-end">Hola mundo</div>
           </div>
               
               
               `);
-
+              
             }
           </script>
         </div>
@@ -234,11 +285,10 @@
       </div>
     </div>
   </div>
-  <a class="btn-flotante d-sm-block d-md-none" data-bs-toggle="modal"
-  data-bs-target="#exampleModal">
+  <a class="btn-flotante d-sm-block d-md-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
     <img src="assets/terminos.png" alt="" width="40">
   </a>
-  
+
   <!-- Js -->
   <script src="Js/popper.min.js"></script>
   <script src="Js/bootstrap.js"></script>
