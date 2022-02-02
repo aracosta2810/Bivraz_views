@@ -138,24 +138,16 @@
     <div class="container-fluid bg-light" id="home">
       <div class="row">
         <div class="col-12 col-sm-8 rigth-column">
-          <!-- publication -->
-
+          <!-- publication for user-->
           <div class="row bg-light">
-            <div class="col-1 offset-lg-1 mr-0">
-              <div style="
-              border: 2px solid #393a34;
-              border-radius: 100px;
-              padding: 3px 7px;
-              width: fit-content;
-            ">
-                <i class="fas fa-user brow-color" style="font-size: 1.6rem;"></i>
-              </div>
+            <div class="col-6">
+              <img src="assets/bad-bunny-gq-april-2019.jpg" class="rounded-circle float-left" alt="..." width="40"
+              height="40">
+              <a class="username float-left" href="pages/artists.html">
+                @username</a>
             </div>
-            <div class="col-5"><a class="username" href="#" tabindex="0" data-bs-trigger="focus"
-                data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom"
-                data-bs-content="<a href='#' class='username'>Ver perfil</a>">@username</a></div>
 
-            <div class="col-5 position-relative">
+            <div class="col-5 col-lg-6 position-relative">
               <div class="dropdown position-absolute" style="top: 0%;right: 0%;">
                 <a class="dropdown-toggle brow-color user_menu" href="#" role="button" id="dropdownMenuLink"
                   data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none;">
@@ -173,7 +165,7 @@
               Hola mundo
             </div>
             <div class="col-6">
-              <p class="text-dark title_song">Falling Donw <span class="artist"><br>XXX Tentation</span></p>
+              <p class="text-dark title_song">Falling Down<span class="artist"><br>XXX Tentation</span></p>
             </div>
             <div class="col-6 text-end btn-options">
               <i class="far fa-play-circle"></i>
@@ -181,6 +173,10 @@
               <i class="fa fa-share"></i>
             </div>
           </div>
+
+          <!-- end publication for user -->
+
+          <!-- last uploads -->
           <div class="row bg-light">
             <div class="col-12">
               <h3 style="color: #393a34;">Subidas Recientemente</h3>
@@ -223,7 +219,9 @@
               </div>
             </div>
           </div>
+          <!--end last uploads -->
 
+          <!-- artist suggestions -->
           <div class="row bg-light position-relative artists">
             <div class="col-9">
               <h3 style="color: #393a34;width: fit-content;">Sugerencias de artistas</h3>
@@ -304,9 +302,11 @@
               </div>
             </div>
           </div>
-
+          <!--end artist suggestions -->
           <!-- end publications -->
         </div>
+
+
         <div class="col-12 col-sm-4 vh-100 d-none d-sm-block">
           <div class="left-column">
             <p><i class="fa fa-list"></i> &Uacute;ltimas reproducidas</p>
@@ -341,7 +341,6 @@
             <h5 class="modal-title border-bottom pb-3" id="exampleModalLabel" style="width: 100%;text-align: center;">
               T&eacute;rminos y condiciones de uso
             </h5>
-            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
           </div>
           <div class="modal-body">
             <script>
@@ -372,26 +371,7 @@
   <script src="Js/custom.js"></script>
   <script>
     $(document).ready(function () {
-      let notifications = `
-      <a href="#" class="data_notifications"><img src='assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>
-      <br>
-      <a href="#" class="data_notifications"><img src='assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>  
-      <br>
-      <a href="#" class="data_notifications"><img src='assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a> 
-      <br>
-      <hr class="dropdown-divider">
-      <a href="pages/notifications.html" class="data_notifications btn_more_notifications btn btn-sm" >Ver más</a> `;
-      $(".fa-bell").attr("data-bs-content", notifications);
-      var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-      var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-        return new bootstrap.Popover(popoverTriggerEl)
-      });
-      $(".fa-search").click(function (e) {
-        alert("Has hecho click en buscar");
-      });
-      if ($(window).width() <= 368) {
-        $(".cell_view_artist").removeClass("d-none");
-      }
+      enablePopover();
       responsiveDesign();
     });
   </script>

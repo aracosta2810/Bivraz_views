@@ -22,17 +22,7 @@
     border-radius: 15px;
 }
 
-@media(max-width: 768px) {
-    .username {
-        margin-left: 10%;
-    }
-}
-
 @media(max-width: 400px) {
-    .username {
-        margin-left: 25%;
-    }
-
     .rigth-column .row {
         margin-left: 1%;
     }
@@ -46,13 +36,12 @@
 }
 
 
-.username, .username:hover {
+.username, .username:hover{
     text-decoration: none;
     color: #393a34;
     cursor: pointer;
     padding-top: 10px;
 }
-
 @media(max-width: 460px) {
     .username {
         font-size: small;
