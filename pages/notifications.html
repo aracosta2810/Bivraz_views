@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="../Css/bootstrap.css">
     <link rel="stylesheet" href="../fontawesome/css/all.css">
     <link rel="stylesheet" href="../Css/main.css">
+    <link rel="stylesheet" href="../Css/notification.css">
 </head>
 <body> 
     <!-- Navbar PC view -->
-  <nav class="navbar navbar-expand-md d-none d-md-block navbar-dark sticky-top" style="background-color: #393a34">
+  <nav class="navbar navbar-expand-md d-none d-md-block navbar-dark fixed-top" style="background-color: #393a34">
     <div class="container-fluid pe-md-4 pe-lg-5">
       <a class="navbar-brand" href="/"> <img src="../assets/logoBivraz.png" alt="" width="100"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -76,8 +77,6 @@
   </nav>
 
 
-
-
 <!-- Navbar Cell View -->
   <nav class="navbar pb-0 d-block d-md-none sticky-top" style="background-color: #393a34">
     <div class="navbar-dark w-100 d-flex justify-content-between align-items-center pb-3 px-2">
@@ -125,7 +124,44 @@
     </ul>
   </nav>
 
-  <div>Notificaciones</div>
+  <!-- Notifications section -->
+  <div class="px-0 px-md-4 px-lg-5" >
+    <div  class="container-fluid bg-white py-3 py-sm-0 py-md-0">
+
+      <div class="panel">
+          <!-- Vista para cuando no haya notificaciones -->
+        <div class="d-flex justify-content-center align-items-center whiteBackground h-100 mt-5 mt-sm-5 mt-md-0">
+          <div>
+            <div class="d-flex justify-content-center mb-2">
+              <i id="noNotifications" class="fa fa-bell" ></i>
+            </div>
+            <p style="color: #979696; font-size: 2.3rem;">Sin notificaciones</p>
+          </div>
+        </div>
+      </div>
+
+
+<!-- Me quede aqui -->
+
+      <!-- Vista para cuando haya notificaciones -->
+      <!-- <div class="panel">
+        <h3 class="text-secondary d-none d-md-block">Notificaciones</h3>
+        <a href="notifications.html" class="row notification my-3 my-sm-1 my-sm-2">
+          <div class="col-2 col-sm-1 me-sm-4 me-md-2 me-lg-0 pt-sm-3 pt-md-0">
+            <img src="../assets/bad-bunny-gq-april-2019.jpg" class="fotoAvatarNotificacion" alt="fotoAvatarNotificacion">
+          </div>
+          <div class="col-10 d-flex align-items-center">Tienes un nuevo fan, toca para ver quien es.</div>
+        </a>
+        <a href="notifications.html" class="row notification my-3 my-sm-1 my-sm-2">
+          <div class="col-2 col-sm-1 me-sm-4 me-md-2 me-lg-0 pt-sm-3 pt-md-0">
+            <img src="../assets/bad-bunny-gq-april-2019.jpg" class="fotoAvatarNotificacion" alt="fotoAvatarNotificacion">
+          </div>
+          <div class="col-10 d-flex align-items-center">Frank Alejandro ha subido un nuevo tema.</div>
+        </a>
+      </div> -->
+
+    </div>
+  </div>
 
   <!-- Js -->
   <script src="../Js/popper.min.js"></script>
