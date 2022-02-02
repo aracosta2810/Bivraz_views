@@ -1,11 +1,20 @@
 
 function responsiveDesign() {
-    let container = $("#nav_bar");
+    let container = $("#home");
     $(window).resize(() => {
-        if ($(this).width() <= 400) {
-            container.removeClass("container");
+        //Background of container
+        if ($(this).width() <= 575) {
+            container.removeClass("bg-light");
         } else {
-            container.addClass("container");
+            container.addClass("bg-light");
         }
+        //list of users 
+
+        if ($(this).width() <= 368) {
+            $(".cell_view_artist").removeClass("d-none");
+        } else {
+            $(".cell_view_artist").addClass("d-none");
+        }
+
     });
 }

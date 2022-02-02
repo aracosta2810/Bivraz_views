@@ -13,7 +13,10 @@
     margin: 2%;
     margin-left: .5%;
     margin-right: .5%;
-    box-shadow: gray 2px 2px 2px;
+    /*     box-shadow: gray 2px 2px 2px; */
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #393a3456;
     padding: 15px;
     padding-right: 5px;
     border-radius: 15px;
@@ -96,19 +99,23 @@
         bottom: 20px;
         right: 20px;
     }
+
 }
 
 .dropdown-toggle::after {
     border: none;
 }
-.dropdown-toggle:hover{
-    color:#393a34;
+
+.dropdown-toggle:hover {
+    color: #393a34;
 }
-.user_menu{
-font-size: 26px;
-font-weight: bold;
+
+.user_menu {
+    font-size: 26px;
+    font-weight: bold;
 }
-.status{
+
+.status {
     margin-top: 15px;
     margin-bottom: 15px;
     border-top-style: solid;
@@ -120,7 +127,108 @@ font-weight: bold;
     height: 150px;
     font-size: 28px;
 }
-.name-of-song{
+
+.name-of-song {
     margin: 0px;
     padding: 5px;
+}
+
+.title_song {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.artist {
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.btn-options .fa, .btn-options .far {
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+    color: #393a34;
+}
+
+.carousel-item .row {
+    border: none;
+}
+
+.carousel-caption p, .carousel-caption h5 {
+    text-align: start;
+}
+
+
+.carousel-caption {
+    color: #393a34;
+}
+
+.carousel-item img {}
+
+.carousel-item p.position-absolute {
+    top: 50%;
+    left: 50%;
+}
+
+.carousel-item p.position-absolute i {
+    color: #393a34;
+}
+
+@media only screen and (max-width: 768px) {
+    .carousel-caption p, .carousel-caption h5 {
+        font-size: 15px;
+    }
+
+    .carousel-caption {
+        left: 0%;
+        bottom: 0%;
+        margin-left: 5%;
+    }
+
+    .artists a.view-all {
+        font-size: 12px;
+    }
+
+}
+
+@media(max-width: 490px) {
+    .carousel-caption p, .carousel-caption h5 {
+        font-size: 10px;
+    }
+}
+
+@media(max-width:368px) {
+    .pc_view_artist {
+        display: none;
+    }
+
+}
+
+@media(max-width:350px) {
+    .cell_view_artist {
+        display: block;
+        align-items: center;
+    }
+
+
+
+}
+
+.list-artist figure {
+    font-size: 15px;
+    padding: 15px;
+}
+
+.list-artist button {
+    background-color: #393a34;
+    box-shadow: gray 1px 1px 5px;
+    border-radius: 2px;
+    color: white;
+    padding: 4%;
+    font-size: x-small;
+    font-style: italic;
+}
+
+.list-artist button:hover {
+    opacity: 1;
 }
