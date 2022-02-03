@@ -252,6 +252,59 @@
                 </div>
               </div>
             </div>
+          <!-- Canciones que estan despues de la primera en la lista top -->
+             <script>
+              for (let i = 2; i < 11; i++) {
+                 document.write(`
+                 <div >
+              <!-- Song box -->
+              <div
+                class="px-2 py-3 text-white pe-3 mt-4"
+                style="
+                  background-color: #393a34c7 !important;
+                  border-radius: 13px;
+                "
+              >
+                <div class="row align-items-center">
+                  <div class="col-1 number">${i}-</div>
+                  <div class="col-5">
+                    <div>Falling down</div>
+                    <div style="font-size: 0.7rem; color: #b8b8b8;">
+                      Our secret fet Nig
+                    </div>
+                  </div>
+                  <div class="col-6 features">
+                    <div class="row justify-content-end">
+                      <div class="col-3 col-sm-2 col-md-2">
+                        <i class="fa fa-arrow-right upSong"> </i>
+                      </div>
+                      <div class="col-3 col-sm-2 col-md-2">
+                        <i class="far fa-play-circle">
+                          <span class="badge">42</span>
+                        </i>
+                      </div>
+                      <div class="col-3 col-sm-2 col-md-2">
+                        <i class="far fa-heart">
+                          <span class="badge">245</span>
+                        </i>
+                      </div>
+                      <div class="col-3 col-sm-2 col-md-2">
+                        <i class="far fa-paper-plane">
+                          <span class="badge">4</span>
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+                 
+                 
+                 `);
+                 
+               }
+             </script>
+
           </div>
 
           <!-- "Ultimas reproducciones" section -->
