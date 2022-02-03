@@ -147,12 +147,57 @@
     text-align: start;
 }
 
-
-.carousel-caption {
-    color: #393a34;
+#carrousel-0 .carousel-caption {
+    overflow: hidden;
+    transform: translateY(100%);
+    color: white;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+    font-size: 1.2rem;
+    filter: opacity(0);
+    transition: all .3s;
 }
 
-.carousel-item img {}
+#carrousel-0 .carousel-caption h5{
+    font-size: 1.7rem !important;
+    font-weight: 600;
+}
+
+#carrousel-0{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#carrousel-0 img{
+    transition: filter .3s;
+}
+
+#carrousel-0:hover img{
+    filter: blur(3px) brightness(70%);
+}
+
+#carrousel-0:hover .carousel-caption{
+    transform: translateY(0);
+}
+
+.carousel-caption {
+    overflow: hidden;
+    transform: translateY(100%);
+    filter: opacity(0);
+    color: white;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+    font-size: 1.2rem;
+    transition: all .3s;
+}
+
+.carousel-caption h5{
+    font-size: 1.7rem !important;
+    font-weight: 600;
+}
+
+#carrousel-0:hover .carousel-caption{
+    filter: opacity(100%);
+}
+
+/* .carousel-item img {} */
 
 .carousel-item p.position-absolute {
     top: 50%;
@@ -183,6 +228,15 @@
 @media(max-width: 490px) {
     .carousel-caption p, .carousel-caption h5 {
         font-size: 10px;
+    }
+    .carousel-caption {
+        transform: translateY(0%) !important;
+        filter: opacity(100%) !important;
+        font-size: 4rem !important;
+    }
+
+    .carousel-caption h5{
+        font-size: 1.3rem !important;
     }
 }
 
@@ -220,4 +274,8 @@
 
 .list-artist button:hover {
     opacity: 1;
+}
+
+#artistSuggestions-0 img{
+    object-fit: cover;
 }
