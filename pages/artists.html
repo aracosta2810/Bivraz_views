@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../Css/bootstrap.css">
-    <link rel="stylesheet" href="../fontawesome/css/all.css">
-    <link rel="stylesheet" href="../Css/main.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../Css/bootstrap.css">
+  <link rel="stylesheet" href="../fontawesome/css/all.css">
+  <link rel="stylesheet" href="../Css/main.css">
+  <link rel="stylesheet" href="../Css/artist.css">
 </head>
-<body> 
-    <!-- Navbar PC view -->
+
+<body>
+  <!-- Navbar PC view -->
   <nav class="navbar navbar-expand-md d-none d-md-block navbar-dark sticky-top" style="background-color: #393a34">
     <div class="container-fluid pe-md-4 pe-lg-5">
       <a class="navbar-brand" href="/"> <img src="../assets/logoBivraz.png" alt="" width="100"></a>
@@ -20,23 +23,25 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/"><i class="fas fa-home d-sm-none d-lg-inline"></i> Inicio</a>
-              <div class="activating_item"></div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="list.html"><i class="fas fa-music d-sm-none d-lg-inline"></i> Listas</a>
-              <div class="activating_item"></div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="packages.html"><i class="fas fa-box-open d-sm-none d-lg-inline"></i> Paquetes</a>
-              <div class="activating_item"></div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link activePCSection" href="artists.html"><i class="fas fa-user d-sm-none d-lg-inline"></i> Artistas</a>
-              <div class="activating_item"></div>
-            </li>
-          </ul>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/"><i class="fas fa-home d-sm-none d-lg-inline"></i>
+              Inicio</a>
+            <div class="activating_item"></div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="list.html"><i class="fas fa-music d-sm-none d-lg-inline"></i> Listas</a>
+            <div class="activating_item"></div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="packages.html"><i class="fas fa-box-open d-sm-none d-lg-inline"></i> Paquetes</a>
+            <div class="activating_item"></div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link activePCSection" href="artists.html"><i class="fas fa-user d-sm-none d-lg-inline"></i>
+              Artistas</a>
+            <div class="activating_item"></div>
+          </li>
+        </ul>
         <form class="d-flex">
           <div id="form" style="padding: 7px;">
             <input type="text" class="form-input" placeholder="Buscar" id="input_search" />
@@ -78,7 +83,7 @@
 
 
 
-<!-- Navbar Cell View -->
+  <!-- Navbar Cell View -->
   <nav class="navbar pb-0 d-block d-md-none sticky-top" style="background-color: #393a34">
     <div class="navbar-dark w-100 d-flex justify-content-between align-items-center pb-3 px-2">
       <a class="navbar-brand" href="/"> <img src="../assets/logoBivraz.png" alt="" width="100"></a>
@@ -112,7 +117,8 @@
         <a href="/"><i class="fas fa-home "></i></a>
       </li>
       <li class="nav-item me-4 position-relative">
-        <a href="notifications.html"><i class="fas fa-bell "></i></a>
+        <a><i class="fas fa-bell" tabindex="0" data-bs-trigger="focus" data-bs-container="body" data-bs-toggle="popover"
+            data-bs-html="true" data-bs-placement="bottom" data-bs-content="" title="Notificaciones"></i></a>
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
           9
           <span class="visually-hidden">unread messages</span>
@@ -124,7 +130,75 @@
     </ul>
   </nav>
 
-  <div>Artistas</div>
+
+  <!-- content -->
+
+  <!-- Home -->
+  <div class="px-0 px-md-4 px-lg-5">
+    <div class="container-fluid bg-light" id="home">
+      <div class="row">
+        <div class="col-12 col-sm-8 rigth-column">
+          <div class="row">
+            <div class="col-12">
+              <h1 style="padding-left: 3%;padding-top: 3%;">Artistas</h1>
+            </div>
+            <div class="col-12">
+              <hr style="margin-left: 3%;margin-right: 3%;">
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-4 vh-100 d-none d-sm-block">
+          <div class="left-column">
+            <div class="d-sm-none d-md-block">
+              <p style="width: 100%; font-size: small;">T&eacute;rminos y condicines de uso</p>
+              <p style="width: 100%; font-size: x-small;">&copy; copyrigth 2022 - Todos los derechos reservados</p>
+              <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+                Leer más
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable ">
+        <div class="modal-content overflow-visible" style="border-radius: 20px;text-align: center;">
+          <div class="position-relative pt-5">
+            <img src="../assets/logo.png" alt="logoBivraz"
+              style="position: absolute; top: -35px; left: calc(50% - 35px);" width="70">
+            <h5 class="modal-title border-bottom pb-3" id="exampleModalLabel" style="width: 100%;text-align: center;">
+              T&eacute;rminos y condiciones de uso
+            </h5>
+          </div>
+          <div class="modal-body">
+            <script>
+              for (let i = 0; i < 20; i++) {
+                document.write(`<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae nulla iure, quidem expedita
+            reprehenderit officia sed ad deleniti illum exercitationem delectus ipsa eum, ullam nostrum totam blanditiis
+            obcaecati? Accusamus, alias!</p>`)
+
+              }
+            </script>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a class="btn-flotante d-sm-block d-md-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <img src="../assets/terminos.png" alt="" width="40">
+  </a>
+
+
+
+  <!-- content -->
 
   <!-- Js -->
   <script src="../Js/popper.min.js"></script>
@@ -134,24 +208,17 @@
   <script>
     $(document).ready(function () {
       let notifications = `
-      <a href="#" class="data_notifications"><img src='../assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>
-      <br>
-      <a href="#" class="data_notifications"><img src='../assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>  
-      <br>
-      <a href="#" class="data_notifications"><img src='../assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a> 
-      <br>
-      <hr class="dropdown-divider">
-      <a href="notifications.html" class="data_notifications btn_more_notifications btn btn-sm" >Ver m&aacute;s</a> `;
-      $("#icon_notifications").attr("data-bs-content", notifications);
-      var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-      var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-        return new bootstrap.Popover(popoverTriggerEl)
-      });
-      $("#btn_search").click(function (e) {
-        alert("Has hecho click en buscar");
-      });
-
+        <a href="#" class="data_notifications"><img src='../assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>
+        <br>
+        <a href="#" class="data_notifications"><img src='../assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>  
+        <br>
+        <a href="#" class="data_notifications"><img src='../assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a> 
+        <br>
+        <hr class="dropdown-divider">
+        <a href="notifications.html" class="data_notifications btn_more_notifications btn btn-sm" >Ver m&aacute;s</a> `;
+      enabledPopover(notifications);
     });
   </script>
 </body>
+
 </html>

@@ -22,16 +22,7 @@ function responsiveDesign() {
     });
 }
 
-function enablePopover() {
-    let notifications = `
-    <a href="#" class="data_notifications"><img src='assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>
-    <br>
-    <a href="#" class="data_notifications"><img src='assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>  
-    <br>
-    <a href="#" class="data_notifications"><img src='assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a> 
-    <br>
-    <hr class="dropdown-divider">
-    <a href="pages/notifications.html" class="data_notifications btn_more_notifications btn btn-sm" >Ver más</a> `;
+function enabledPopover(notifications) {
     $(".fa-bell").attr("data-bs-content", notifications);
     var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
     var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {

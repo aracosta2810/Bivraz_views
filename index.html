@@ -142,7 +142,7 @@
           <div class="row bg-light">
             <div class="col-6">
               <img src="assets/bad-bunny-gq-april-2019.jpg" class="rounded-circle float-left" alt="..." width="40"
-              height="40">
+                height="40">
               <a class="username float-left" href="pages/artists.html">
                 @username</a>
             </div>
@@ -371,7 +371,16 @@
   <script src="Js/custom.js"></script>
   <script>
     $(document).ready(function () {
-      enablePopover();
+      let notifications = `
+        <a href="#" class="data_notifications"><img src='assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>
+        <br>
+        <a href="#" class="data_notifications"><img src='assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>  
+        <br>
+        <a href="#" class="data_notifications"><img src='assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a> 
+        <br>
+        <hr class="dropdown-divider">
+        <a href="pages/notifications.html" class="data_notifications btn_more_notifications btn btn-sm" >Ver m&aacute;s</a> `;
+      enabledPopover(notifications);
       responsiveDesign();
     });
   </script>
