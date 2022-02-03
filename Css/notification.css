@@ -22,8 +22,9 @@
   }
 
   .notification:hover{
-    background-color: #007ACC;
+    background-color: #393a34c7;
     color: white;
+    padding: .7%;
   }
 
   .panel{
