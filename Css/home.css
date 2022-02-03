@@ -95,7 +95,7 @@
     border: none;
 }
 
-.dropdown-toggle:hover {
+#home .dropdown-toggle:hover {
     color: #393a34;
 }
 
