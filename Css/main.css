@@ -109,13 +109,10 @@ body {
 }
 
 .panel{
-  height: 100vh;
+  height: 100%;
 }
 
 @media (max-width: 768px) {
-  .panel {
-    height: 100%;
-  }
   body {
     background-color: white;
   }
