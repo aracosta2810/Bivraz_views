@@ -5570,9 +5570,11 @@ textarea.form-control-lg {
   border-bottom-right-radius: calc(0.3rem - 1px);
   border-bottom-left-radius: calc(0.3rem - 1px);
 }
+
 .modal-footer > * {
   margin: 0.25rem;
 }
+
 
 @media (min-width: 576px) {
   .modal-dialog {
