@@ -35,17 +35,3 @@ function replaceInputGroup(cont) {
     }
 
 }
-function resetModal() {
-    $("#form_packages").trigger("reset"); 
-  /*   cont = 0;
-    for (let i = 0; i <= 2; i++) {
-        if (i == 0) {
-            $(`.input-group-${i}`).show()
-        } else {
-            $(`.input-group-${i}`).hide();
-        }
-
-
-    }
- */
-}  
