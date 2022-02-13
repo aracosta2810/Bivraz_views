@@ -1,4 +1,3 @@
-
 function responsiveDesign() {
     let container = $("#nav_bar");
     $(window).resize(() => {
@@ -9,7 +8,11 @@ function responsiveDesign() {
         }
     });
 }
-function getPackage(packageType) {
+
+//-----------------Dando funcionalidad a los paquetes-------------------------------------
+var counter = 4;
+var cont = 0;
+function sendTypePackage(packageType) {
     let type = ``;
     if (packageType == 1) {
         type = "Básico";
@@ -19,19 +22,60 @@ function getPackage(packageType) {
         type = "Golden";
     }
     $(`#package-name`).text(type);
+    $("#pacakges_type").val(type);
+    $("h3.text-center span").text(type);
 }
 function replaceInputGroup(cont) {
-    if (cont == 0) {
-        $(`.input-group-${cont}`).addClass("d-none");
-        $(`.input-group-${cont + 1}`).removeClass("d-none");
-    } else if (cont == 1) {
-        $(`.input-group-${cont}`).addClass("d-none");
-        $(`.input-group-${cont + 1}`).removeClass("d-none");
-        $(`#continue`).text("Aceptar");
-    } else if (cont == 2) {
-        $(`.input-group-${cont}`).addClass("d-none");
-        $(`.input-group-${0}`).removeClass("d-none")
-        $("#form-modal").modal(`hide`);
+    let controller = false;
+    $(`.input-group-${cont} input`).each(function (index, element) {
+        if (element.value == "") {
+            controller = true;
+        }
+
+    });
+    if (!controller) {
+        if (cont == 0) {
+            $(`.input-group-${cont}`).addClass("d-none");
+            $(`.input-group-${cont + 1}`).removeClass("d-none");
+        } else if (cont == 1) {
+            $(`.input-group-${cont}`).addClass("d-none");
+            $(`.input-group-${cont + 1}`).removeClass("d-none");
+            $(`#continue`).text("Aceptar");
+        } else if (cont == 2) {
+            $(`.input-group-${cont}`).addClass("d-none");
+            $(`.input-group-${0}`).removeClass("d-none")
+            $("#form-modal").modal(`hide`);
+            getPackage();
+        }
     }
 
+    return controller;
 }
+
+function getPackage() {
+    $("#form_packages").submit(function (e) {
+        e.preventDefault();
+        let data = $(this).serialize();
+        console.log(data);
+        $.ajax({
+            type: "post",
+            url: "/url",
+            data: data,
+            dataType: "json",
+            success: function (response) {
+
+            },
+            error: function (response) {
+            }
+        });
+
+    });
+    $("#form_packages").submit();
+}
+function separateString(element) {
+    if (element.value.length == counter) {
+        element.value += " ";
+        counter += 5;
+    }
+}
+//-----------------Dando funcionalidad a los paquetes-------------------------------------

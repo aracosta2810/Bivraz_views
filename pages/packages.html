@@ -170,7 +170,7 @@
           </div>
           <div class="d-flex justify-content-center mt-3">
             <button class="btn btn-secondary" style="background-color: #353632 !important" type="button"
-              data-bs-toggle="modal" data-bs-target="#form-modal" onclick="getPackage(1)">
+              data-bs-toggle="modal" data-bs-target="#form-modal" onclick="sendTypePackage(1)">
               Comprar
             </button>
           </div>
@@ -189,7 +189,7 @@
           </div>
           <div class="d-flex justify-content-center mt-3">
             <button class="btn btn-secondary" style="background-color: #353632 !important" type="button"
-              data-bs-toggle="modal" data-bs-target="#form-modal" onclick="getPackage(2)">
+              data-bs-toggle="modal" data-bs-target="#form-modal" onclick="sendTypePackage(2)">
               Comprar
             </button>
           </div>
@@ -208,7 +208,7 @@
           </div>
           <div class="d-flex justify-content-center mt-3">
             <button class="btn btn-secondary" style="background-color: #353632 !important" type="button"
-              data-bs-toggle="modal" data-bs-target="#form-modal" onclick="getPackage(3)">
+              data-bs-toggle="modal" data-bs-target="#form-modal" onclick="sendTypePackage(3)">
               Comprar
             </button>
           </div>
@@ -233,7 +233,7 @@
             " width="70" />
         </div>
         <div class="modal-body">
-          <form action="" id="form_packages" method="get">
+          <form action="" id="form_packages" method="post">
             <div class="input-group-0">
               <div class="form-floating mb-3">
                 <h3>Paquete <span id="package-name"></span></h3>
@@ -275,19 +275,20 @@
               </div>
               <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="transaction_number" placeholder="Numero de transacción"
-                  name="transaction_number" required>
+                  name="transaction_number" required maxlength="20" onkeypress="separateString(this)">
                 <label for="floatingInput">N&uacute;mero de transacci&oacute;n: </label>
                 <p style="font-size: 12px;">Tras realizar la transferencia cubacel le enviar&aacute; un
                   SMS donde aparecer&aacute; el Nro de transacci&oacute;n el cual
                   deber&aacute; copiar y pegar aqu&iacute; </p>
               </div>
             </div>
+            <input type="submit" value="" class="d-none" id="submit_form">
           </form>
           <div class="row input-group-2  d-none">
             <div class="col-12">
               <h3 class="text-center">¡Gracias por comprar
                 nuestro paquete
-                premium!
+                <span></span>!
               </h3>
               <p style="font-size: 70%;" class="mt-5">La validaci&oacute;n de &eacute;ste paquete puede tardar de 1-5
                 d&iacute;as. Si excede
@@ -317,7 +318,6 @@
   <script src="../Js/custom.js"></script>
   <script>
     $(document).ready(function () {
-      let cont = 0;
       let html = $(".modal-body").html();
 
       let notifications = `
@@ -340,13 +340,17 @@
         $(".modal-body").html(html);
         $(`#continue`).text("Continuar");
         cont = 0;
+        counter = 4;
       });
       $(`#continue`).click(function (e) {
-        replaceInputGroup(cont);
-        if (cont == 2) {
-          cont = 0;
+        if (!replaceInputGroup(cont)) {
+          if (cont == 2) {
+            cont = 0;
+          } else {
+            cont++;
+          }
         } else {
-          cont++;
+          $("#submit_form").click();
         }
       });
     });
