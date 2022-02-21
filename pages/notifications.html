@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Bivraz</title>
+  <link rel="icon" href="../assets/logo.png">
   <link rel="stylesheet" href="../Css/bootstrap.css">
   <link rel="stylesheet" href="../fontawesome/css/all.css">
   <link rel="stylesheet" href="../Css/main.css">
@@ -118,7 +119,7 @@
         <a href="notifications.html"> <i class="fas fa-bell activeCellSection"></i></a>
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
           9
-          <span class="visually-hidden">unread messages</span>
+          <span class="visually-hidden"></span>
         </span>
       </li>
       <li class="nav-item me-4">
@@ -190,9 +191,6 @@
 
     </div>
   </div>
-  <audio>
-    <source type="audio/mp3" src="/assets/bambu_1.mp3">
-  </audio>
   <!-- Js -->
   <script src="../Js/popper.min.js"></script>
   <script src="../Js/bootstrap.js"></script>
@@ -200,20 +198,6 @@
   <script src="../Js/custom.js"></script>
   <script>
     $(document).ready(function () {
-      let notifications = `
-      <a href="#" class="data_notifications"><img src='../assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>
-      <br>
-      <a href="#" class="data_notifications"><img src='../assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>  
-      <br>
-      <a href="#" class="data_notifications"><img src='../assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a> 
-      <br>
-      <hr class="dropdown-divider">
-      <a href="notifications.html" class="data_notifications btn_more_notifications btn btn-sm" >Ver m&aacute;s</a> `;
-      $("#icon_notifications").attr("data-bs-content", notifications);
-      var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-      var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-        return new bootstrap.Popover(popoverTriggerEl)
-      });
       $("#btn_search").click(function (e) {
         alert("Has hecho click en buscar");
       });

@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>Bivraz</title>
+  <link rel="icon" href="assets/logo.png">
   <link rel="stylesheet" href="Css/bootstrap.css" />
   <link rel="stylesheet" href="fontawesome/css/all.css" />
   <link rel="stylesheet" href="Css/main.css" />
@@ -117,12 +118,11 @@
       <li class="nav-item me-4">
         <a href="/"><i class="fas fa-home activeCellSection"></i></a>
       </li>
-      <li class="nav-item me-4 position-relative">
+      <li class="nav-item me-4 position-relative" style="cursor: pointer;">
         <a href="pages/notifications.html"><i class="fas fa-bell"></i></a>
-        
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
           9
-          <span class="visually-hidden">unread messages</span>
+          <span class="visually-hidden"></span>
         </span>
       </li>
       <li class="nav-item me-4">
@@ -135,11 +135,176 @@
 
   <!-- Home -->
   <div class="px-0 px-md-4 px-lg-5">
-    <div class="container-fluid bg-light">
+    <div class="container-fluid bg-light" id="home">
       <div class="row">
         <div class="col-12 col-sm-8 rigth-column">
-          <!-- content of home-->
-          
+          <!-- publication for user-->
+          <div class="row bg-light">
+            <div class="col-6">
+              <img src="assets/bad-bunny-gq-april-2019.jpg" class="rounded-circle float-left" alt="..." width="40"
+                height="40">
+              <a class="username float-left" href="pages/artists.html">
+                @username</a>
+            </div>
+
+            <div class="col-5 col-lg-6 position-relative">
+              <div class="dropdown position-absolute" style="top: 0%;right: 0%;">
+                <a class="dropdown-toggle brow-color user_menu" href="#" role="button" id="dropdownMenuLink"
+                  data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none;">
+                  ...
+                </a>
+
+                <ul class="dropdown-menu brow-color" aria-labelledby="dropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 bg-primary status  d-flex align-items-center justify-content-center text-white">
+              Hola mundo
+            </div>
+            <div class="col-6">
+              <p class="text-dark title_song">Falling Down<span class="artist"><br>XXX Tentation</span></p>
+            </div>
+            <div class="col-6 text-end btn-options">
+              <i class="far fa-play-circle"></i>
+              <i class="far fa-heart"></i>
+              <i class="fa fa-share"></i>
+            </div>
+          </div>
+
+          <!-- end publication for user -->
+
+          <!-- last uploads -->
+          <div class="row bg-light">
+            <div class="col-12">
+              <h3 style="color: #393a34;">Subidas Recientemente</h3>
+            </div>
+            <div class="col-12">
+              <div id="carrousel-0" class="carousel slide" data-bs-ride="carousel" data-bs-touch="false"
+                data-bs-interval="false">
+                <div class="carousel-inner">
+                  <div class="carousel-item active position-relative">
+                    <img src="assets/bad-bunny-gq-april-2019.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption">
+                      <h5>Amantes de una noche</h5>
+                      <p>Bad bunny ft Natti Natasha</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item position-relative">
+                    <img src="assets/bad-bunny-gq-april-2019.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption">
+                      <h5>Amantes de una noche</h5>
+                      <p>Bad bunny ft Natti Natasha</p>
+                    </div>
+                    <!-- <p class="position-absolute"><i class="far fa-play-circle"></i></p> -->
+                  </div>
+                  <div class="carousel-item position-relative">
+                    <img src="assets/bad-bunny-gq-april-2019.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption">
+                      <h5>Amantes de una noche</h5>
+                      <p>Bad bunny ft Natti Natasha</p>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carrousel-0" data-bs-slide="prev">
+                  <img src="assets/arrowModel2.png" alt="" width="50%" style="transform: rotate(180deg);">
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carrousel-0" data-bs-slide="next">
+                  <img src="assets/arrowModel2.png" alt="" width="50%">
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!--end last uploads -->
+
+          <!-- artist suggestions -->
+          <div class="row bg-light position-relative artists">
+            <div class="col-9">
+              <h3 style="color: #393a34;width: fit-content;">Sugerencias de artistas</h3>
+            </div>
+            <div class="col-3 d-flex justify-content-end">
+              <a href="pages/allArtist.html" style="text-decoration: none;color: #393a34;" class="view-all">Ver todos</a>
+            </div>
+            <div class="col-12">
+              <div id="artistSuggestions-0" class="carousel slide d-flex justify-content-center align-items-center" data-bs-touch="false" data-bs-interval="false">
+                <div class="carousel-inner" style="padding: 5%;">
+                  <div class="carousel-item active list-artist">
+                    <div class="row pc_view_artist">
+                      <div class="col-4 d-flex  justify-content-center">
+                        <figure style="text-align: center;">
+                          <img src="assets/bad-bunny-gq-april-2019.jpg" class="rounded-circle" alt="..." width="75"
+                            height="75">
+                          <figcaption>username</figcaption>
+                          <figcaption><button type="button" class="btn btn-secondary btn-sm">Seguir</button>
+                          </figcaption>
+                        </figure>
+                      </div>
+                      <div class="col-4 d-flex  justify-content-center">
+                        <figure style="text-align: center;">
+                          <img src="assets/bad-bunny-gq-april-2019.jpg" class="rounded-circle" alt="..." width="75"
+                            height="75">
+                          <figcaption>username</figcaption>
+                          <figcaption><button type="button" class="btn btn-secondary btn-sm">Seguir</button>
+                          </figcaption>
+                        </figure>
+                      </div>
+                      <div class="col-4 d-flex  justify-content-center">
+                        <figure style="text-align: center;">
+                          <img src="assets/bad-bunny-gq-april-2019.jpg" class="rounded-circle" alt="..." width="75"
+                            height="75">
+                          <figcaption>username</figcaption>
+                          <figcaption><button type="button" class="btn btn-secondary btn-sm">Seguir</button>
+                          </figcaption>
+                        </figure>
+                      </div>
+                    </div>
+                    <div class="row d-none cell_view_artist">
+                      <div class="col-6 d-flex  justify-content-center mx-auto">
+                        <figure style="text-align: center;">
+                          <img src="assets/bad-bunny-gq-april-2019.jpg" class="rounded-circle" alt="..." width="75"
+                            height="75">
+                          <figcaption>username</figcaption>
+                          <figcaption><button type="button" class="btn btn-secondary btn-sm">Seguir</button>
+                          </figcaption>
+                        </figure>
+                      </div>
+                      <div class="col-6 d-flex  justify-content-center mx-auto">
+                        <figure style="text-align: center;">
+                          <img src="assets/bad-bunny-gq-april-2019.jpg" class="rounded-circle" alt="..." width="75"
+                            height="75">
+                          <figcaption>username</figcaption>
+                          <figcaption><button type="button" class="btn btn-secondary btn-sm">Seguir</button>
+                          </figcaption>
+                        </figure>
+                      </div>
+                    </div>
+
+                  </div>
+                  <!--  <div class="carousel-item list-artist">
+
+                  </div> -->
+                </div>
+                <!--   <a href="pages/artists.html">Ver todos</a> -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#artistSuggestions-0"
+                  data-bs-slide="prev">
+                  <img src="assets/arrowModel2.png" alt="" width="50%" style="transform: rotate(180deg);">
+                  <span class="visually-hidden"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#artistSuggestions-0"
+                  data-bs-slide="next">
+                  <img src="assets/arrowModel2.png" alt="" width="50%">
+                  <span class="visually-hidden"></span>
+                </button>
+              </div>
+              
+            </div>
+          </div>
+          <!--end artist suggestions -->
+          <!-- end publications -->
         </div>
 
         <div class="col-12 col-sm-4 vh-100 d-none d-sm-block">
@@ -166,16 +331,17 @@
         </div>
       </div>
     </div>
+
     <!-- Modal -->
     <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-scrollable ">
         <div class="modal-content overflow-visible" style="border-radius: 20px;text-align: center;">
           <div class="position-relative pt-5">
-            <img src="assets/logo.png" alt="logoBivraz" style="position: absolute; top: -35px; left: calc(50% - 35px);" width="70">
+            <img src="assets/logo.png" alt="logoBivraz" style="position: absolute; top: -35px; left: calc(50% - 35px);"
+              width="70">
             <h5 class="modal-title border-bottom pb-3" id="exampleModalLabel" style="width: 100%;text-align: center;">
               T&eacute;rminos y condiciones de uso
             </h5>
-            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
           </div>
           <div class="modal-body">
             <script>
@@ -195,6 +361,9 @@
       </div>
     </div>
   </div>
+  <a class="btn-flotante rounded-circle d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#exampleModal">
+   <i class="fa fa-plus"></i>
+  </a>
 
   <!-- Js -->
   <script src="Js/popper.min.js"></script>
@@ -204,23 +373,16 @@
   <script>
     $(document).ready(function () {
       let notifications = `
-      <a href="#" class="data_notifications"><img src='assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>
-      <br>
-      <a href="#" class="data_notifications"><img src='assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>  
-      <br>
-      <a href="#" class="data_notifications"><img src='assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a> 
-      <br>
-      <hr class="dropdown-divider">
-      <a href="pages/notifications.html" class="data_notifications btn_more_notifications btn btn-sm" >Ver más</a> `;
-      $("#icon_notifications").attr("data-bs-content", notifications);
-      var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-      var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-        return new bootstrap.Popover(popoverTriggerEl)
-      });
-      $("#btn_search").click(function (e) {
-        alert("Has hecho click en buscar");
-      });
-
+        <a href="#" class="data_notifications"><img src='assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>
+        <br>
+        <a href="#" class="data_notifications"><img src='assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>  
+        <br>
+        <a href="#" class="data_notifications"><img src='assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a> 
+        <br>
+        <hr class="dropdown-divider">
+        <a href="pages/notifications.html" class="data_notifications btn_more_notifications btn btn-sm" >Ver m&aacute;s</a> `;
+      enabledPopover(notifications);
+      responsiveDesign();
     });
   </script>
 

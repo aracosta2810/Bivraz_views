@@ -1,11 +1,23 @@
 function responsiveDesign() {
-    let container = $("#nav_bar");
+    let container = $("#home");
+    if ($(window).width() <= 368) {
+        $(".cell_view_artist").removeClass("d-none");
+    }
     $(window).resize(() => {
-        if ($(this).width() <= 400) {
-            container.removeClass("container");
+        //Background of container
+        if ($(this).width() <= 575) {
+            container.removeClass("bg-light");
         } else {
-            container.addClass("container");
+            container.addClass("bg-light");
         }
+        //list of users 
+
+        if ($(this).width() <= 368) {
+            $(".cell_view_artist").removeClass("d-none");
+        } else {
+            $(".cell_view_artist").addClass("d-none");
+        }
+
     });
 }
 
@@ -78,4 +90,11 @@ function separateString(element) {
         counter += 5;
     }
 }
-//-----------------Dando funcionalidad a los paquetes-------------------------------------
+//-----------------Habilitando el popover-------------------------------------
+function enabledPopover(notifications) {
+    $(".fa-bell").attr("data-bs-content", notifications);
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+    });
+}
