@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .modal-dialog {
   padding: 5%;
 }
@@ -280,3 +281,14 @@
 #artistSuggestions-0 img {
   object-fit: cover;
 }
+=======
+.modal-dialog{
+    padding: 5%
+}
+
+@media (max-width: 576px){
+    .modal-dialog{
+        padding: 10%
+    }
+}
+>>>>>>> main
