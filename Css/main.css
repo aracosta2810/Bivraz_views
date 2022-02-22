@@ -107,6 +107,11 @@ body {
 .left-column i {
   cursor: pointer;
 }
+<<<<<<< HEAD
+.brow-color{
+  color:#393a34;
+}
+=======
 
 .panel{
   height: 100%;
@@ -117,3 +122,4 @@ body {
     background-color: white;
   }
 }
+>>>>>>> main
