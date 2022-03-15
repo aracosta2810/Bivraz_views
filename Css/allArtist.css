@@ -27,12 +27,15 @@
     div.col-12 hr.d-none {
         width: 100%;
     }
+
     .secondaryTitle {
         padding-left: 0%;
     }
+
     .carrousel-popover a {
         opacity: 1;
     }
+
     figure {
         opacity: 1;
     }
@@ -60,9 +63,7 @@ figure:hover, figure a:hover {
 
 article.col-12 .row .col-12:hover {
     opacity: 1;
-    color: #393a34;
-    transition: opacity .2s ease-in-out,
-                color .2s .3s ease-in-out;
+    transition: opacity .30s ease-in-out;
 }
 
 figure img:hover, a:hover img {

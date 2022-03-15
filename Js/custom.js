@@ -3,6 +3,17 @@ function responsiveDesign() {
     if ($(window).width() <= 368) {
         $(".cell_view_artist").removeClass("d-none");
     }
+    if ($(this).width() <= 575) {
+        container.removeClass("bg-light");
+    } else {
+
+        container.addClass("bg-light");
+    }
+    if ($(this).width() <= 368) {
+        $(".cell_view_artist").removeClass("d-none");
+    } else {
+        $(".cell_view_artist").addClass("d-none");
+    }
     $(window).resize(() => {
         //Background of container
         if ($(this).width() <= 575) {

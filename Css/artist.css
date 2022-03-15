@@ -1,17 +1,3 @@
-.modal-dialog {
-    padding: 5%;
-}
-
-@media(max-width: 576px) {
-    .modal-dialog {
-        padding: 10%;
-    }
-}
-
-.modal-dialog {
-    padding: 5%;
-}
-
 .secondaryTitle {
     padding-top: 1.5%;
     padding-left: 5%;
@@ -27,9 +13,11 @@
     div.col-12 hr.d-none {
         width: 100%;
     }
+
     .secondaryTitle {
         padding-left: 0%;
     }
+
     .carrousel-popover a {
         opacity: 1;
     }
@@ -129,6 +117,7 @@
     .pc_view_artist {
         display: none;
     }
+
     .cell_view_artist {
         display: flex;
     }
@@ -138,16 +127,51 @@
     .pc_view_artist {
         display: flex;
     }
+
     .cell_view_artist {
         display: none;
     }
 }
 
-@media(max-width:860px) {
+img.img-artist {
+    width: 70px;
+    height: 70px;
+}
+
+.pc_view_artist figure figcaption {
+    font-size: 14px;
+}
+
+@media(max-width:1000px) {
+    img.img-artist {
+        width: 50px;
+        height: 50px;
+    }
+
     .pc_view_artist figure figcaption {
         font-size: 10px;
     }
+
 }
+@media(max-width:767px) {
+    img.img-artist {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media(max-width:395px) {
+    img.img-artist {
+        width: 50px;
+        height: 50px;
+    }
+
+    .pc_view_artist figure figcaption {
+        font-size: 10px;
+    }
+
+}
+
 
 .carrousel-popover {
     height: fit-content;
@@ -198,7 +222,7 @@ figure:hover {
     transition: opacity .1s ease-in-out;
 }
 
-.carrousel-popover a:hover img{
+.carrousel-popover a:hover img {
     box-shadow: gray 4px 4px 6px;
     transition: all .2s ease-in-out;
 }

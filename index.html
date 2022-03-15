@@ -63,8 +63,8 @@
             </a>
 
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Perfil</a></li>
-              <li><a class="dropdown-item" href="#">Otra opci&oacute;n</a></li>
+              <li><a class="dropdown-item" href="pages/profile.html">Perfil</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#use_terms">Política de uso</a></li>
               <li><a class="dropdown-item" href="#">Cerrar sesi&oacute;n</a></li>
             </ul>
           </div>
@@ -100,9 +100,16 @@
               border: 2px solid white;
               border-radius: 100px;
               padding: 3px 7px;
-            ">
-          <i class="fas fa-user" style="font-size: 1.6rem; color: white"></i>
+            " class="dropdown position-relative" id="cell-view">
+          <i class="fas fa-user" style="font-size: 1.6rem; color: white;" role="button" id="dropdownMenuLink"
+            data-bs-toggle="dropdown" aria-expanded="false"></i>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="menu-cell-view">
+            <li><a class="dropdown-item" href="pages/profile.html">Perfil</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#use_terms">Política de uso</a></li>
+            <li><a class="dropdown-item" href="#">Cerrar sesi&oacute;n</a></li>
+          </ul>
         </div>
+
       </div>
     </div>
 
@@ -147,7 +154,7 @@
                 @username</a>
             </div>
 
-            <div class="col-5 col-lg-6 position-relative">
+            <div class="col-6 position-relative">
               <div class="dropdown position-absolute" style="top: 0%;right: 0%;">
                 <a class="dropdown-toggle brow-color user_menu" href="#" role="button" id="dropdownMenuLink"
                   data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none;">
@@ -175,6 +182,57 @@
           </div>
 
           <!-- end publication for user -->
+
+          <!-- top list publication -->
+
+
+          <div class="row bg-light">
+            <div class="col-6">
+              <img src="assets/bad-bunny-gq-april-2019.jpg" class="rounded-circle float-left" alt="..." width="40"
+                height="40">
+              <a class="username" href="pages/artists.html">
+                @username
+               <span style="font-size: 11px;opacity: 0.8;"><br>Ha subido 10 nuevas canciones</span>
+              </a>
+            </div>
+
+            <div class="col-6 position-relative">
+              <div class="dropdown position-absolute" style="top: 0%;right: 0%;">
+                <a class="dropdown-toggle brow-color user_menu" href="#" role="button" id="dropdownMenuLink"
+                  data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none;">
+                  ...
+                </a>
+
+                <ul class="dropdown-menu brow-color" aria-labelledby="dropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-8">
+              <p class=" d-flex align-items-center" style="height: 100%; font-size: 12px;font-weight: bold;">Lista por
+                Halloween. 10 temas, espero que les guste</p>
+            </div>
+            <div class="col-12 bg-primary top-list align-items-center justify-content-center text-white">
+                   <p class="title_song">Falling Down<span><br>XXX Tentation</span></p>
+              <script>
+                for (let i = 0; i < 20; i++) {
+                  document.write(` <p class="title_song">Falling Down<span><br>XXX Tentation</span></p>`);
+
+                }
+              </script>
+            </div>
+            <div class="col-12 text-center btn-options">
+              <i class="far fa-play-circle"></i>
+              <i class="far fa-heart"></i>
+              <i class="fa fa-share"></i>
+            </div>
+          </div>
+
+          <!-- top list publication -->
+
+
 
           <!-- last uploads -->
           <div class="row bg-light">
@@ -209,11 +267,11 @@
                   </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carrousel-0" data-bs-slide="prev">
-                  <img src="assets/arrowModel2.png" alt="" width="50%" style="transform: rotate(180deg);">
+                  <i class="fa fa-angle-left"></i>
                   <span class="visually-hidden">Previous</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#carrousel-0" data-bs-slide="next">
-                  <img src="assets/arrowModel2.png" alt="" width="50%">
+                  <i class="fa fa-angle-right"></i>
                   <span class="visually-hidden">Next</span>
                 </button>
               </div>
@@ -227,10 +285,12 @@
               <h3 style="color: #393a34;width: fit-content;">Sugerencias de artistas</h3>
             </div>
             <div class="col-3 d-flex justify-content-end">
-              <a href="pages/allArtist.html" style="text-decoration: none;color: #393a34;" class="view-all">Ver todos</a>
+              <a href="pages/allArtist.html" style="text-decoration: none;color: #393a34;" class="view-all">Ver
+                todos</a>
             </div>
             <div class="col-12">
-              <div id="artistSuggestions-0" class="carousel slide d-flex justify-content-center align-items-center" data-bs-touch="false" data-bs-interval="false">
+              <div id="artistSuggestions-0" class="carousel slide d-flex justify-content-center align-items-center"
+                data-bs-touch="false" data-bs-interval="false">
                 <div class="carousel-inner" style="padding: 5%;">
                   <div class="carousel-item active list-artist">
                     <div class="row pc_view_artist">
@@ -291,16 +351,16 @@
                 <!--   <a href="pages/artists.html">Ver todos</a> -->
                 <button class="carousel-control-prev" type="button" data-bs-target="#artistSuggestions-0"
                   data-bs-slide="prev">
-                  <img src="assets/arrowModel2.png" alt="" width="50%" style="transform: rotate(180deg);">
+                  <i class="fa fa-angle-left"></i>
                   <span class="visually-hidden"></span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#artistSuggestions-0"
                   data-bs-slide="next">
-                  <img src="assets/arrowModel2.png" alt="" width="50%">
+                  <i class="fa fa-angle-right"></i>
                   <span class="visually-hidden"></span>
                 </button>
               </div>
-              
+
             </div>
           </div>
           <!--end artist suggestions -->
@@ -333,7 +393,7 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade " id="use_terms" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-scrollable ">
         <div class="modal-content overflow-visible" style="border-radius: 20px;text-align: center;">
           <div class="position-relative pt-5">
@@ -361,8 +421,8 @@
       </div>
     </div>
   </div>
-  <a class="btn-flotante rounded-circle d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#exampleModal">
-   <i class="fa fa-plus"></i>
+  <a class="btn-flotante rounded-circle d-flex justify-content-center align-items-center" href="/pages/uploadFile.html">
+    <i class="fa fa-plus"></i>
   </a>
 
   <!-- Js -->

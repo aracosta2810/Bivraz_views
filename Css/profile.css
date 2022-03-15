@@ -1,0 +1,254 @@
+#home img.rounded-circle, .album-photo {
+
+    box-shadow: gray 4px 4px 5px;
+}
+
+img {
+    object-fit: cover;
+}
+
+.user-photo {
+    border: 2px solid #393a34;
+    width: fit-content;
+    padding: 10%;
+    padding-top: 7%;
+}
+
+.user-photo .fa-user {
+    font-size: 4rem;
+    color: #393a34;
+}
+
+figcaption.title-song {
+    font-weight: bold;
+    font-size: 24px;
+    font-style: italic;
+}
+
+p.follow-song {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 1%;
+}
+
+.btn-brown {
+    background-color: #393a34;
+    color: rgb(233, 229, 229);
+}
+
+.btn-brown:hover {
+    color: white;
+    box-shadow: none;
+}
+
+.bg-brown {
+    background-color: #393a34;
+
+}
+
+.nav-tabs li {
+    width: 50%;
+}
+
+.nav-tabs li button {
+    width: 100%;
+    text-align: center;
+    color: white !important;
+    background-color: #393a34 !important;
+}
+
+#nav-tab button {
+    text-align: center;
+    color: white !important;
+    background-color: #393a34 !important;
+    padding: 0;
+}
+
+
+button.active {
+    font-weight: bold;
+
+}
+
+.name-song {
+    font-style: italic;
+}
+
+#myTabContent {
+    height: 600px;
+    overflow-y: scroll;
+}
+
+#nav-tabContent {
+    height: 240px;
+    overflow-y: scroll;
+}
+
+@media(max-width:1200px) {
+    #nav-tabContent {
+        height: 270px;
+        overflow-y: scroll;
+    }
+
+
+}
+
+
+
+
+#myTabContent::-webkit-scrollbar-track, #nav-tabContent::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    background-color: transparent;
+}
+
+#myTabContent::-webkit-scrollbar, #nav-tabContent::-webkit-scrollbar {
+    width: 3px;
+    background-color: #F5F5F5;
+}
+
+#myTabContent::-webkit-scrollbar-thumb, #nav-tabContent::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    background-color: #555;
+}
+
+.features i {
+    position: relative;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.features i:hover {
+    color: gray;
+}
+
+.album {
+    border-bottom: .5px solid gray;
+}
+
+.content-album {
+    height: 140px;
+}
+
+.content-album:last-child {
+    overflow-y: scroll;
+}
+
+@media(min-width:580px) {
+    .content-album {
+        height: 180px;
+    }
+}
+
+.song {
+    background-color: #393a34c7 !important;
+    border-radius: 13px;
+    padding-bottom: 2px !important;
+}
+
+@media(max-width:400px) {
+    .song {
+        font-size: 10px;
+    }
+}
+
+.nav-link-custom {
+    width: 150px;
+    color: white;
+}
+
+.nav-link-custom:last-child {
+    margin-left: 2%;
+}
+
+#img-profile {
+    width: 220px;
+    height: 220px;
+}
+
+#edit-profile {
+    width: 40px;
+    height: 40px;
+    bottom: 5em;
+    right: .7em;
+    border: none;
+
+
+}
+
+.btn-edit {
+    padding: 8px;
+    cursor: pointer;
+    background-color: rgb(253, 151, 39);
+    transition: all .2s ease-in;
+}
+
+.btn-edit:hover {
+    background-color: rgb(250, 130, 2);
+}
+
+@media(max-width:768px) {
+    #img-profile {
+        width: 120px;
+        height: 120px;
+    }
+
+    #edit-profile {
+        width: 30px;
+        height: 30px;
+        bottom: 4em;
+        right: .6em;
+    }
+
+    .btn-edit {
+        padding: 5px;
+        font-size: 12px;
+
+    }
+
+}
+
+#background-profile {
+    background-image: url(/assets/bad-bunny-gq-april-2019.jpg);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+.song-name-album {
+    width: fit-content;
+    text-decoration: none;
+
+    color: white;
+}
+
+.features i {
+    font-size: 14px;
+}
+
+@media(max-width:1170px) {
+    .song-name-album {
+        font-size: 14px;
+    }
+}
+
+#profile-information {
+    border-left: rgba(128, 128, 128, 0.5) solid 2px;
+}
+
+div#profile-information .row .col-4{
+    font-weight: bold;
+    height: 100%;
+    border-right: rgba(128, 128, 128, 0.5) solid 2px;
+}
+div#profile-information .row .col-4 p{
+    margin-bottom: 2%;
+}
+
+@media (max-width: 768px) {
+body{
+    background-color: white;
+}
+}

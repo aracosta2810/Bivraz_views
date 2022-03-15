@@ -64,10 +64,8 @@
             </a>
 
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Perfil</a></li>
-              <li>
-                <a class="dropdown-item" href="#">Otra opci&oacute;n</a>
-              </li>
+              <li><a class="dropdown-item" href="/pages/profile.html">Perfil</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#use_terms">Política de uso</a></li>
               <li>
                 <a class="dropdown-item" href="#">Cerrar sesi&oacute;n</a>
               </li>
@@ -100,11 +98,18 @@
           <i class="fa fa-search"></i>
         </div>
         <div style="
-              border: 2px solid white;
-              border-radius: 100px;
-              padding: 3px 7px;
-            ">
-          <i class="fas fa-user" style="font-size: 1.6rem; color: white"></i>
+                border: 2px solid white;
+                border-radius: 100px;
+                padding: 3px 7px;
+              " class="dropdown position-relative" id="cell-view">
+          <i class="fas fa-user" style="font-size: 1.6rem; color: white;" role="button" id="dropdownMenuLink"
+            data-bs-toggle="dropdown" aria-expanded="false"></i>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="menu-cell-view">
+            <li><a class="dropdown-item" href="pages/profile.html">Perfil</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#use_terms">Política de
+                uso</a></li>
+            <li><a class="dropdown-item" href="#">Cerrar sesi&oacute;n</a></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -265,8 +270,7 @@
             </button>
           </div>
           <!-- Modal -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
+          <div class="modal fade" id="use_terms" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable">
               <div class="modal-content overflow-visible" style="border-radius: 20px; text-align: center">
                 <div class="position-relative pt-5">

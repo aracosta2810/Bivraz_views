@@ -1,5 +1,5 @@
 body {
-  background-color: #e0dfdf;
+  background-color: #EBEBEB;
 }
 
 #form {
@@ -55,7 +55,7 @@ body {
 }
 
 .activeCellSection {
-  color: #212529 !important;
+  color: #393a34 !important;
 }
 
 .activePCSection {
@@ -112,11 +112,7 @@ body {
   height: 100%;
 }
 
-@media (max-width: 768px) {
-  body {
-    background-color: white;
-  }
-}
+
 
 .brow-color {
   color: #393a34;
@@ -141,8 +137,9 @@ figure img {
   /* Borde del boton */
   letter-spacing: 2px;
   /* Espacio entre letras */
- background-image: linear-gradient(to bottom right, #45F8FE, #FD4443); 
+  /*background-image: linear-gradient(to bottom right, #45F8FE, #FD4443);*/
   /* Color de fondo */
+  background-color: aqua !important;
   /* padding: 10px 20px; */
   padding: 5px;
   /* Relleno del boton */
@@ -155,6 +152,7 @@ figure img {
   cursor: pointer;
   width: 60px;
   height: 60px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .btn-flotante:hover {
@@ -176,4 +174,27 @@ figure img {
     height: 50px;
   }
 
+}
+
+li a {
+  cursor: pointer;
+}
+
+.modal-dialog {
+  padding: 5%;
+}
+
+@media(max-width: 576px) {
+  .modal-dialog {
+    padding: 10%;
+  }
+}
+
+.position-static {
+  position: static;
+}
+#menu-cell-view {
+  right: 0!important;
+  left: auto !important;
+  bottom: 10;
 }

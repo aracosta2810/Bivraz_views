@@ -2,7 +2,7 @@ function responsiveDesign() {
     let divAll = document.querySelectorAll(".pc_view_artist div.col-2");
     divAll = Array.from(divAll);
     let fuctionRemove = () => {
-        if ($(window).width() < 768 && $(window).width() > 300) {
+        if ($(window).width() < 767 && $(window).width() > 300) {
             //divAll[divAll.length - 1].classList.add("d-none");
             for (let i = 0; i < divAll.length; i++) {
                 if (i == 4 || i == 9 || i == 14) {
@@ -13,7 +13,7 @@ function responsiveDesign() {
         } else if ($(window).width() < 300) {
             $(".pc_view_artist").removeClass("d-flex");
         }
-        else if ($(window).width() > 768) {
+        else if ($(window).width() > 767) {
             // divAll[divAll.length - 1].classList.remove("d-none");
             for (let i = 0; i < divAll.length; i++) {
                 if (i == 4 || i == 9 || i == 14) {
