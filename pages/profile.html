@@ -162,21 +162,28 @@
 
         <!-- Home -->
         <div class="px-0 px-md-4 px-lg-5">
-            <div class="container-fluid bg-light vh-100" id="home">
+            <div class="container-fluid bg-light" id="home" style="height: 105vh;">
                 <div class="row d-flex justify-content-center justify-content-md-start">
-                    <div class="col-6 col-md-3 offset-md-1 offset-lg-0 d-flex justify-content-center mt-3">
+                    <div class="col-6 col-md-3 offset-md-1 offset-lg-1 offset-xl-0 d-flex justify-content-center mt-3 ">
                         <figure class="position-relative">
+                            <!-- Este boton tiene que salir solo en el perfil del artista autenticado -->
                             <div class="position-absolute d-flex justify-content-center align-items-center rounded-circle bg-light"
                                 id="edit-profile">
                                 <i class="fas fa-highlighter btn-edit text-white rounded-circle"
                                     style="    box-shadow: gray 2px 2px 6px;"></i>
                             </div>
+                            <!-- Este boton tiene que salir solo en el perfil del artista autenticado -->
                             <img src="/assets/bad-bunny-gq-april-2019.jpg" alt="" class="rounded-circle"
                                 id="img-profile">
                             <figcaption class="text-center mt-1 title-song">Our Secret</figcaption>
                             <figcaption class="text-center mt-1">@username</figcaption>
                         </figure>
                     </div>
+                    <div class="col-12 d-flex justify-content-center justify-content-md-start">
+                        <p class="description text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Ullam optio necessitatibus tempora voluptatem</p>
+                    </div>
+
                 </div>
 
                 <!-- pc view proile -->
@@ -194,6 +201,7 @@
                                         <button class="nav-link nav-link-custom" id="nav-profile-tab"
                                             data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab"
                                             aria-controls="nav-profile" aria-selected="false">Albumes</button>
+
                                     </div>
                                 </nav>
                                 <div class="tab-content col-12 row" id="nav-tabContent" style="margin-top: .5%;">
@@ -401,17 +409,48 @@
                             <div class="col-md-4 offset-1" id="profile-information">
                                 <div class="row">
                                     <div class="col-4">
-                                        <p class="text-center">Seguidores</p>
-                                        <p class="text-center">0</p>
+                                        <p style="font-style: italic;">Seguidores</p>
+                                        <p>0</p>
                                     </div>
                                     <div class="col-4">
-                                        <p class="text-center">Seguidos</p>
-                                        <p class="text-center">0</p>
+                                        <p style="font-style: italic;">Seguidos</p>
+                                        <p>0</p>
                                     </div>
                                     <div class="col-4">
-                                        <p class="text-center">Canciones</p>
-                                        <p class="text-center">0</p>
+                                        <p style="font-style: italic;">Canciones</p>
+                                        <p>0</p>
                                     </div>
+                                </div>
+                                <div class="row mt-3 py-3 position-relative">
+                                    <div class="col-12 d-flex align-items-center">
+                                        <figure class="d-flex aling-items-center">
+                                            <img src="/assets/bad-bunny-gq-april-2019.jpg" alt="" width="50" height="50"
+                                                class="rounded-circle">
+                                            <figcaption
+                                                style="height: fit-content;font-weight: bold;padding-left: 5px;">
+                                                @username
+                                                <br>
+                                                <span style="font-size: 12px;"> 15k</span>
+                                            </figcaption>
+                                        </figure>
+                                        <p class="text-end follow-text"><i class="fa fa-check" aria-hidden="true"></i>
+                                            Siguiendo</p>
+                                    </div>
+                                    <div class="col-12 d-flex align-items-center">
+                                        <figure class="d-flex aling-items-center">
+                                            <img src="/assets/bad-bunny-gq-april-2019.jpg" alt="" width="50" height="50"
+                                                class="rounded-circle">
+                                            <figcaption
+                                                style="height: fit-content;font-weight: bold;padding-left: 5px;">
+                                                @username
+                                                <br>
+                                                <span style="font-size: 12px;"> 15k</span>
+                                            </figcaption>
+                                        </figure>
+                                        <p class="text-end follow-text"><i class="fa fa-check" aria-hidden="true"></i>
+                                            Siguiendo</p>
+                                    </div>
+                                    <a href="" class="view-all-artist text-dark" style="font-size: 12px;">Ver todo</a>
                                 </div>
                             </div>
 
@@ -440,16 +479,22 @@
                     <div class="col-auto mb-3 d-flex justify-content-center">
                         <button type="button" class="btn btn-brown btn-sm">Dejar de seguir</button>
                     </div>
-                    <ul class="nav nav-tabs col-12 col-md-4" id="myTab" role="tablist">
+                    <ul class="nav nav-tabs col-12 col-md-4 d-flex justify-content-between" id="myTab" role="tablist"
+                        style="width: 100%;">
                         <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="profile-tab" data-bs-toggle="tab"
                                 data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
-                                aria-selected="true">Canciones</button>
+                                aria-selected="true"><i class="fa fa-music"></i> Canciones</button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact"
-                                type="button" role="tab" aria-controls="contact"
-                                aria-selected="false">&Aacute;lbumes</button>
+                                type="button" role="tab" aria-controls="contact" aria-selected="false"><i
+                                    class="fa fa-folder-open"></i> &Aacute;lbumes</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="reproduction-list-tab" data-bs-toggle="tab" data-bs-target="#reproduction-list"
+                                type="button" role="tab" aria-controls="contact" aria-selected="false"><i
+                                    class="fas fa-sliders-h"></i> listas</button>
                         </li>
                     </ul>
                     <div class="tab-content " id="myTabContent">
@@ -612,7 +657,10 @@
                             <!-- end album cell box -->
 
                         </div>
+                        <div class="tab-pane fade" id="reproduction-list" role="tabpanel" aria-labelledby="reproduction-list-tab">
+                            <p>Estas son las listas de reproducci&oacute;n</p>
 
+                        </div>
                     </div>
                 </div>
 

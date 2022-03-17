@@ -47,8 +47,15 @@ p.follow-song {
 }
 
 .nav-tabs li {
-    width: 50%;
+    width: 33.3%;
 }
+
+@media(max-width:400px) {
+    .nav-tabs li button i{
+        display: none;
+    }
+}
+
 
 .nav-tabs li button {
     width: 100%;
@@ -209,19 +216,15 @@ button.active {
 
 }
 
-#background-profile {
-    background-image: url(/assets/bad-bunny-gq-april-2019.jpg);
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-}
-
 .song-name-album {
     width: fit-content;
     text-decoration: none;
-
     color: white;
+    cursor: pointer;
+}
+.song-name-album:hover {
+    color: white;
+    font-weight: bold;
 }
 
 .features i {
@@ -238,17 +241,94 @@ button.active {
     border-left: rgba(128, 128, 128, 0.5) solid 2px;
 }
 
-div#profile-information .row .col-4{
+div#profile-information .row .col-4 {
     font-weight: bold;
-    height: 100%;
+    height: 60px;
     border-right: rgba(128, 128, 128, 0.5) solid 2px;
 }
-div#profile-information .row .col-4 p{
+
+
+
+div#profile-information .row .col-4 p {
     margin-bottom: 2%;
 }
 
-@media (max-width: 768px) {
-body{
-    background-color: white;
+.description {
+    font-size: 12px;
+    width: 50%;
+    color: gray;
 }
+
+@media (max-width: 1100px) {
+    div#profile-information .row .col-4 p {
+        font-size: 12px;
+    }
+
+    div#profile-information .row .col-4 {
+        height: 40px;
+    }
+
+}
+
+@media (max-width: 870px) {
+    div#profile-information .row .col-4 p {
+        font-size: 10px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    body {
+        background-color: white;
+    }
+
+    .description {
+
+        width: 100%;
+    }
+}
+
+#profile-information .row .col-4:last-child {
+    border: none;
+}
+
+#profile-information img {
+    box-shadow: none !important;
+}
+
+#profile-information .row {
+    margin-left: 2%;
+}
+
+#profile-information .row:last-child {
+    border-top: rgba(128, 128, 128, 0.5) solid 2px;
+    border-bottom: rgba(128, 128, 128, 0.5) solid 2px;
+}
+
+.view-all-artist {
+    text-decoration: none;
+}
+
+.follow-text {
+    font-size: 12px;
+    font-style: italic;
+    width: 100%;
+}
+
+@media(max-width: 1070px) {
+    .follow-text {
+        font-size: 10px;
+    }
+}
+
+@media(max-width: 840px) {
+    .follow-text {
+        display: none;
+    }
+}
+
+@media(max-width: 576px) {
+    body {
+        background-color: white;
+    }
 }

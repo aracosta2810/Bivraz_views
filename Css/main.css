@@ -137,9 +137,9 @@ figure img {
   /* Borde del boton */
   letter-spacing: 2px;
   /* Espacio entre letras */
-  /*background-image: linear-gradient(to bottom right, #45F8FE, #FD4443);*/
+  background-image: linear-gradient(to bottom right, #393a34d2 , #c2bebe);
   /* Color de fondo */
-  background-color: aqua !important;
+  /*background-color: #393a34 !important;*/
   /* padding: 10px 20px; */
   padding: 5px;
   /* Relleno del boton */
