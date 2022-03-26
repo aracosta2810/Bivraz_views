@@ -99,23 +99,6 @@
     font-size: 12px;
 }
 
-.btn-options .fa, .btn-options .far {
-    margin-left: 5px;
-    margin-right: 5px;
-    font-size: 18px;
-    cursor: pointer;
-    color: #393a34a2;
-    transition: all .3s;
-}
-
-.btn-options .fa:hover, .btn-options .far:hover {
-    cursor: pointer;
-    color: #393a34;
-    font-size: 20px;
-
-}
-
-
 .carousel-item .row {
     border: none;
 }
@@ -222,44 +205,51 @@ img {
     border-bottom-color: black;
     height: 180px;
     overflow-y: scroll;
-    background-image: linear-gradient(to right,rgba(0, 0, 0, 0.77), rgba(0, 0, 0, 0.5)), url("/assets/logoParaLista.png");
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.77), rgba(0, 0, 0, 0.5)), url("/assets/logoParaLista.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    transition: all .2s ease-in-out;
 
     /*background-color: #393a34 !important;*/
 }
-.top-list p  {
-    border-bottom:1px solid  rgba(255, 255, 255, 0.20) ;
+
+.top-list p {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.20);
     padding: .5%;
 }
 
 .top-list p span {
     font-size: 10px;
     opacity: 0.7;
-    transition:  background-color .5s ease-in-out;
+    transition: background-color .5s ease-in-out;
 
 }
+
 .top-list p:hover {
-   background-color: #393a3459;
-   border-bottom:none;
+    background-color: #393a3459;
+    border-bottom: none;
 
 }
-@media(min-width:1400px) {
-    .top-list::-webkit-scrollbar-track {
-        -webkit-box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.3);
-        border-radius: 3px;
-        background-color: transparent;
+
+/*.top-list:hover .top-list::-webkit-scrollbar{
+    display: block;
+    background-color: rgb(118, 119, 119);
+}*/
+.fa-heart {
+    transition: all .5s ease-in-out;
+}
+
+.fa-heart:active, .fa-play-circle:active, .fa-pause-circle:active {
+    font-size: 12px;
+}
+
+@media(max-width:768px) {
+    .fa-heart, .fa-play-circle, .fa-pause-circle {
+        transition: all .3s ease-in-out;
     }
 
-    .top-list::-webkit-scrollbar {
-        width: 3px;
-        background-color: #F5F5F5;
-    }
-
-    .top-list::-webkit-scrollbar-thumb {
-        -webkit-box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.103);
-        border-radius: 3px;
-        background-color: #555;
+    .fa-heart:active, .fa-play-circle:active, .fa-pause-circle:active {
+        font-size: 15px;
     }
 }

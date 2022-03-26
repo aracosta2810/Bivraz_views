@@ -50,8 +50,8 @@ p.follow-song {
     width: 33.3%;
 }
 
-@media(max-width:400px) {
-    .nav-tabs li button i{
+@media(max-width:405px) {
+    .nav-tabs li button i {
         display: none;
     }
 }
@@ -64,12 +64,19 @@ p.follow-song {
     background-color: #393a34 !important;
 }
 
+.col-md-7 .nav-tab {
+    width: 100%;
+}
+
 #nav-tab button {
     text-align: center;
     color: white !important;
     background-color: #393a34 !important;
     padding: 0;
+    width: 25%;
+    margin-right: 1%;
 }
+
 
 
 button.active {
@@ -100,26 +107,6 @@ button.active {
 
 }
 
-
-
-
-#myTabContent::-webkit-scrollbar-track, #nav-tabContent::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.3);
-    border-radius: 3px;
-    background-color: transparent;
-}
-
-#myTabContent::-webkit-scrollbar, #nav-tabContent::-webkit-scrollbar {
-    width: 3px;
-    background-color: #F5F5F5;
-}
-
-#myTabContent::-webkit-scrollbar-thumb, #nav-tabContent::-webkit-scrollbar-thumb {
-    -webkit-box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.3);
-    border-radius: 3px;
-    background-color: #555;
-}
-
 .features i {
     position: relative;
     cursor: pointer;
@@ -140,6 +127,10 @@ button.active {
 
 .content-album:last-child {
     overflow-y: scroll;
+}
+
+.content-album::-webkit-scrollbar {
+    display: block;
 }
 
 @media(min-width:580px) {
@@ -180,8 +171,6 @@ button.active {
     bottom: 5em;
     right: .7em;
     border: none;
-
-
 }
 
 .btn-edit {
@@ -211,7 +200,6 @@ button.active {
     .btn-edit {
         padding: 5px;
         font-size: 12px;
-
     }
 
 }
@@ -222,6 +210,7 @@ button.active {
     color: white;
     cursor: pointer;
 }
+
 .song-name-album:hover {
     color: white;
     font-weight: bold;
@@ -331,4 +320,59 @@ div#profile-information .row .col-4 p {
     body {
         background-color: white;
     }
+}
+
+.reproduction-item {
+    margin-bottom: 2%;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+}
+
+.title-reproduction-list {
+    font-size: 18px;
+    margin-bottom: 0%;
+
+
+}
+
+.top-list {
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: black;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: black;
+    height: 180px;
+    overflow-y: scroll;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.77), rgba(0, 0, 0, 0.5)), url("/assets/logoParaLista.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.top-list::-webkit-scrollbar {
+    display: block;
+    background-color: rgb(118, 119, 119);
+}
+
+.top-list p {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+    padding: .5%;
+}
+
+.top-list p span {
+    font-size: 10px;
+    opacity: 0.7;
+    transition: background-color .5s ease-in-out;
+
+}
+
+.top-list p:hover {
+    background-color: #393a3459;
+    border-bottom: none;
+
+}
+
+.btn-options i {
+    font-size: 18px;
+    margin: 5px;
 }

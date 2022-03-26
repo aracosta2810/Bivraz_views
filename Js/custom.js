@@ -4,10 +4,10 @@ function responsiveDesign() {
         $(".cell_view_artist").removeClass("d-none");
     }
     if ($(this).width() <= 575) {
-        container.removeClass("bg-light");
+        container.removeClass("bg-white");
     } else {
 
-        container.addClass("bg-light");
+        container.addClass("bg-white");
     }
     if ($(this).width() <= 368) {
         $(".cell_view_artist").removeClass("d-none");
@@ -17,9 +17,9 @@ function responsiveDesign() {
     $(window).resize(() => {
         //Background of container
         if ($(this).width() <= 575) {
-            container.removeClass("bg-light");
+            container.removeClass("bg-white");
         } else {
-            container.addClass("bg-light");
+            container.addClass("bg-white");
         }
         //list of users 
 
@@ -108,4 +108,66 @@ function enabledPopover(notifications) {
     var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
         return new bootstrap.Popover(popoverTriggerEl)
     });
+}
+//-----------------Color rojo al corazon---------------------------------------------------------
+
+function likeMe(element) {
+    if ($(element).hasClass("far")) {
+        $(element).removeClass("far");
+        $(element).addClass("fa");
+        sendRequest({ like: 1 }, "/like", "POST");
+    } else {
+        $(element).removeClass("fa");
+        $(element).addClass("far");
+        sendRequest({ like: -1 }, "/like", "POST");
+    }
+}
+
+//-----------------Cambiar icono play y pause a las canciones-------------------------------------
+
+function setIconPlayPause(element) {
+    if ($(element).hasClass("fa-play-circle")) {
+        $(element).removeClass("fa-play-circle");
+        $(".fa-pause-circle").each(function (index, element) {
+            $(this).removeClass("fa-pause-circle");
+            $(this).addClass("fa-play-circle");
+        });
+        $(element).addClass("fa-pause-circle");
+    } else if ($(element).hasClass("fa-pause-circle")) {
+        $(element).removeClass("fa-pause-circle");
+        $(element).addClass("fa-play-circle");
+    }
+}
+
+//-----------------Cambiar icono play y pause a las canciones-------------------------------------
+
+function setFollowUnfollow(element) {
+    //Esta linea me da si tengo el boton de seguir
+    if ($($(element).children()).is("button")) {
+        let btnFollow = `<p class="follow-artist"><i class="fa fa-check"></i> Siguiendo</p>`
+        $(element).html(btnFollow);
+    } else {
+        let btnFollow = `<button type="button" class="btn btn-secondary btn-sm">Seguir</button>`
+        $(element).html(btnFollow);
+    }
+}
+
+function sendRequest(value, url_database, method, id = -1) {
+    if (id == -1) {
+        console.log("Debe seleccionar un elemento");
+    } else {
+        $.ajax({
+            type: method,
+            dataType: "json",
+            url: url_database / id,
+            data: value,
+            success: function (response) {
+                console.log(response);
+            },
+            error: function (response) {
+                console.log(response);
+            }
+        });
+    }
+
 }
