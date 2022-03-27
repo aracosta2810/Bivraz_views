@@ -113,12 +113,12 @@ function enabledPopover(notifications) {
 
 function likeMe(element) {
     if ($(element).hasClass("far")) {
-        $(element).removeClass("far");
-        $(element).addClass("fa");
+        $(element).removeClass("far text-dark");
+        $(element).addClass("fa text-danger");
         sendRequest({ like: 1 }, "/like", "POST");
     } else {
-        $(element).removeClass("fa");
-        $(element).addClass("far");
+        $(element).removeClass("fa text-danger");
+        $(element).addClass("far text-dark");
         sendRequest({ like: -1 }, "/like", "POST");
     }
 }

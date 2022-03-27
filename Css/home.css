@@ -232,10 +232,16 @@ img {
 
 }
 
-/*.top-list:hover .top-list::-webkit-scrollbar{
+ .top-list::-webkit-scrollbar{
     display: block;
-    background-color: rgb(118, 119, 119);
-}*/
+    width: 7px;
+    background-color: rgb(93, 94, 94);
+}
+.top-list::-webkit-scrollbar-thumb{
+    background-color: rgb(207, 204, 204);
+    border-color: #393a34;
+}
+
 .fa-heart {
     transition: all .5s ease-in-out;
 }
@@ -252,4 +258,8 @@ img {
     .fa-heart:active, .fa-play-circle:active, .fa-pause-circle:active {
         font-size: 15px;
     }
+}
+
+.btn-options i{
+    font-size: 1.5rem !important;
 }
