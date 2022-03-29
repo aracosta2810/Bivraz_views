@@ -246,22 +246,28 @@
                   <div class="carousel-item active position-relative">
                     <img src="assets/bad-bunny-gq-april-2019.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption">
-                      <h5>Amantes de una noche</h5>
-                      <p>Bad bunny ft Natti Natasha</p>
+                      <div>
+                          <h5>Amantes de una noche</h5>
+                          <p>Bad bunny ft Natti Natasha</p>
+                      </div>
                     </div>
                   </div>
                   <div class="carousel-item position-relative">
                     <img src="assets/bad-bunny-gq-april-2019.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption">
-                      <h5>Amantes de una noche</h5>
-                      <p>Bad bunny ft Natti Natasha</p>
+                      <div>
+                        <h5>Amantes de una noche</h5>
+                        <p>Bad bunny ft Natti Natasha</p>
+                      </div>
                     </div>
                   </div>
                   <div class="carousel-item position-relative">
                     <img src="assets/bad-bunny-gq-april-2019.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption">
-                      <h5>Amantes de una noche</h5>
-                      <p>Bad bunny ft Natti Natasha</p>
+                      <div>
+                        <h5>Amantes de una noche</h5>
+                        <p>Bad bunny ft Natti Natasha</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -279,7 +285,7 @@
           <!--end last uploads -->
 
           <!-- artist suggestions -->
-          <div class="row bg-white position-relative artists">
+          <div class="row bg-white position-relative artists px-0">
             <div class="col-9">
               <h3 style="color: #393a34;width: fit-content;">Sugerencias de artistas</h3>
             </div>
@@ -287,7 +293,7 @@
               <a href="pages/allArtist.html" style="text-decoration: none;color: #393a34;" class="view-all">Ver
                 todos</a>
             </div>
-            <div class="col-12">
+            <div class="col-12 px-0">
               <div id="artistSuggestions-0" class="carousel slide d-flex justify-content-center align-items-center"
                 data-bs-touch="false" data-bs-interval="false">
                 <div class="carousel-inner" style="padding: 5%;">
@@ -344,12 +350,12 @@
 
                   </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#artistSuggestions-0"
+                <button class="carousel-control-prev carousel-control" type="button" data-bs-target="#artistSuggestions-0"
                   data-bs-slide="prev">
                   <i class="fa fa-angle-left"></i>
                   <span class="visually-hidden"></span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#artistSuggestions-0"
+                <button class="carousel-control-next carousel-control" type="button" data-bs-target="#artistSuggestions-0"
                   data-bs-slide="next">
                   <i class="fa fa-angle-right"></i>
                   <span class="visually-hidden"></span>
@@ -381,12 +387,61 @@
   <a class="btn-flotante rounded-circle d-flex justify-content-center align-items-center" href="/pages/uploadFile.html">
     <i class="fa fa-plus"></i>
   </a>
+  <a id="MusicPlayerButton" class="float-music-player-button rounded-circle d-flex justify-content-center align-items-center">
+    <i class="fa fa-play " ></i>
+  </a>
+  <!-- Music Player -->
+  <div class="music-player-container music-player-container-hidden" id="MusicPlayerContainer">
+    <i class="fa fa-close text-white" id="closeButton"></i>
+    <button class="btn btn-primary" id="playlistButton">
+      <i class="fa fa-list text-white" ></i>
+    </button>
+    <div class="title-music-container">
+        <h4 class="song-title">Amorfoda</h4>
+        <span class="song-author">Bad Bunny</span>
+    </div>
+    <div class="controls-music-container">
+        <div class="progress-song-container">
+            <div class="progress-bar">
+                <span class="progress"></span>
+            </div>
+        </div>
+        <div class="time-container">
+            <span class="time-left" id="CurrentSongTime"></span>
+            <span class="time-left" id="SongLength"></span>
+        </div>
+    </div>
+    <audio controls preload="metadata" src="./assets/Bad Bunny - Amor Foda .mp3"></audio>
+    <div class="main-song-controls mt-1">
+        <i class="fa fa-random icon" id=""></i>
+        <i class="fa fa-backward-step icon" id="BackwardStep"></i>
+        <i class="fa fa-backward icon" id="Back10"></i>
+        <i class="fa fa-play icon" id="PlayPause"></i>
+        <i class="fa fa-forward icon" id="Plus10"></i>
+        <i class="fa fa-forward-step icon" id="FowardStep"></i>
+        <i class="fa fa-repeat icon" id=""></i>
+    </div>
+    <!-- Playlist -->
+    <div class="playlist playlist-hidden" id="playlist">
+        <script>
+          for (let i = 0; i < 20; i++) {
+            document.write(` 
+              <p class="title_song ">
+                Falling Down<br>
+                <span> XXX Tentation</span>
+              </p>
+            `);
+          }
+        </script>
+    </div>
+  </div>
 
   <!-- Js -->
   <script src="Js/popper.min.js"></script>
   <script src="Js/bootstrap.js"></script>
   <script src="Js/jquery-3.5.1.js"></script>
   <script src="Js/custom.js"></script>
+  <script src="./Js/music-player.js"></script>
   <script>
     $(document).ready(function () {
       let notifications = `
