@@ -125,13 +125,13 @@
       <li class="nav-item me-4">
         <a href="/"><i class="fas fa-home activeCellSection"></i></a>
       </li>
-      <li class="nav-item me-4 position-relative" style="cursor: pointer;">
-        <a href="pages/notifications.html"><i class="fas fa-bell"></i></a>
+      <li class="nav-item me-4 position-relative">
+        <a href="pages/notifications.html"> <i class="fas fa-bell"></i></a>
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-          9
-          <span class="visually-hidden"></span>
+            9
+            <span class="visually-hidden">unread messages</span>
         </span>
-      </li>
+    </li>
       <li class="nav-item me-4">
         <a href="pages/artists.html"><i class="fas fa-user"></i></a>
       </li>
@@ -146,7 +146,7 @@
       <div class="row">
         <div class="col-12 col-sm-8 rigth-column">
           <!-- publication for user-->
-          <div class="row bg-white">
+          <div class="row bg-light px-3">
             <div class="col-6">
               <img src="assets/bad-bunny-gq-april-2019.jpg" class="rounded-circle float-left" alt="..." width="40"
                 height="40">
@@ -235,7 +235,7 @@
 
 
           <!-- last uploads -->
-          <div class="row bg-white">
+          <div class="row bg-light px-0">
             <div class="col-12">
               <h3 style="color: #393a34;">Subidas Recientemente</h3>
             </div>
@@ -244,10 +244,10 @@
                 data-bs-interval="false">
                 <div class="carousel-inner">
                   <div class="carousel-item active position-relative">
-                    <img src="assets/bad-bunny-gq-april-2019.jpg" class="d-block w-100" alt="...">
+                    <img src="assets/bad-bunny-gq-april-2019.jpg" class="d-block w-100 " alt="...">
                     <div class="carousel-caption">
-                      <h5>Amantes de una noche</h5>
-                      <p>Bad bunny ft Natti Natasha</p>
+                        <h5 >Amantes de una noche</h5>
+                        <div class="text-start">Bad bunny ft Natti Natasha</div>
                     </div>
                   </div>
                   <div class="carousel-item position-relative">
@@ -266,11 +266,11 @@
                   </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carrousel-0" data-bs-slide="prev">
-                  <i class="fa fa-angle-left"></i>
+                  <i class="fas fa-angle-left" style="font-size: 2rem; text-shadow: 5px 5px 10px rgba(0,0,0,0.7);"></i>
                   <span class="visually-hidden">Previous</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#carrousel-0" data-bs-slide="next">
-                  <i class="fa fa-angle-right"></i>
+                  <i class="fas fa-angle-right" style="font-size: 2rem; text-shadow: 5px 5px 10px rgba(0,0,0,0.7);"></i>
                   <span class="visually-hidden">Next</span>
                 </button>
               </div>
@@ -279,13 +279,12 @@
           <!--end last uploads -->
 
           <!-- artist suggestions -->
-          <div class="row bg-white position-relative artists">
+          <div class="row m-0 bg-light position-relative artists px-0">
             <div class="col-9">
               <h3 style="color: #393a34;width: fit-content;">Sugerencias de artistas</h3>
             </div>
             <div class="col-3 d-flex justify-content-end">
-              <a href="pages/allArtist.html" style="text-decoration: none;color: #393a34;" class="view-all">Ver
-                todos</a>
+              <a href="pages/artists.html" class="view-all btn btn-outline-dark">Ver todos</a>
             </div>
             <div class="col-12">
               <div id="artistSuggestions-0" class="carousel slide d-flex justify-content-center align-items-center"
@@ -362,6 +361,8 @@
           <!-- end publications -->
         </div>
 
+
+        <!-- Ultmias reproducidas section -->
         <div class="col-12 col-sm-4 vh-100 d-none d-sm-block">
 
           <div class="left-column">

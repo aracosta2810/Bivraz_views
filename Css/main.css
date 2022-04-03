@@ -108,6 +108,7 @@ body {
   cursor: pointer;
 }
 
+
 .panel {
   height: 100%;
 }
@@ -241,3 +242,4 @@ li a {
 .follow-artist:hover {
   font-weight: bold;
 }
+
