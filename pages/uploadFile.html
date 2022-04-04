@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bivraz</title>
+    <link rel="icon" href="../assets/logo.png">
+    <link rel="stylesheet" href="../Css/bootstrap.css">
+    <link rel="stylesheet" href="../fontawesome/css/all.css">
+    <link rel="stylesheet" href="../Css/main.css">
+    <link rel="stylesheet" href="../Css/conditions.css">
+    <link rel="stylesheet" href="../Css/uploadd.css">
+</head>
+
+<body>
+    <!-- Navbar PC view -->
+    <nav class="navbar navbar-expand-md d-none d-md-block navbar-dark sticky-top" style="background-color: #393a34">
+        <div class="container-fluid pe-md-4 pe-lg-5">
+            <a class="navbar-brand" href="/"> <img src="../assets/logoBivraz.png" alt="" width="100"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/"><i
+                                class="fas fa-home d-sm-none d-lg-inline"></i>
+                            Inicio</a>
+                        <div class="activating_item"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="list.html"><i class="fas fa-music d-sm-none d-lg-inline"></i>
+                            Listas</a>
+                        <div class="activating_item"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="packages.html"><i class="fas fa-box-open d-sm-none d-lg-inline"></i>
+                            Paquetes</a>
+                        <div class="activating_item"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="artists.html"><i class="fas fa-user d-sm-none d-lg-inline"></i>
+                            Artistas</a>
+                        <div class="activating_item"></div>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <div id="form" style="padding: 7px;">
+                        <input type="text" class="form-input" placeholder="Buscar" id="input_search" />
+                        <i class="fa fa-search" style="padding: 7px;cursor: pointer;" id="btn_search"></i>
+                    </div>
+                    <div style="
+                border: 2px solid white;
+                border-radius: 100px;
+                padding: 3px 7px;
+              ">
+                        <i class="fas fa-user" style="font-size: 1.6rem; color: white;"></i>
+                    </div>
+                    <div class="dropdown " style="padding: 7px;">
+                        <a class="dropdown-toggle text-white" href="#" role="button" id="dropdownMenuLink"
+                            data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none;">
+                            @username
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" href="/pages/profile.html">Perfil</a></li>
+                            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#use_terms">Política de
+                                    uso</a></li>
+                            <li><a class="dropdown-item" href="#">Cerrar sesi&oacute;n</a></li>
+                        </ul>
+                    </div>
+                    <div style="color: white;padding: 7px;position: relative;" class="dropdown">
+                        <i class="fas fa-bell" style="cursor: pointer;" id="icon_notifications" tabindex="0"
+                            data-bs-trigger="focus" data-bs-container="body" data-bs-toggle="popover"
+                            data-bs-html="true" data-bs-placement="bottom" data-bs-content=""
+                            title="Notificaciones"></i>
+
+                        <span class="position-absolute top-0 translate-end badge rounded-pill bg-danger">
+                            9
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Navbar Cell View -->
+    <nav class="navbar pb-0 d-block d-md-none sticky-top" style="background-color: #393a34">
+        <div class="navbar-dark w-100 d-flex justify-content-between align-items-center pb-3 px-2">
+            <!--     <a class="navbar-brand px-2" href="/"><i class="	fa fa-angle-left"></i></a> -->
+            <!-- Searchfield -->
+            <div class="d-flex align-items-center w-100 d-flex justify-content-between text-white header">
+                <a class="px-2 text-white" href="/"><i class="fa fa-angle-left"></i></a>
+                <h1 class="text-center">Crea tu post</h1>
+                <a class="text-center px-2 text-white" href="/" id="confirm-post"><i class="fa fa-check"></i></a>
+            </div>
+        </div>
+    </nav>
+    <!-- Home -->
+    <div class="px-0 px-md-4 px-lg-5">
+        <div class="container-fluid py-2" style="height: 100vh;">
+            <div class="row form-post">
+                <div class="col-12 col-sm-6 col-md-8 bg-white " style="border-radius: 15px;">
+                    <div class="row" style="padding: 0;">
+                        <div class="col-6  py-2 px-2">
+                            <img src="/assets/bad-bunny-gq-april-2019.jpg" class="rounded-circle float-left" alt="..."
+                                width="40" height="40">
+                            <a class="username float-left" href="pages/artists.html">
+                                @username</a>
+                        </div>
+
+                        <div class="col-6 position-relative d-flex justify-content-end align-items-center">
+                            <a class="text-muted changed-background py-2 px-2 text-end"><i class="fa fa-area-chart"></i>
+                                <span class="text-changed-background">Cambiar fondo</span></a>
+                        </div>
+
+                        <div class="col-12 upload-status  d-flex align-items-center justify-content-center text-muted"
+                            style="padding: 0%;">
+                            <div class="form-floating" style="width: 100%; height: 100%;">
+                                <textarea class="form-control text-center" placeholder="Leave a comment here"
+                                    id="floatingTextarea" onkeyup="replaceLabel(this)"></textarea>
+                                <label for="floatingTextarea" class="w-100 post">
+                                    <p><i class="fa fa-pencil"></i> Escribe algo</p>
+                                </label>
+                            </div>
+                        </div>
+                        <!--  <div class="col-6">
+                            <p class="text-dark title_song">Falling Down<span class="artist"><br>XXX Tentation</span>
+                            </p>
+                        </div>
+                        <div class="col-6 text-end btn-options">
+                            <i class="far fa-play-circle"></i>
+                            <i class="far fa-heart"></i>
+                            <i class="fa fa-share"></i>
+                        </div> -->
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <!-- Js -->
+    <script src="../Js/popper.min.js"></script>
+    <script src="../Js/bootstrap.js"></script>
+    <script src="../Js/jquery-3.5.1.js"></script>
+    <script src="../Js/custom.js"></script>
+    <script src="../Js/upload.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            let counterColor = 0;
+            let notifications = `
+            <a href="#" class="data_notifications"><img src='../assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>
+            <br>
+            <a href="#" class="data_notifications"><img src='../assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>  
+            <br>
+            <a href="#" class="data_notifications"><img src='../assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a> 
+            <br>
+            <hr class="dropdown-divider">
+            <a href="notifications.html" class="data_notifications btn_more_notifications btn btn-sm" >Ver m&aacute;s</a> `;
+            enabledPopover(notifications);
+            $("#confirm-post").click(function (e) {
+                e.preventDefault();
+                let c = confirm("¿Desea agregar un nuevo post?");
+                if (c) {
+                    location.href = "/";
+                }
+            });
+            changedBackground(counterColor);
+        });
+
+        function replaceLabel(e) {
+            if (e.value != "") {
+                $(".post").html("");
+            } else {
+                $(".post").html(` <p><i class="fa fa-pencil"></i> Escribe algo</p>`);
+            }
+        }
+    </script>
+</body>
+
+</html>
