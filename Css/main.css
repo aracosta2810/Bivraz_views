@@ -261,6 +261,11 @@ li a {
   width: 60px;
   height: 60px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.1s;
+}
+
+.float-music-player-button-hidden {
+  transform: translateX(100px);
 }
 
 .float-music-player-button:hover {
@@ -280,11 +285,13 @@ li a {
   }
 }
 
+/* ---------------- */
+
 /* Music-Player */
 .music-player-container {
   position: fixed;
   z-index: 100;
-  bottom: 35px;
+  top: 80px;
   right: 120px;
   background: linear-gradient(30deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.85));
   backdrop-filter: blur(10px);
@@ -302,43 +309,28 @@ li a {
 }
 
 .music-player-container-hidden {
-  transform: translateY(160%);
+  transform: translateY(-160%);
   filter: opacity(100%);
 }
 
 #closeButton {
-  display: none;
-}
-/* ---------------------- */
-#playlistButton {
-  z-index: 101;
-  font-size: 1.5rem;
-  width: 50px;
-  height: 50px;
+  display: inline-block;
   position: absolute;
-  top: -25px;
-  border-radius: 100%;
-  background: linear-gradient(-45deg, #0461a0, #2db6ed);
+  top: 15px;
+  right: 20px;
 }
-/* ------------------------- */
 
 @media screen and (max-width: 768px) {
   .music-player-container {
-    bottom: 1%;
+    z-index: 100000;
+    top: 1%;
     right: 3%;
     min-width: 94%;
   }
 
   .music-player-container-hidden {
-    transform: translateY(130%);
+    transform: translateY(-130%);
     filter: opacity(100%);
-  }
-
-  #closeButton {
-    display: inline-block;
-    position: absolute;
-    top: 10px;
-    right: 15px;
   }
 }
 
@@ -348,7 +340,6 @@ li a {
   width: fit-content;
   color: white;
   margin-right: auto;
-  margin-left: 10%;
 }
 
 .song-title {
@@ -366,53 +357,6 @@ li a {
   letter-spacing: 0.1px;
 }
 
-.controls-music-container {
-  width: 80%;
-  height: fit-content;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.progress-song-container {
-  margin-top: 0.6rem;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.progress-bar {
-  height: 3px;
-  border-radius: 3px;
-  width: 100%;
-  background-color: rgb(102, 102, 102);
-  position: relative;
-}
-
-.progress {
-  position: absolute;
-  height: 100%;
-  width: 0%;
-  border-radius: 3px;
-  background-color: white;
-}
-
-.time-container {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: rgb(167, 167, 167);
-  font-size: 12px;
-}
-
-.time-left {
-  margin-top: 0.3rem;
-}
-
 .main-song-controls {
   height: 30px;
   width: 80%;
@@ -422,7 +366,7 @@ li a {
   align-items: center;
 }
 
-.icon {
+.main-song-controls  .icon {
   font-size: 1.5rem;
   color: white;
   height: auto;
@@ -434,29 +378,70 @@ li a {
   border-radius: 100px;
 }
 
-.icon:hover {
-  opacity: 1;
+#RandomRepeat{
+  position: relative;
+}
+
+#RandomRepeat span{
+  position: absolute;
+  top: -2px;
+  right: -5px;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 
 audio {
   display: none;
 }
 
-.playlist{
-  overflow-y: scroll;
+.playlist {
+  overflow-y: hidden;
   color: white;
   position: absolute;
-  bottom: 110%;
+  top: 103%;
   width: 100%;
-  max-height: 350px;
-  padding: 20px 10px;
+  height: 400px;
   background: linear-gradient(30deg, #565656, #282828);
   border-radius: 10px;
-  filter: opacity(100%);
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
-.playlist-hidden{
-  /* filter: opacity(0); */
-  transform: translateY(calc(100% + 350px));
+.playlist-hidden {
+  transform: translateY(-200%);
+  /* top: 103%; */
+}
+
+.playlist-container{
+  height: 100%;
+}
+
+.playlist-container span {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+.playlist-container .title_song {
+  white-space: nowrap;
+}
+
+.playlist-container .active {
+  border-radius: 6px;
+  background-color: #656565;
+  transition: all 1s;
+}
+
+.playlist-container::-webkit-scrollbar-track {
+  border-radius: 3px;
+  background-color: transparent;
+}
+
+.playlist-container::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+
+.playlist-container::-webkit-scrollbar-thumb {
+  box-shadow: inset 0px 0px 0px rgba(255, 255, 255, 0.637);
+  border-radius: 5px;
+  background-color: rgb(124, 124, 124);
 }

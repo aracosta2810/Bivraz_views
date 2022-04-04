@@ -9,6 +9,7 @@
   <link rel="icon" href="assets/logo.png">
   <link rel="stylesheet" href="Css/bootstrap.css" />
   <link rel="stylesheet" href="fontawesome/css/all.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="Css/main.css" />
   <link rel="stylesheet" href="Css/home.css">
 </head>
@@ -392,47 +393,36 @@
   </a>
   <!-- Music Player -->
   <div class="music-player-container music-player-container-hidden" id="MusicPlayerContainer">
-    <i class="fa fa-close text-white" id="closeButton"></i>
-    <button class="btn btn-primary" id="playlistButton">
-      <i class="fa fa-list text-white" ></i>
-    </button>
-    <div class="title-music-container">
-        <h4 class="song-title">Amorfoda</h4>
-        <span class="song-author">Bad Bunny</span>
-    </div>
-    <div class="controls-music-container">
-        <div class="progress-song-container">
-            <div class="progress-bar">
-                <span class="progress"></span>
-            </div>
+    <i class="fa fa-angle-up icon" id="closeButton"></i>
+    <!-- Header -->
+    <div class="row w-75 align-self-start ms-4 ms-sm-5 ms-md-3">
+      <div class="col-3 d-flex align-items-end">
+        <img class="rounded-circle" src="assets/bad-bunny-gq-april-2019.jpg" height="50" width="50" alt="">
+      </div>
+      <div class="col-9">
+        <div class="title-music-container">
+          <h4 class="song-title overflow-hidden" id="songTitle">Amor foda</h4>
+          <span class="song-author overflow-hidden" id="songArtist">Bad Bunny</span>
         </div>
-        <div class="time-container">
-            <span class="time-left" id="CurrentSongTime"></span>
-            <span class="time-left" id="SongLength"></span>
-        </div>
+      </div>
     </div>
-    <audio controls preload="metadata" src="./assets/Bad Bunny - Amor Foda .mp3"></audio>
-    <div class="main-song-controls mt-1">
-        <i class="fa fa-random icon" id=""></i>
+    <!-- ---------------- -->
+    <!-- Audio source -->
+    <audio controls preload="metadata" src='./assets/Music/Bad Bunny - Amor Foda .mp3'></audio>
+
+    <!-- Controls -->
+    <div class="main-song-controls mt-2">
+        <i class="fa fa-list icon"id="playlistButton" ></i>
         <i class="fa fa-backward-step icon" id="BackwardStep"></i>
-        <i class="fa fa-backward icon" id="Back10"></i>
         <i class="fa fa-play icon" id="PlayPause"></i>
-        <i class="fa fa-forward icon" id="Plus10"></i>
         <i class="fa fa-forward-step icon" id="FowardStep"></i>
-        <i class="fa fa-repeat icon" id=""></i>
+        <i class="material-icons icon" style="font-size: 1.8rem;" id="RandomRepeat">repeat</i>
     </div>
     <!-- Playlist -->
     <div class="playlist playlist-hidden" id="playlist">
-        <script>
-          for (let i = 0; i < 20; i++) {
-            document.write(` 
-              <p class="title_song ">
-                Falling Down<br>
-                <span> XXX Tentation</span>
-              </p>
-            `);
-          }
-        </script>
+        <div class="playlist-container h-100 px-1 m-2 pb-2" style="overflow-y: scroll;" id="playlist-container">
+          <!-- Generated with js -->
+        </div>
     </div>
   </div>
 
