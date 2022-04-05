@@ -9,6 +9,7 @@
   <link rel="icon" href="assets/logo.png">
   <link rel="stylesheet" href="Css/bootstrap.css" />
   <link rel="stylesheet" href="fontawesome/css/all.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="Css/main.css" />
   <link rel="stylesheet" href="Css/home.css">
 </head>
@@ -125,13 +126,13 @@
       <li class="nav-item me-4">
         <a href="/"><i class="fas fa-home activeCellSection"></i></a>
       </li>
-      <li class="nav-item me-4 position-relative">
-        <a href="pages/notifications.html"> <i class="fas fa-bell"></i></a>
+      <li class="nav-item me-4 position-relative" style="cursor: pointer;">
+        <a href="pages/notifications.html"><i class="fas fa-bell"></i></a>
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            9
-            <span class="visually-hidden">unread messages</span>
+          9
+          <span class="visually-hidden"></span>
         </span>
-    </li>
+      </li>
       <li class="nav-item me-4">
         <a href="pages/artists.html"><i class="fas fa-user"></i></a>
       </li>
@@ -146,7 +147,7 @@
       <div class="row">
         <div class="col-12 col-sm-8 rigth-column">
           <!-- publication for user-->
-          <div class="row bg-light px-3">
+          <div class="row bg-white">
             <div class="col-6">
               <img src="assets/bad-bunny-gq-april-2019.jpg" class="rounded-circle float-left" alt="..." width="40"
                 height="40">
@@ -176,7 +177,7 @@
             </div>
             <div class="col-6 text-end btn-options">
               <i class="far fa-play-circle"></i>
-              <i class="far fa-heart"></i>
+              <i class="far fa-heart "></i>
               <i class="fa fa-share"></i>
             </div>
           </div>
@@ -235,7 +236,7 @@
 
 
           <!-- last uploads -->
-          <div class="row bg-light px-0">
+          <div class="row bg-white">
             <div class="col-12">
               <h3 style="color: #393a34;">Subidas Recientemente</h3>
             </div>
@@ -244,33 +245,39 @@
                 data-bs-interval="false">
                 <div class="carousel-inner">
                   <div class="carousel-item active position-relative">
-                    <img src="assets/bad-bunny-gq-april-2019.jpg" class="d-block w-100 " alt="...">
+                    <img src="assets/bad-bunny-gq-april-2019.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption">
-                        <h5 >Amantes de una noche</h5>
-                        <div class="text-start">Bad bunny ft Natti Natasha</div>
+                      <div>
+                          <h5>Amantes de una noche</h5>
+                          <p>Bad bunny ft Natti Natasha</p>
+                      </div>
                     </div>
                   </div>
                   <div class="carousel-item position-relative">
                     <img src="assets/bad-bunny-gq-april-2019.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption">
-                      <h5>Amantes de una noche</h5>
-                      <p>Bad bunny ft Natti Natasha</p>
+                      <div>
+                        <h5>Amantes de una noche</h5>
+                        <p>Bad bunny ft Natti Natasha</p>
+                      </div>
                     </div>
                   </div>
                   <div class="carousel-item position-relative">
                     <img src="assets/bad-bunny-gq-april-2019.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption">
-                      <h5>Amantes de una noche</h5>
-                      <p>Bad bunny ft Natti Natasha</p>
+                      <div>
+                        <h5>Amantes de una noche</h5>
+                        <p>Bad bunny ft Natti Natasha</p>
+                      </div>
                     </div>
                   </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carrousel-0" data-bs-slide="prev">
-                  <i class="fas fa-angle-left" style="font-size: 2rem; text-shadow: 5px 5px 10px rgba(0,0,0,0.7);"></i>
+                  <i class="fa fa-angle-left"></i>
                   <span class="visually-hidden">Previous</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#carrousel-0" data-bs-slide="next">
-                  <i class="fas fa-angle-right" style="font-size: 2rem; text-shadow: 5px 5px 10px rgba(0,0,0,0.7);"></i>
+                  <i class="fa fa-angle-right"></i>
                   <span class="visually-hidden">Next</span>
                 </button>
               </div>
@@ -279,14 +286,15 @@
           <!--end last uploads -->
 
           <!-- artist suggestions -->
-          <div class="row m-0 bg-light position-relative artists px-0">
+          <div class="row bg-white position-relative artists px-0">
             <div class="col-9">
               <h3 style="color: #393a34;width: fit-content;">Sugerencias de artistas</h3>
             </div>
             <div class="col-3 d-flex justify-content-end">
-              <a href="pages/artists.html" class="view-all btn btn-outline-dark">Ver todos</a>
+              <a href="pages/allArtist.html" style="text-decoration: none;color: #393a34;" class="view-all">Ver
+                todos</a>
             </div>
-            <div class="col-12">
+            <div class="col-12 px-0">
               <div id="artistSuggestions-0" class="carousel slide d-flex justify-content-center align-items-center"
                 data-bs-touch="false" data-bs-interval="false">
                 <div class="carousel-inner" style="padding: 5%;">
@@ -343,12 +351,12 @@
 
                   </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#artistSuggestions-0"
+                <button class="carousel-control-prev carousel-control" type="button" data-bs-target="#artistSuggestions-0"
                   data-bs-slide="prev">
                   <i class="fa fa-angle-left"></i>
                   <span class="visually-hidden"></span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#artistSuggestions-0"
+                <button class="carousel-control-next carousel-control" type="button" data-bs-target="#artistSuggestions-0"
                   data-bs-slide="next">
                   <i class="fa fa-angle-right"></i>
                   <span class="visually-hidden"></span>
@@ -361,8 +369,6 @@
           <!-- end publications -->
         </div>
 
-
-        <!-- Ultmias reproducidas section -->
         <div class="col-12 col-sm-4 vh-100 d-none d-sm-block">
 
           <div class="left-column">
@@ -382,12 +388,50 @@
   <a class="btn-flotante rounded-circle d-flex justify-content-center align-items-center" href="/pages/uploadFile.html">
     <i class="fa fa-plus"></i>
   </a>
+  <a id="MusicPlayerButton" class="float-music-player-button rounded-circle d-flex justify-content-center align-items-center">
+    <i class="fa fa-play " ></i>
+  </a>
+  <!-- Music Player -->
+  <div class="music-player-container music-player-container-hidden" id="MusicPlayerContainer">
+    <i class="fa fa-angle-up icon text-white" id="closeButton" ></i>
+    <!-- Header -->
+    <div class="row w-75 align-self-start ms-4 ms-sm-5 ms-md-3">
+      <div class="col-3 d-flex align-items-end">
+        <img class="rounded-circle" src="assets/bad-bunny-gq-april-2019.jpg" height="50" width="50" alt="">
+      </div>
+      <div class="col-9">
+        <div class="title-music-container">
+          <h4 class="song-title overflow-hidden" id="songTitle">Amor foda</h4>
+          <span class="song-author overflow-hidden" id="songArtist">Bad Bunny</span>
+        </div>
+      </div>
+    </div>
+    <!-- ---------------- -->
+    <!-- Audio source -->
+    <audio controls preload="metadata" src='./assets/Bad Bunny - Amor Foda .mp3'></audio>
+
+    <!-- Controls -->
+    <div class="main-song-controls mt-2">
+        <i class="fa fa-list icon"id="playlistButton" ></i>
+        <i class="fa fa-backward-step icon" id="BackwardStep"></i>
+        <i class="fa fa-play icon" id="PlayPause"></i>
+        <i class="fa fa-forward-step icon" id="FowardStep"></i>
+        <i class="material-icons icon" style="font-size: 1.8rem;" id="RandomRepeat">repeat</i>
+    </div>
+    <!-- Playlist -->
+    <div class="playlist playlist-hidden" id="playlist">
+        <div class="playlist-container h-100 px-1 m-2 pb-2" style="overflow-y: scroll;" id="playlist-container">
+          <!-- Generated with js -->
+        </div>
+    </div>
+  </div>
 
   <!-- Js -->
   <script src="Js/popper.min.js"></script>
   <script src="Js/bootstrap.js"></script>
   <script src="Js/jquery-3.5.1.js"></script>
   <script src="Js/custom.js"></script>
+  <script src="./Js/music-player.js"></script>
   <script>
     $(document).ready(function () {
       let notifications = `

@@ -1,1 +1,1 @@
-Some views from the social network Bivraz
+Bivraz Social Network Front-End  
