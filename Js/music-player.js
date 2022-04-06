@@ -54,6 +54,8 @@ randomRepeat.addEventListener('click', () => {
             break;
         case 'repeat_one':
             randomRepeat.innerHTML = 'shuffle'
+            shufflePlaylist()
+
             break;
         default:
             randomRepeat.innerHTML = 'repeat'
@@ -61,16 +63,39 @@ randomRepeat.addEventListener('click', () => {
     }
 })
 
-// Next song
-fowardStep.addEventListener('click', () => {
-    let playingSongId;
-    // To select current song id
+// To shuffle the playlist
+const shufflePlaylist = () => {
+    songs.sort(() => Math.random() - 0.5)
+    
+    for (let i = 0; i < songs.length; i++) {
+        if (songs[i].id == selectCurrentSongID()) {
+            let temp = songs.filter(item => item.id == selectCurrentSongID())[0]
+            songs[i] = songs[0]
+            songs[0] = temp
+            break
+        }
+    }
+
+    refreshPlaylist(songs[0].id)
+}
+
+// To select current song id
+const selectCurrentSongID = () => {
+    let id;
+
     playlistContainer.childNodes.forEach(item => {
-        if (item.className !== undefined && item.className.indexOf('active') !== -1) playingSongId = item.id
+        if (item.className !== undefined && item.className.indexOf('active') !== -1) {
+            id = item.id
+        }
     })
 
+    return id
+}
+
+// Next song
+fowardStep.addEventListener('click', () => {
     for (let i = 0; i < songs.length; i++) {
-        if (songs[i].id == playingSongId) {
+        if (songs[i].id == selectCurrentSongID()) {
             if (i + 1 === songs.length) i = 0
             else i += 1
 
@@ -90,14 +115,8 @@ fowardStep.addEventListener('click', () => {
 
 // Previous song
 backwardStep.addEventListener('click', () => {
-    let playingSongId;
-    // To select current song id
-    playlistContainer.childNodes.forEach(item => {
-        if (item.className !== undefined && item.className.indexOf('active') !== -1) playingSongId = item.id
-    })
-
     for (let i = 0; i < songs.length; i++) {
-        if (songs[i].id == playingSongId) {
+        if (songs[i].id == selectCurrentSongID()) {
             if (i - 1 < 0) i = songs.length - 1
             else i -= 1
 
@@ -125,6 +144,32 @@ const songs = [
 
 const playlistContainer = document.getElementById('playlist-container')
 
+//When the song ends this event will be fired
+audio.addEventListener('ended', () => {
+    if (randomRepeat.innerHTML === 'repeat_one') {
+        audio.play()
+        return
+    }
+
+    for (let i = 0; i < songs.length; i++) {
+        if (songs[i].id == selectCurrentSongID()) {
+            if (i + 1 === songs.length && randomRepeat.innerHTML === 'repeat') i = 0
+            else if (i + 1 === songs.length && randomRepeat.innerHTML !== 'repeat') {
+                playPause.className = 'fa fa-play icon px-1'
+                return
+            }
+            else i += 1
+
+            audio.src = songs[i].song
+            songTitle.innerHTML = songs[i].title
+            songArtist.innerHTML = songs[i].artist
+            refreshPlaylist(songs[i].id)
+            break
+        }
+    }
+    audio.play()
+})
+
 // Update playlist with an id to put the active class on the current song
 const refreshPlaylist = (currentSongId) => {
     playlistContainer.innerHTML = ''
@@ -142,4 +187,3 @@ const refreshPlaylist = (currentSongId) => {
 }
 
 refreshPlaylist(1)
-
