@@ -1,0 +1,63 @@
+.backContainer {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0) 30%,
+      rgb(0, 0, 0) 50%,
+      rgb(0, 0, 0)
+    ),
+    url(../assets/login_background.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
+  background-color: black;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding-bottom: 100px;
+}
+
+@media screen and (min-width: 600px) {
+    .backContainer{
+        background:linear-gradient(90deg,
+            rgba(0, 0, 0, 0) 30%,
+            rgb(0, 0, 0) 50%,
+            rgb(0, 0, 0)
+          ), url(../assets/login_background.jpg);
+        background-color: black;
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-position: left;
+        justify-content: flex-end;
+        padding-right: 150px;
+    }
+
+    .loginContainer h1{
+       font-size: 3rem;
+    }
+}
+
+.loginContainer{
+    border: 6px solid #c8bbd383;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.loginContainer .logo{
+    width: 100px;
+    object-fit: contain;
+}
+
+form i{
+    font-size: 1.6rem;
+    color: gray;
+    position: absolute;
+    left: -20px;
+}
+
+.loginContainer .text-input{
+    border-radius: 20px;
+    border: none;
+    padding-left: 20px;
+    width: 90%;
+}
