@@ -435,6 +435,11 @@ audio {
   background-color: transparent;
 }
 
+.playlist-container::-webkit-scrollbar-track {
+  border-radius: 3px;
+  background-color: transparent;
+}
+
 .playlist-container::-webkit-scrollbar {
   width: 5px;
   background-color: transparent;
