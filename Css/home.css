@@ -177,9 +177,11 @@ img {
   overflow-y: scroll;
   background-image: linear-gradient(
       to right,
-      rgba(0, 0, 0, 0.77),
-      rgba(0, 0, 0, 0.5)
-    );
+      rgba(0, 0, 0, 0.3),
+      rgba(250, 250, 250, 0.3)
+    ),
+    url(../assets/logoParaLista.png);
+    background-color: rgb(30,30,30);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -200,8 +202,8 @@ img {
 }
 
 .top-list p:hover {
-  background-color: #393a3459;
-  border-bottom: none;
+  background-color: #9b9b9b59;
+  border-bottom: 1px solid transparent;
 }
 
 .top-list::-webkit-scrollbar {
@@ -218,9 +220,7 @@ img {
   transition: all 0.5s ease-in-out;
 }
 
-.fa-heart:active,
-.fa-play-circle:active,
-.fa-pause-circle:active {
+.fa-heart:active{
   font-size: 12px;
 }
 
@@ -266,12 +266,12 @@ img {
     height: 100%;
     left: 0;
     top: 0;
-    opacity: 0%;
+    filter: opacity(0);
     transition: all 0.3s ease;
   }
 
   #carrousel-0:hover .carousel-caption {
-    opacity: 100%;
+    filter: opacity(100%);
     cursor: pointer;
   }
 }
@@ -301,3 +301,9 @@ img {
   }
 }
 
+.text-brown{
+  color:#393a34bb;
+}
+.text-brown:hover{
+  color:#393a34;
+}

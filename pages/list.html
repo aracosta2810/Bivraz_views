@@ -269,20 +269,11 @@
   <script src="../Js/popper.min.js"></script>
   <script src="../Js/bootstrap.js"></script>
   <script src="../Js/jquery-3.5.1.js"></script>
+  <script src="../Js/js.cookie.min.js"></script>
   <script src="../Js/custom.js"></script>
   <script>
     $(document).ready(function () {
-      let notifications = `
-      <a href="#" class="data_notifications"><img src='../assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>
-      <br>
-      <a href="#" class="data_notifications"><img src='../assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>  
-      <br>
-      <a href="#" class="data_notifications"><img src='../assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a> 
-      <br>
-      <hr class="dropdown-divider">
-      <a href="notifications.html" class="data_notifications btn_more_notifications btn btn-sm" >Ver m&aacute;s</a> `;
-      $("#icon_notifications").attr("data-bs-content", notifications);
-      enabledPopover(notifications);
+      showNotifications("notifications.html");
       $("#btn_search").click(function (e) {
         alert("Has hecho click en buscar");
       });

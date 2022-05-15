@@ -175,7 +175,7 @@
           </div>
           <h3 class="text-center mt-2">Básico</h3>
           <div class="text-secondary text-center" style="font-size: 0.8rem">
-            Disfruta de lo m&aacute;s top de la semana
+            Disfruta de lo más top de la semana
           </div>
           <div class="text-secondary text-center" style="font-size: 0.7rem">
             Valor: 35cup
@@ -326,25 +326,13 @@
   <script src="../Js/popper.min.js"></script>
   <script src="../Js/bootstrap.js"></script>
   <script src="../Js/jquery-3.5.1.js"></script>
+  <script src="../Js/js.cookie.min.js"></script>
   <script src="../Js/custom.js"></script>
   <script src="../Js/packages.js"></script>
   <script>
     $(document).ready(function () {
       let html = $("#body-packages").html();
-
-
-      let notifications = `
-      <a href="#" class="data_notifications"><img src='../assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>
-      <br>
-      <a href="#" class="data_notifications"><img src='../assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>  
-      <br>
-      <a href="#" class="data_notifications"><img src='../assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a> 
-      <br>
-      <hr class="dropdown-divider">
-      <a href="notifications.html" class="data_notifications btn_more_notifications btn btn-sm" >Ver m&aacute;s</a> `;
-      $("#icon_notifications").attr("data-bs-content", notifications);
-      enabledPopover(notifications);
-
+      showNotifications("notifications.html");
       $(`#form-modal`).on("hidden.bs.modal", function () {
         $(".modal-body#body-packages").html(html);
         $(`#continue`).text("Continuar");

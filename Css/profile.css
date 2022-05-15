@@ -343,10 +343,17 @@ div#profile-information .row .col-4 p {
     border-bottom-color: black;
     height: 180px;
     overflow-y: scroll;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.77), rgba(0, 0, 0, 0.5)), url("/assets/logoParaLista.png");
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.3),
+        rgba(250, 250, 250, 0.3)
+      ),
+      url(../assets/logoParaLista.png);
+      background-color: rgb(30,30,30);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    cursor: pointer;
 }
 
 .top-list::-webkit-scrollbar {
@@ -367,8 +374,8 @@ div#profile-information .row .col-4 p {
 }
 
 .top-list p:hover {
-    background-color: #393a3459;
-    border-bottom: none;
+    background-color: #9b9b9b59;
+    border-bottom: 1px solid transparent;
 
 }
 

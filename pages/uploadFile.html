@@ -9,80 +9,24 @@
     <link rel="icon" href="../assets/logo.png">
     <link rel="stylesheet" href="../Css/bootstrap.css">
     <link rel="stylesheet" href="../fontawesome/css/all.css">
-    <link rel="stylesheet" href="../Css/main.css">
-    <link rel="stylesheet" href="../Css/conditions.css">
     <link rel="stylesheet" href="../Css/uploadd.css">
 </head>
 
 <body>
     <!-- Navbar PC view -->
-    <nav class="navbar navbar-expand-md d-none d-md-block navbar-dark sticky-top" style="background-color: #393a34">
+    <nav class="navbar navbar-expand-md d-none d-md-block navbar-dark fixed-top" style="background-color: #393a34">
         <div class="container-fluid pe-md-4 pe-lg-5">
-            <a class="navbar-brand" href="/"> <img src="../assets/logoBivraz.png" alt="" width="100"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <a class="px-5 text-white navbar-brand" href="/" onclick="return confirm('¿Cancelar posteo?')"><i
+                    class="fa fa-angle-left"></i> Atrás</a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/"><i
-                                class="fas fa-home d-sm-none d-lg-inline"></i>
-                            Inicio</a>
-                        <div class="activating_item"></div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="list.html"><i class="fas fa-music d-sm-none d-lg-inline"></i>
-                            Listas</a>
-                        <div class="activating_item"></div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="packages.html"><i class="fas fa-box-open d-sm-none d-lg-inline"></i>
-                            Paquetes</a>
-                        <div class="activating_item"></div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="artists.html"><i class="fas fa-user d-sm-none d-lg-inline"></i>
-                            Artistas</a>
-                        <div class="activating_item"></div>
+                        <h3 class="text-center text-white">Crea tu post</h3>
                     </li>
                 </ul>
                 <form class="d-flex">
-                    <div id="form" style="padding: 7px;">
-                        <input type="text" class="form-input" placeholder="Buscar" id="input_search" />
-                        <i class="fa fa-search" style="padding: 7px;cursor: pointer;" id="btn_search"></i>
-                    </div>
-                    <div style="
-                border: 2px solid white;
-                border-radius: 100px;
-                padding: 3px 7px;
-              ">
-                        <i class="fas fa-user" style="font-size: 1.6rem; color: white;"></i>
-                    </div>
-                    <div class="dropdown " style="padding: 7px;">
-                        <a class="dropdown-toggle text-white" href="#" role="button" id="dropdownMenuLink"
-                            data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none;">
-                            @username
-                        </a>
-
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li><a class="dropdown-item" href="/pages/profile.html">Perfil</a></li>
-                            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#use_terms">Política de
-                                    uso</a></li>
-                            <li><a class="dropdown-item" href="#">Cerrar sesi&oacute;n</a></li>
-                        </ul>
-                    </div>
-                    <div style="color: white;padding: 7px;position: relative;" class="dropdown">
-                        <i class="fas fa-bell" style="cursor: pointer;" id="icon_notifications" tabindex="0"
-                            data-bs-trigger="focus" data-bs-container="body" data-bs-toggle="popover"
-                            data-bs-html="true" data-bs-placement="bottom" data-bs-content=""
-                            title="Notificaciones"></i>
-
-                        <span class="position-absolute top-0 translate-end badge rounded-pill bg-danger">
-                            9
-                        </span>
-                    </div>
+                    <a class="text-center px-2 text-white" onclick=" confirmPost()"><i class="fa fa-check"></i>
+                        Publicar</a>
                 </form>
             </div>
         </div>
@@ -90,99 +34,178 @@
 
 
     <!-- Navbar Cell View -->
-    <nav class="navbar pb-0 d-block d-md-none sticky-top" style="background-color: #393a34">
+    <nav class="navbar pb-0 d-block d-md-none fixed-top navbar-cell-view">
         <div class="navbar-dark w-100 d-flex justify-content-between align-items-center pb-3 px-2">
             <!--     <a class="navbar-brand px-2" href="/"><i class="	fa fa-angle-left"></i></a> -->
             <!-- Searchfield -->
-            <div class="d-flex align-items-center w-100 d-flex justify-content-between text-white header">
-                <a class="px-2 text-white" href="/"><i class="fa fa-angle-left"></i></a>
-                <h1 class="text-center">Crea tu post</h1>
-                <a class="text-center px-2 text-white" href="/" id="confirm-post"><i class="fa fa-check"></i></a>
+            <div class="d-flex align-items-center w-100 justify-content-between text-white header">
+                <a class="px-2 text-white" href="/" onclick="return confirm('¿Cancelar posteo?')"><i class="fa fa-angle-left"></i></a>
+                <h2 class="text-center navbar-title">Crea tu post</h2>
+                <a class="text-center px-2 text-white" onclick=" confirmPost()"><i class="fa fa-check"></i></a>
             </div>
         </div>
     </nav>
     <!-- Home -->
-    <div class="px-0 px-md-4 px-lg-5">
-        <div class="container-fluid py-2" style="height: 100vh;">
+    <div class="px-0">
+        <div class="container-fluid">
             <div class="row form-post">
-                <div class="col-12 col-sm-6 col-md-8 bg-white " style="border-radius: 15px;">
-                    <div class="row" style="padding: 0;">
-                        <div class="col-6  py-2 px-2">
+                <div class="col-12 background-container vh-100 d-flex header-row">
+                    <div class="row bg-white ">
+                        <div class="col-6 py-2 px-2 px-md-5 header-status">
                             <img src="/assets/bad-bunny-gq-april-2019.jpg" class="rounded-circle float-left" alt="..."
                                 width="40" height="40">
-                            <a class="username float-left" href="pages/artists.html">
+                            <a class="username float-left" href="profile.html">
                                 @username</a>
                         </div>
-
-                        <div class="col-6 position-relative d-flex justify-content-end align-items-center">
-                            <a class="text-muted changed-background py-2 px-2 text-end"><i class="fa fa-area-chart"></i>
+                        <div
+                            class="col-6 position-relative d-flex justify-content-end align-items-center  px-md-5 header-status">
+                            <a class="changed-background py-2 px-2 text-end"><i class="fa fa-pencil"></i>
                                 <span class="text-changed-background">Cambiar fondo</span></a>
+                            <a class="py-2 px-2 text-end changed-text-style"
+                                style="font-size: 30px;font-weight: bold;">T</a>
                         </div>
-
-                        <div class="col-12 upload-status  d-flex align-items-center justify-content-center text-muted"
-                            style="padding: 0%;">
-                            <div class="form-floating" style="width: 100%; height: 100%;">
-                                <textarea class="form-control text-center" placeholder="Leave a comment here"
-                                    id="floatingTextarea" onkeyup="replaceLabel(this)"></textarea>
-                                <label for="floatingTextarea" class="w-100 post">
-                                    <p><i class="fa fa-pencil"></i> Escribe algo</p>
-                                </label>
-                            </div>
-                        </div>
-                        <!--  <div class="col-6">
-                            <p class="text-dark title_song">Falling Down<span class="artist"><br>XXX Tentation</span>
+                    </div>
+                    <div class="row container-text-area" style="overflow-y: scroll;">
+                        <!--Arreglar   -->
+                        <div class="col-12  text-area text-white d-flex justify-content-center align-items-center">
+                            <p contenteditable="true" class="text-center text-white" id="editable-tag">
+                                <span style="opacity: .4;">Escribe aqui</span>
                             </p>
                         </div>
-                        <div class="col-6 text-end btn-options">
-                            <i class="far fa-play-circle"></i>
-                            <i class="far fa-heart"></i>
-                            <i class="fa fa-share"></i>
-                        </div> -->
+                    </div>
+                    <div class="row bg-white">
+                        <div class="col-12 py-0 d-flex align-items-center justify-content-center file"
+                            data-bs-toggle="modal" data-bs-target="#modal_search">
+                            <p class="text-center"><i class="fa fa-pencil"></i> Seleccionar
+                                canciones</p>
+                        </div>
                     </div>
                 </div>
-
             </div>
-
-
         </div>
     </div>
+
+
+    <form action="url" method="post" id="to-post" class="d-none">
+        <input type="hidden" name="color" value="" id="song-background">
+        <input type="hidden" name="topic" value="" id="song-topic">
+        <input type="hidden" name="ids" value="" id="ids">
+    </form>
     <!-- Js -->
+
+    <button type="button" class="btn btn-primary d-none" id="liveToastBtn"></button>
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto text-danger"><i class="fas fa-exclamation-triangle"></i> <span
+                        class="title-toast">Campos vac&iacute;os</span></strong>
+                <button type="button" class="btn-close toast-button" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                <p>
+                    Compruebe:
+                    <br><small>1- Seleccionar al menos una canción</small>
+                    <br><small>2- Escribir en el post</small>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+
+    <!-- Modal -->
+    <div class="modal fade " id="modal_search" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title px-2" id="exampleModalLabel"><i class="fa fa-search"></i></h5>
+                    <input type="text" name="search" id="search-input" class="w-100 px-2 rounded border-0"
+                        placeholder="Buscar" onkeyup="searching(this);">
+                    <a data-bs-dismiss="modal" aria-label="Close" id="search-button-confirm"
+                        onclick="amountCheckedInputs();" class="px-2"><i class="fa fa-check"></i></a>
+                </div>
+                <div class="modal-body" id="modal-body">
+                    <p class="position-fixed w-100 header-modal-body text-center text-white px-1">
+                        <span id="selectedSong">0</span> canciones seleccionadas
+                    </p>
+                    <div class="container-fluid mt-5" id="songs">
+                        <script>
+                            let objects = [{
+                                id: 1,
+                                name: "Amantes de una noche - Bad Bunny"
+                            },
+                            {
+                                id: 2,
+                                name: "Te mudaste - Bad Bunny"
+                            },
+                            {
+                                id: 3,
+                                name: "Una noche mas - kamel"
+                            },
+                            {
+                                id: 4,
+                                name: "Tu jardin con enanitos - Melendi"
+                            },
+                            {
+                                id: 5,
+                                name: "Negronas y negrones - El Carnal"
+                            },
+                            {
+                                id: 6,
+                                name: "Mi primera vez - Los aldeanos"
+                            },
+                            {
+                                id: 7,
+                                name: "AmorFOda - bad Bunny"
+                            },
+                            ];
+
+                            for (let i = 0; i < objects.length; i++) {
+                                document.write(`
+                        <div class="row row_${i}">
+                            <div class="col-12">
+                                <div class="form-check mt-2">
+                                    <input class="form-check-input rounded-circle" type="checkbox" value="${objects[i].id}"
+                                        id="${objects[i].id}" name="${objects[i].id}"  onclick="countSelectedSongs();">
+                                    <label class="form-check-label" for="${objects[i].id}" style="cursor:pointer;">
+                                         ${objects[i].name}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>`);
+                            }
+
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Modal -->
     <script src="../Js/popper.min.js"></script>
     <script src="../Js/bootstrap.js"></script>
     <script src="../Js/jquery-3.5.1.js"></script>
     <script src="../Js/custom.js"></script>
     <script src="../Js/upload.js"></script>
     <script>
-
+        let first = false;
         $(document).ready(function () {
+            //Counters
             let counterColor = 0;
-            let notifications = `
-            <a href="#" class="data_notifications"><img src='../assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>
-            <br>
-            <a href="#" class="data_notifications"><img src='../assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a>  
-            <br>
-            <a href="#" class="data_notifications"><img src='../assets/artistas.png' width='20' height= '20' class="rounded-circle"> Hola mundo Hola mundo</a> 
-            <br>
-            <hr class="dropdown-divider">
-            <a href="notifications.html" class="data_notifications btn_more_notifications btn btn-sm" >Ver m&aacute;s</a> `;
-            enabledPopover(notifications);
-            $("#confirm-post").click(function (e) {
-                e.preventDefault();
-                let c = confirm("¿Desea agregar un nuevo post?");
-                if (c) {
-                    location.href = "/";
-                }
-            });
-            changedBackground(counterColor);
-        });
+            let counterStyle = 0;
+            //-----------------------------------------
 
-        function replaceLabel(e) {
-            if (e.value != "") {
-                $(".post").html("");
-            } else {
-                $(".post").html(` <p><i class="fa fa-pencil"></i> Escribe algo</p>`);
-            }
-        }
+            let focusText = false;
+            let event = undefined;
+            changedBackground(counterColor);
+            changeFontStyle(counterStyle);
+            textArea();
+        });
     </script>
 </body>
 

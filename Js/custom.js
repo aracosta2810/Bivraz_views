@@ -139,16 +139,18 @@ function setIconPlayPause(element) {
     }
 }
 
-//-----------------Cambiar icono play y pause a las canciones-------------------------------------
+//-----------------Cambiar seguir y siguiendo en las sugerencias de artistas-------------------------------------
 
-function setFollowUnfollow(element) {
+function setFollowUnfollow(element, id, idAuth) {
     //Esta linea me da si tengo el boton de seguir
     if ($($(element).children()).is("button")) {
         let btnFollow = `<p class="follow-artist"><i class="fa fa-check"></i> Siguiendo</p>`
         $(element).html(btnFollow);
+        sendRequest({ follow: true, idAuth: idAuth }, "/follow", "POST", id);
     } else {
         let btnFollow = `<button type="button" class="btn btn-secondary btn-sm">Seguir</button>`
         $(element).html(btnFollow);
+        sendRequest({ follow: false, idAuth: idAuth }, "/follow", "POST", id);
     }
 }
 
@@ -170,4 +172,26 @@ function sendRequest(value, url_database, method, id = -1) {
         });
     }
 
+}
+function showNotifications(url) {
+    let notifications = Cookies.get('notifications');
+    let values = `<div class="container-fluid">`;
+    if (typeof notifications !== 'undefined') {
+        notifications = notifications.split('$');
+        for (const element of notifications) {
+            values += `
+    <a href="${url}" class="data_notifications row py-1">
+    <img src="../assets/bad-bunny-gq-april-2019.jpg" alt="" width="40" height="40" class="rounded-circle col-3"> 
+    <span class="col-9 d-flex align-items-center">${element}</span></a>`;
+        }
+
+        values += `
+    <hr class="dropdown-divider">
+    <a href="${url}" class="data_notifications btn_more_notifications btn" >Ver m&aacute;s</a> </div>`;
+    } else {
+        values += `<a href="${url}" class="data_notifications  row py-1">
+    <i class="far fa-bell-slash col-3  d-flex align-items-center empty"></i>
+    <span class="col-9 d-flex align-items-center">Sin notificaciones recientes en el sistema</span></a> </div>`;
+    }
+    enabledPopover(values);
 }
