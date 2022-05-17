@@ -307,3 +307,21 @@ img {
 .text-brown:hover{
   color:#393a34;
 }
+
+.fav-musical-gender{
+  background-image: url(../assets/listasOscuro.png);
+  background-position: center;
+  background-size: contain;
+  color: white;
+  height: 80px;
+  width: 80px;
+  overflow: hidden;
+  background-color: #1c1d18;
+  font-weight: bold;
+  cursor: pointer;
+  transition: border-color .3s ease;
+}
+
+.fav-musical-gender-selected{
+  border: 4px solid rgb(211, 9, 9);
+}

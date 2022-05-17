@@ -432,16 +432,91 @@
     </div>
   </div>
 
-  <!-- Js -->
+  <!-- Fav musical genders modal -->
+  <div class="modal fade show"  id="musicalGendersModal" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: block; background-color: rgba(0,0,0,0.5); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);" aria-modal="true" role="dialog">
+    <div class="modal-dialog px-0 px-sm-4 ">
+      <div class="modal-content ">
+        <div class="modal-header py-0 text-white" style="background-color: #393A34;">
+          <div class="modal-title fw-bolder" id="exampleModalLabel">Escoger géneros favoritos</div>
+          <button type="button" id="acceptGendersButton" class="btn btn-sm text-white fw-bolder" data-bs-dismiss="modal"><i class="fa fa-check"></i> Aceptar</button>
+        </div>
+        <div class="modal-body"  style="max-height: 450px; overflow-y: scroll;">
+          <div class="row justify-content-center">
+            <script>
+              for (let i = 0; i < 5; i++) {
+                document.write(`
+                <div class="fav-musical-gender m-2 col-4 col-md-3 d-flex justify-content-center align-items-center rounded-circle" >
+                  Cumbia
+                </div>
+                `)
+                
+              }
+            </script>
+            
+          </div>
+        </div>
+        <div class="text-danger text-center" id="musicalGendersWarningText"></div>
+      </div>
+    </div>
+  </div>
+   <!--End Generos fav modal -->
+
+   <!-- Js -->
   <script src="Js/popper.min.js"></script>
   <script src="Js/bootstrap.js"></script>
   <script src="Js/jquery-3.5.1.js"></script>
   <script src="./Js/js.cookie.min.js"></script>
   <script src="Js/custom.js"></script>
   <script src="./Js/music-player.js"></script>
+  
 
   <script>
     $(document).ready(function () {
+      // Select musical genders logic
+      // ------------------Esta linea es para quitarle el scroll al fondo que se ve, mucho ojo al usarla
+      document.querySelector('body').className += 'overflow-hidden'
+      // ----------------------------------------------------------
+
+       const element = document.getElementsByClassName('fav-musical-gender')
+        for (let i = 0; i < element.length; i++) {
+          element[i].addEventListener('click', ()=>{
+            document.getElementById('musicalGendersWarningText').innerHTML = ''
+            if (element[i].className.indexOf('fav-musical-gender-selected') === -1) element[i].className += ' fav-musical-gender-selected'
+            else element[i].className = 'fav-musical-gender m-2 col-4 col-md-3 d-flex justify-content-center align-items-center rounded-circle'
+          })
+        }
+
+      // Accept musical genders method
+      const acceptGendersButton = document.getElementById('acceptGendersButton')
+      acceptGendersButton.addEventListener('click', () => {
+        if(musicalGenders().length === 0){
+          document.getElementById('musicalGendersWarningText').innerHTML = 'Debe seleccionar al menos un género musical'
+          document.getElementById('musicalGendersWarningText').className += ' mb-2'
+          return
+        }
+
+        let data = musicalGenders()
+        fetch('https://domain.com', {
+          method:'POST',
+          body:{
+            data
+          }
+        })
+      })
+
+      // To return the selected genders
+      const musicalGenders = () =>{
+        let genders =[];
+        for (let i = 0; i < element.length; i++) {
+          if (element[i].className.indexOf('fav-musical-gender-selected') !== -1){
+            genders.push(element[i].innerHTML.trim())
+          }
+          
+        }
+        return genders;
+      }
+      //END Select musical genders logic
+
       responsiveDesign();
       $(`.fa-heart`).click(function (e) {
         likeMe(this);
@@ -454,7 +529,7 @@
       loadingFiles();
     });
   </script>
-
+  
 
 </body>
 
