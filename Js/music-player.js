@@ -66,7 +66,7 @@ randomRepeat.addEventListener('click', () => {
 // To shuffle the playlist
 const shufflePlaylist = () => {
     songs.sort(() => Math.random() - 0.5)
-
+    
     for (let i = 0; i < songs.length; i++) {
         if (songs[i].id == selectCurrentSongID()) {
             let temp = songs.filter(item => item.id == selectCurrentSongID())[0]
