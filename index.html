@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="Css/main.css" />
   <link rel="stylesheet" href="Css/home.css">
+  <link rel="stylesheet" href="jquery-fadeintoview/jquery-fadeintoview.css">
 </head>
 
 <body>
@@ -433,90 +434,66 @@
   </div>
 
   <!-- Fav musical genders modal -->
-  <div class="modal fade show"  id="musicalGendersModal" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: block; background-color: rgba(0,0,0,0.5); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);" aria-modal="true" role="dialog">
-    <div class="modal-dialog px-0 px-sm-4 ">
-      <div class="modal-content ">
-        <div class="modal-header py-0 text-white" style="background-color: #393A34;">
-          <div class="modal-title fw-bolder" id="exampleModalLabel">Escoger géneros favoritos</div>
-          <button type="button" id="acceptGendersButton" class="btn btn-sm text-white fw-bolder" data-bs-dismiss="modal"><i class="fa fa-check"></i> Aceptar</button>
+  <div class="modal fade" id="musicalGendersModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    style="background-color: rgba(0,0,0,0.5); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);"
+    aria-modal="true" role="dialog">
+    <div class="modal-dialog px-0 py-0 modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header py-3 px-3 text-white" style="background-color: #393A34;">
+          <div class="modal-title fw-bolder" id="exampleModalLabel">
+            <h3>Escoger géneros favoritos</h3>
+          </div>
+          <button type="button" id="acceptGendersButton" class="btn text-white fw-bolder" data-bs-dismiss="modal"
+            style="font-size: 28px;box-shadow: none;"><i class="fa fa-check check-genders"></i> <span class="acept-genders">Aceptar</span></button>
         </div>
-        <div class="modal-body"  style="max-height: 450px; overflow-y: scroll;">
+        <div class="modal-body">
           <div class="row justify-content-center">
             <script>
-              for (let i = 0; i < 5; i++) {
+              for (let i = 0; i < 500; i++) {
                 document.write(`
-                <div class="fav-musical-gender m-2 col-4 col-md-3 d-flex justify-content-center align-items-center rounded-circle" >
-                  Cumbia
+                <div class="fav-musical-gender m-2 d-flex justify-content-center align-items-center rounded-circle" id="${i}" >
+                 <p class="name-gender">Cumbia</p>
                 </div>
                 `)
-                
+
               }
             </script>
-            
           </div>
         </div>
-        <div class="text-danger text-center" id="musicalGendersWarningText"></div>
       </div>
     </div>
   </div>
-   <!--End Generos fav modal -->
+  <!--End Generos fav modal -->
 
-   <!-- Js -->
+
+  <button type="button" class="btn btn-primary d-none" id="liveToastBtn"></button>
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 999999">
+    <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="me-auto text-danger"><i class="fas fa-exclamation-triangle"></i> <span class="title-toast">Sin seleccionar elementos</span></strong>
+        <button type="button" class="btn-close toast-button" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        <p>
+          Compruebe escoger al menos 1 g&eacute;nero musical
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Js -->
   <script src="Js/popper.min.js"></script>
   <script src="Js/bootstrap.js"></script>
   <script src="Js/jquery-3.5.1.js"></script>
   <script src="./Js/js.cookie.min.js"></script>
   <script src="Js/custom.js"></script>
   <script src="./Js/music-player.js"></script>
-  
+  <script src="jquery-fadeintoview/jquery-fadeintoview.js"></script>
 
   <script>
     $(document).ready(function () {
-      // Select musical genders logic
-      // ------------------Esta linea es para quitarle el scroll al fondo que se ve, mucho ojo al usarla
-      document.querySelector('body').className += 'overflow-hidden'
-      // ----------------------------------------------------------
-
-       const element = document.getElementsByClassName('fav-musical-gender')
-        for (let i = 0; i < element.length; i++) {
-          element[i].addEventListener('click', ()=>{
-            document.getElementById('musicalGendersWarningText').innerHTML = ''
-            if (element[i].className.indexOf('fav-musical-gender-selected') === -1) element[i].className += ' fav-musical-gender-selected'
-            else element[i].className = 'fav-musical-gender m-2 col-4 col-md-3 d-flex justify-content-center align-items-center rounded-circle'
-          })
-        }
-
-      // Accept musical genders method
-      const acceptGendersButton = document.getElementById('acceptGendersButton')
-      acceptGendersButton.addEventListener('click', () => {
-        if(musicalGenders().length === 0){
-          document.getElementById('musicalGendersWarningText').innerHTML = 'Debe seleccionar al menos un género musical'
-          document.getElementById('musicalGendersWarningText').className += ' mb-2'
-          return
-        }
-
-        let data = musicalGenders()
-        fetch('https://domain.com', {
-          method:'POST',
-          body:{
-            data
-          }
-        })
-      })
-
-      // To return the selected genders
-      const musicalGenders = () =>{
-        let genders =[];
-        for (let i = 0; i < element.length; i++) {
-          if (element[i].className.indexOf('fav-musical-gender-selected') !== -1){
-            genders.push(element[i].innerHTML.trim())
-          }
-          
-        }
-        return genders;
-      }
-      //END Select musical genders logic
-
+      sendFavoritesGenders();
       responsiveDesign();
       $(`.fa-heart`).click(function (e) {
         likeMe(this);
@@ -527,9 +504,16 @@
       });
       showNotifications("pages/notifications.html");
       loadingFiles();
+      let gender = Cookies.get("genders");
+     /*  if(typeof gender === 'undefined'){
+        sendFavoritesGenders();
+      } */
+     /*  $(".modal-body").scroll(function () { 
+        
+      }); */
     });
   </script>
-  
+
 
 </body>
 

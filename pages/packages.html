@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -234,10 +235,11 @@
 
 
   <!-- Modal -->
+
   <div class="modal fade" id="form-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+    <div class="modal-dialog  modal-dialog-centered">
       <div class="modal-content overflow-visible" style="border-radius: 20px; text-align: center">
-        <div class="position-relative pt-5">
+        <div class="position-relative pt-3">
           <img src="../assets/logo.png" alt="logoBivraz" style="
               position: absolute;
               top: -35px;
@@ -294,9 +296,62 @@
                   deber&aacute; copiar y pegar aqu&iacute; </p>
               </div>
             </div>
-            <input type="submit" value="" class="d-none" id="submit_form">
           </form>
-          <div class="row input-group-2  d-none">
+
+          <div class="row input-group-2 d-none">
+            <div class="col-12">
+              <h3 class="text-center">Carrito
+                <br>
+                <i class="fa fa-shopping-cart"></i>
+              </h3>
+              <div class="pt-2">
+                <p class="text-start" style="margin-bottom: 0%;">Tienda: </p>
+                <p class="text-start">Comprador: </p>
+              </div>
+              <div class="details row py-1 px-2">
+                <div class="col-3">
+                  <img src="/assets/pro.png" alt="" class="img-fluid" height="100%" width="100%">
+                </div>
+                <div class="col-6">
+                  <h4 class="shopping-text">
+                    Title
+                    <br>
+                    other title
+                  </h4>
+                </div>
+                <div class="col-3">
+                  <p class="text-center text-danger" style="font-style: italic;font-size: xx-large;"><i
+                      class="fa fa-close"></i></p>
+                </div>
+                <div class="col-6 offset-3">
+                  <ul>
+                    <li>HOla mundo</li>
+                    <li>HOla mundo</li>
+                    <li>HOla mundo</li>
+                    <li>HOla mundo</li>
+                    <li>HOla mundo</li>
+                  </ul>
+                </div>
+                <p class="col-12 tedxt-center">
+                  <small>Duraci&oacute;n: <span>1 mes</span></small>
+                </p>
+              </div>
+              <div class="row  py-1 px-2">
+                <p class="mb-0">Total a pagar:</p>
+                <p  class="mb-0">
+                  <strong>
+                    35 CUP
+                  </strong>
+                </p>
+              </div>
+
+              <!--  <p style="font-size: 70%;" class="mt-5">
+              Tienda: <span></span>
+              </p> -->
+            </div>
+          </div>
+
+          <div class="row input-group-3 d-none">
             <div class="col-12">
               <h3 class="text-center">¡Gracias por comprar
                 nuestro paquete
@@ -311,10 +366,10 @@
         </div>
         <div class="modal-footer-customized">
           <div class="row">
-            <div class="col-6" data-bs-dismiss="modal" id="cancel">
+            <div class="col-6 btn-col" data-bs-dismiss="modal" id="cancel">
               Cancelar
             </div>
-            <div class="col-6" id="continue">
+            <div class="col-6 btn-col" id="continue">
               Continuar
             </div>
           </div>
@@ -341,7 +396,7 @@
       });
       $(`#continue`).click(function (e) {
         if (!replaceInputGroup(cont)) {
-          if (cont == 2) {
+          if (cont == 3) {
             cont = 0;
           } else {
             cont++;

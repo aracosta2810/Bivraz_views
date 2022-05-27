@@ -35,14 +35,18 @@ function responsiveDesign() {
 //-----------------Dando funcionalidad a los paquetes-------------------------------------
 var counter = 4;
 var cont = 0;
+var basicType = 0;
 function sendTypePackage(packageType) {
     let type = ``;
     if (packageType == 1) {
         type = "Básico";
+        basicType = 1;
     } else if (packageType == 2) {
         type = "Pro";
+        basicType = 2;
     } else if (packageType == 3) {
         type = "Golden";
+        basicType = 3;
     }
     $(`#package-name`).text(type);
     $("#pacakges_type").val(type);
@@ -54,7 +58,6 @@ function replaceInputGroup(cont) {
         if (element.value == "") {
             controller = true;
         }
-
     });
     if (!controller) {
         if (cont == 0) {
@@ -63,26 +66,32 @@ function replaceInputGroup(cont) {
         } else if (cont == 1) {
             $(`.input-group-${cont}`).addClass("d-none");
             $(`.input-group-${cont + 1}`).removeClass("d-none");
-            $(`#continue`).text("Aceptar");
+            
         } else if (cont == 2) {
             $(`.input-group-${cont}`).addClass("d-none");
             $(`.input-group-${0}`).removeClass("d-none")
-            $("#form-modal").modal(`hide`);
-            getPackage();
+           // $("#form-modal").modal(`hide`);
+            //getPackage(basicType);
+        }else if(cont == 3){
+            $(`.input-group-${cont}`).addClass("d-none");
+            $(`.input-group-${0}`).removeClass("d-none") 
+            $(`#continue`).text("Aceptar");
         }
     }
 
     return controller;
 }
-
-function getPackage() {
+//Datos para enviar al backend y comprar el paquete
+//El parametro type indica el tipo de paquete a escoger
+function getPackage(type) {
+    console.log(type);
     $("#form_packages").submit(function (e) {
         e.preventDefault();
         let data = $(this).serialize();
         console.log(data);
         $.ajax({
             type: "post",
-            url: "/url",
+            url: "/url/" + type,
             data: data,
             dataType: "json",
             success: function (response) {
@@ -194,4 +203,61 @@ function showNotifications(url) {
     <span class="col-9 d-flex align-items-center">Sin notificaciones recientes en el sistema</span></a> </div>`;
     }
     enabledPopover(values);
+}
+
+function sendFavoritesGenders() {
+    // Select musical genders logic
+    // ------------------Esta linea es para quitarle el scroll al fondo que se ve, mucho ojo al usarla
+    document.querySelector('body').className += 'overflow-hidden'
+    // ----------------------------------------------------------
+    document.getElementById('musicalGendersModal').classList.add('show')
+    document.getElementById('musicalGendersModal').classList.add('d-block')
+
+    const element = document.getElementsByClassName('fav-musical-gender')
+    for (let i = 0; i < element.length; i++) {
+        element[i].addEventListener('click', () => {
+            if (element[i].className.indexOf('fav-musical-gender-selected') === -1) element[i].className += ' fav-musical-gender-selected'
+            else element[i].className = 'fav-musical-gender m-2 col-4 col-md-3 d-flex justify-content-center align-items-center rounded-circle'
+        })
+    }
+
+    // Accept musical genders method
+    const acceptGendersButton = document.getElementById('acceptGendersButton')
+    acceptGendersButton.addEventListener('click', () => {
+        if (musicalGenders().length === 0) {
+            showToast();
+            return;
+        }
+
+        let data = musicalGenders()
+        fetch('https://domain.com', {
+            method: 'POST',
+            body: {
+                data
+            }
+        })
+        document.body.classList.remove('overflow-hidden');
+        document.getElementById('musicalGendersModal').classList.remove('show')
+        document.getElementById('musicalGendersModal').classList.remove('d-block')
+        Cookies.set("genders", true, { expires: 5 });
+    })
+
+    // To return the selected genders
+    const musicalGenders = () => {
+        let genders = [];
+        for (let i = 0; i < element.length; i++) {
+            if (element[i].className.indexOf('fav-musical-gender-selected') !== -1) {
+                genders.push(element[i].id)
+            }
+
+        }
+        return genders;
+    }
+    //END Select musical genders logic
+}
+
+function showToast() {
+    var myAlert = document.getElementById('liveToast');//select id of toast
+    var bsAlert = new bootstrap.Toast(myAlert);//inizialize it
+    bsAlert.show();//show it
 }
