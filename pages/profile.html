@@ -104,57 +104,46 @@
 
 
         <!-- Navbar Cell View -->
-        <nav class="navbar pb-0 d-block d-md-none sticky-top" style="background-color: #393a34">
-            <div class="navbar-dark w-100 d-flex justify-content-between align-items-center pb-3 px-2">
-                <a class="navbar-brand" href="/"> <img src="../assets/logoBivraz.png" alt="" width="100"></a>
-
-                <!-- Searchfield -->
-                <div class="d-flex align-items-center">
-                    <div id="form">
-                        <input type="text" class="form-input" placeholder="Buscar" />
-                        <i class="fa fa-search"></i>
-                    </div>
-
-                    <div style="
-                    border: 2px solid white;
+        <nav class="navbar navbar-light pb-0 d-block d-md-none sticky-top bg-white">
+            <div class="navbar-dark w-100 d-flex justify-content-between align-items-center pb-2 px-4 border-bottom border-2">
+                <a class="navbar-brand" href="/"> <i class="fa fa-angle-left text-dark"></i></a>
+                <div class="text-secondary" style="font-size: 1.2rem; font-weight: bold;">Mi Perfil</div>
+                <div style="
                     border-radius: 100px;
-                    padding: 3px 7px;
-                  " class="dropdown position-relative" id="cell-view">
-                        <i class="fas fa-user" style="font-size: 1.6rem; color: white;" role="button"
-                            id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"></i>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="menu-cell-view">
-                            <li><a class="dropdown-item" href="pages/profile.html">Perfil</a></li>
-                            <li><a class="dropdown-item" href="conditionsAndUse.html">Pol&iacute;tica de
-                                    uso</a></li>
-                            <li><a class="dropdown-item" href="#">Cerrar sesi&oacute;n</a></li>
-                        </ul>
-                    </div>
+                    padding: 3px 7px;" 
+                    class="dropdown position-relative" id="cell-view"
+                >
+                    <i class="fas fa-bars" style="font-size: 1.6rem;" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="menu-cell-view"
+                        style="
+                            color: rgb(235, 232, 232);
+                            background-color: #383838;
+                            top: -10px;
+                            right: -20px !important;
+                            text-align: end;
+                        " 
+                    >
+                        <li class="me-4  " style="margin-top: 6px; font-size: 1.3rem; font-weight: 900;">Menú</li>
+                        <li><hr class="dropdown-divider"></li>
+                            <div class="py-2 ps-5 me-3 menu-profile-container">
+                                <style>
+                                    .menu-profile-container  a{
+                                        color: rgb(235, 232, 232);
+                                        padding: 10px 10px 0px;
+                                    }
+                                </style>
+                                <li><a class="dropdown-item" href="profile.html">Editar perfil</a></li>
+                                <li><a class="dropdown-item" href="profile.html">Estadísticas</a></li>
+                                <li><a class="dropdown-item" href="profile.html">Mi cuenta</a></li>
+                                <li><a class="dropdown-item" href="profile.html">Administrar</a></li>
+                                <li><a class="dropdown-item" href="profile.html">Contáctanos</a></li>
+                            </div>
+                        <li class="py-1"><hr class="dropdown-divider"></li>
+                        <li><a style="font-size: 0.7rem; text-align: center;" class="dropdown-item text-white justify-content-center" href="conditionsAndUse.html">Política de privacidad <br> Términos y Condiciones</a></li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- Sections -->
-            <ul id="sectionsCellView" class="navbar-nav py-2 pt-3 px-0 px-sm-5 border-bottom bg-light w-100"
-                style="flex-direction: row">
-                <li class="nav-item me-4">
-                    <a href="packages.html"><i class="fas fa-box-open" style="margin-left: 15px"></i></a>
-                </li>
-                <li class="nav-item me-4">
-                    <a href="list.html"><i class="fas fa-music"></i></a>
-                </li>
-                <li class="nav-item me-4">
-                    <a href="/"><i class="fas fa-home "></i></a>
-                </li>
-                <li class="nav-item me-4 position-relative">
-                    <a href="notifications.html"><i class="fas fa-bell"></i></a>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                        9
-                        <span class="visually-hidden"></span>
-                    </span>
-                </li>
-                <li class="nav-item me-4">
-                    <a href="artists.html"><i class="fas fa-user"></i></a>
-                </li>
-            </ul>
         </nav>
 
 
