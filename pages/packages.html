@@ -70,7 +70,7 @@
             <div class="activating_item"></div>
           </li>
         </ul>
-        <form class="d-flex">
+        <form class="d-flex" id="form">
           <div id="form" style="padding: 7px">
             <input type="text" class="form-input" placeholder="Buscar" id="input_search" />
             <i class="fa fa-search" style="padding: 7px; cursor: pointer" id="btn_search"></i>
@@ -172,18 +172,19 @@
       <div class="row pb-5 pb-md-0" id="packages-row">
         <div class="col-12 col-sm-4 mt-sm-0">
           <div class="d-flex justify-content-center">
-            <img class="packagePic" src="../assets/basico.png" alt="basicPackage" width="150px" />
+            <img class="packagePic" src="../assets/basico.png" alt="basicPackage" width="150px" id="basic-package" />
           </div>
           <h3 class="text-center mt-2">Básico</h3>
           <div class="text-secondary text-center" style="font-size: 0.8rem">
             Disfruta de lo más top de la semana
           </div>
           <div class="text-secondary text-center" style="font-size: 0.7rem">
-            Valor: 35cup
+            <!--             Me quede aqui -->
+            Valor: <span>35</span>cup
           </div>
           <div class="d-flex justify-content-center mt-3">
             <button class="btn btn-secondary" style="background-color: #353632 !important" type="button"
-              data-bs-toggle="modal" data-bs-target="#form-modal" onclick="sendTypePackage(1)">
+              data-bs-toggle="modal" data-bs-target="#form-modal" onclick="sendTypePackage(1,1)">
               Comprar
             </button>
           </div>
@@ -191,7 +192,7 @@
         <hr width="100%" class="d-sm-none my-5">
         <div class="col-12 col-sm-4 mt-sm-0">
           <div class="d-flex justify-content-center">
-            <img class="packagePic" src="../assets/pro.png" alt="basicPackage" width="150px" />
+            <img class="packagePic" src="../assets/pro.png" alt="basicPackage" width="150px" id="pro-package" />
           </div>
           <h3 class="text-center mt-2">Pro</h3>
           <div class="text-secondary text-center" style="font-size: 0.8rem">
@@ -202,7 +203,7 @@
           </div>
           <div class="d-flex justify-content-center mt-3">
             <button class="btn btn-secondary" style="background-color: #353632 !important" type="button"
-              data-bs-toggle="modal" data-bs-target="#form-modal" onclick="sendTypePackage(2)">
+              data-bs-toggle="modal" data-bs-target="#form-modal" onclick="sendTypePackage(2,2)">
               Comprar
             </button>
           </div>
@@ -210,7 +211,7 @@
         <hr width="100%" class="d-sm-none my-5">
         <div class="col-12 col-sm-4 mt-sm-0">
           <div class="d-flex justify-content-center">
-            <img class="packagePic" src="../assets/golden.png" alt="basicPackage" width="150px" />
+            <img class="packagePic" src="../assets/golden.png" alt="basicPackage" width="150px" id="golden-package" />
           </div>
           <h3 class="text-center mt-2">Golden</h3>
           <div class="text-secondary text-center" style="font-size: 0.8rem">
@@ -220,8 +221,9 @@
             Valor: 45cup
           </div>
           <div class="d-flex justify-content-center mt-3">
+            <!-- La funcion sendTypePackage recibe dos parametros, el primero para identificar el pquete y el segundo para el mes de duracioon-->
             <button class="btn btn-secondary" style="background-color: #353632 !important" type="button"
-              data-bs-toggle="modal" data-bs-target="#form-modal" onclick="sendTypePackage(3)">
+              data-bs-toggle="modal" data-bs-target="#form-modal" onclick="sendTypePackage(3,3)">
               Comprar
             </button>
           </div>
@@ -305,41 +307,35 @@
                 <i class="fa fa-shopping-cart"></i>
               </h3>
               <div class="pt-2">
-                <p class="text-start" style="margin-bottom: 0%;">Tienda: </p>
-                <p class="text-start">Comprador: </p>
+                <p class="text-start" style="margin-bottom: 0%;">Tienda: Bivraz</p>
+                <p class="text-start">Comprador: <span>Nombre</span></p>
               </div>
               <div class="details row py-1 px-2">
-                <div class="col-3">
+                <div class="col-3 d-flex align-items-center justify-content-center">
                   <img src="/assets/pro.png" alt="" class="img-fluid" height="100%" width="100%">
                 </div>
-                <div class="col-6">
-                  <h4 class="shopping-text">
-                    Title
-                    <br>
-                    other title
+                <div class="col-6 d-flex align-items-center justify-content-center">
+                  <h4 class="shopping-text" id="name-package">
+                    Paquete Basico
                   </h4>
                 </div>
-                <div class="col-3">
+                <div class="col-3 d-flex align-items-center justify-content-center">
                   <p class="text-center text-danger" style="font-style: italic;font-size: xx-large;"><i
                       class="fa fa-close"></i></p>
                 </div>
                 <div class="col-6 offset-3">
                   <ul>
-                    <li>HOla mundo</li>
-                    <li>HOla mundo</li>
-                    <li>HOla mundo</li>
-                    <li>HOla mundo</li>
-                    <li>HOla mundo</li>
+                    <li> HOla mundo</li>
                   </ul>
                 </div>
                 <p class="col-12 tedxt-center">
-                  <small>Duraci&oacute;n: <span>1 mes</span></small>
+                  <small>Duraci&oacute;n: <span id="month">1</span> mes</small>
                 </p>
               </div>
               <div class="row  py-1 px-2">
                 <p class="mb-0">Total a pagar:</p>
-                <p  class="mb-0">
-                  <strong>
+                <p class="mb-0">
+                  <strong id="value">
                     35 CUP
                   </strong>
                 </p>
@@ -377,6 +373,21 @@
       </div>
     </div>
   </div>
+
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 999999">
+    <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="me-auto header-toast-color"><i class="fas fa-exclamation-triangle"></i> <span
+            class="title-toast"></span></strong>
+        <button type="button" class="btn-close toast-button" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        <p>
+
+        </p>
+      </div>
+    </div>
+  </div>
   <!-- Js -->
   <script src="../Js/popper.min.js"></script>
   <script src="../Js/bootstrap.js"></script>
@@ -401,8 +412,6 @@
           } else {
             cont++;
           }
-        } else {
-          $("#submit_form").click();
         }
       });
       toggleNavBar();

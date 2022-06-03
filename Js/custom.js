@@ -36,11 +36,17 @@ function responsiveDesign() {
 var counter = 4;
 var cont = 0;
 var basicType = 0;
-function sendTypePackage(packageType) {
+function sendTypePackage(packageType, month) {
     let type = ``;
+    let src = ``;
+    let value = 0;
     if (packageType == 1) {
         type = "Básico";
         basicType = 1;
+        src = $("#basic-package").attr("src");
+        //Imagen, nombre, duracion, valor
+
+
     } else if (packageType == 2) {
         type = "Pro";
         basicType = 2;
@@ -66,16 +72,17 @@ function replaceInputGroup(cont) {
         } else if (cont == 1) {
             $(`.input-group-${cont}`).addClass("d-none");
             $(`.input-group-${cont + 1}`).removeClass("d-none");
-            
+            console.log(cont);
+
         } else if (cont == 2) {
             $(`.input-group-${cont}`).addClass("d-none");
-            $(`.input-group-${0}`).removeClass("d-none")
-           // $("#form-modal").modal(`hide`);
-            //getPackage(basicType);
-        }else if(cont == 3){
-            $(`.input-group-${cont}`).addClass("d-none");
-            $(`.input-group-${0}`).removeClass("d-none") 
+            $(`.input-group-${cont + 1}`).removeClass("d-none")
             $(`#continue`).text("Aceptar");
+            /*             $(`.input-group-${cont}`).addClass("d-none");
+                        $(`.input-group-${0}`).removeClass("d-none") */
+        } else {
+            $("#form-modal").modal(`hide`);
+            getPackage(basicType);
         }
     }
 
@@ -85,6 +92,18 @@ function replaceInputGroup(cont) {
 //El parametro type indica el tipo de paquete a escoger
 function getPackage(type) {
     console.log(type);
+    const toast = (message, title, icon) => {
+        $(".toast-body").html(`<p>${message}</p>`);
+        $(".title-toast").text(title);
+        if (icon == "danger") {
+            $(".header-toast-color").addClass("text-danger");
+        } else {
+            $(".header-toast-color").addClass("text-success");
+        }
+        var myAlert = document.getElementById('liveToast');//select id of toast
+        var bsAlert = new bootstrap.Toast(myAlert);//inizialize it
+        bsAlert.show();//show it
+    }
     $("#form_packages").submit(function (e) {
         e.preventDefault();
         let data = $(this).serialize();
@@ -95,9 +114,10 @@ function getPackage(type) {
             data: data,
             dataType: "json",
             success: function (response) {
-
+                toast("Transacción realizada de manera satisfactoria", "Transacción completada", "success");
             },
             error: function (response) {
+                toast("Fallo al realizar la transacción", "Transacción fallida", "danger");
             }
         });
 

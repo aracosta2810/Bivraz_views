@@ -67,9 +67,16 @@
 background-color: rgba(128, 128, 128, 0.322);
 border-radius: 10px;
 }
-
+.shopping-text{
+    font-size: 20px;
+}
 @media(max-width:340px) {
     .shopping-text{
         font-size: 14px;
     }
 }
+@media(max-width:380px) {
+    #liveToast {
+        width: 100%;
+    }
+  }
