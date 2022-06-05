@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../Js/chart.js"></script>
+    <link rel="stylesheet" href="../Css/bootstrap.css" />
+    <link rel="stylesheet" href="../fontawesome/css/all.css" />
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <style>
+      #myChart {
+        max-height: 60vh !important;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-light p-0 sticky-top bg-white mb-5">
+      <div class="navbar-dark w-100 d-flex justify-content-center align-items-center pb-0 px-4 border-bottom border-2">
+          <a class="navbar-brand position-absolute" style="left: 20px;" href="profile.html"> <i class="fa fa-angle-left text-dark"></i></a>
+          <div class="text-secondary" style="font-size: 1.2rem; font-weight: bold;">Oficina</div>
+      </div>
+  </nav>
+
+    <div class="row justify-content-center">
+      <div class="col-11 col-sm-8 col-md-10 col-lg-3">
+        <div class="row justify-content-center ">
+          <div class="col-6 col-lg-12  mb-md-3">
+            <div class="card text-white" style="background-color: #393939; border-radius: 10px;">
+              <div class="card-body px-0">
+                  <h2 class="text-center mb-0" style="font-weight: bold;">500</h2>
+                  <div class="fw-bold text-center mb-4">Reproducciones</div>
+                  <div class="text-center">10 rep/c</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-12 ">
+            <div class="card text-white" style="background-color: #393939; border-radius: 10px;">
+              <div class="card-body px-0">
+                  <h2 class="text-center mb-0" style="font-weight: bold;">500</h2>
+                  <div class="fw-bold text-center mb-4">Suscripciones</div>
+                  <div class="text-center">10 sus/c</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-12 my-5">
+            <div>Canción más escuchada: <b>Falling Down</b></div>
+            <div>Likes por canción: <b>10/c</b></div>
+            <div>Compartidos: <b>10/c</b></div>
+            <div>Canciones publicadas: <b>100</b></div>
+          </div>
+        </div>
+      </div>
+      <hr class="dropdown-divider d-block d-sm-none mb-5">
+      <div class="col-12 col-lg-8">
+        <h3 class="text-center mb-4">Estadísticas</h3>
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+
+    
+
+    <!-- Graphic config -->
+    <script>
+      const ctx = document.getElementById("myChart");
+      const myChart = new Chart(ctx, {
+        type: "doughnut",
+        data: {
+          labels: [
+            "Habana",
+            "Matanzas",
+            "Holguín",
+            "Camaguey",
+            "Santiago de Cuba",
+            "Pinar del Río",
+          ],
+          datasets: [
+            {
+              label: "# of Votes",
+              data: [8, 19, 10, 90, 50, 10],
+              backgroundColor: [
+                "rgb(255, 99, 132)",
+                "rgb(54, 162, 235)",
+                "rgb(255, 205, 86)",
+                "rgb(255, 105, 86)",
+                "rgb(155, 205, 86)",
+                "rgb(155, 105, 86)",
+              ],
+              color:['#CD0C0C'],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          tooltips: {
+            enabled: false,
+          },
+          plugins: {
+            legend: {
+              position: window.innerWidth > 780? 'right' : 'top',
+              labels: {
+                    // This more specific font property overrides the global property
+                    font: {
+                        size: 18
+                    }
+                }
+            },
+            
+          }
+        },
+      });
+     myChart.defaults.color ='rgb(155, 105, 86)'
+
+    </script>
+  </body>
+</html>
